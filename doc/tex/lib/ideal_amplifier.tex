@@ -1,0 +1,36 @@
+\documentclass[../../sdf/tex/BPSK_system.tex]{subfiles}
+\graphicspath{{../../images/}}
+%opening
+\onlyinsubfile{\title{Ideal Amplifier}}
+\date{ }
+
+\begin{document}
+
+\onlyinsubfile{\maketitle}
+
+\subsection*{Input Parameters}
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item setGain
+	\end{itemize}
+\end{multicols}
+
+\subsection*{Functional Description}
+
+This block accepts one time continuous signal and outputs one time continuous signal of the same type built from multiplying the input signals by a predetermined value. The multiplying factor is defined by the values of \textit{Gain}. The input and output signals must be of the same type.
+%This block also adds random gaussian distributed noise with a user defined amplitude. The multiplying factor and noise amplitude are defined by the values of \textit{Amplification} and \textit{NoiseAmplitude} respectively.
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Real, Complex or Complex\_XY signal (ContinuousTimeContinuousAmplitude)
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Real, Complex or Complex\_XY signal (ContinuousTimeContinuousAmplitude)
+
+\end{document}

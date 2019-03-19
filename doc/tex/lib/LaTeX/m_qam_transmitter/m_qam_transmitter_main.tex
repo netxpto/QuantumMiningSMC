@@ -1,0 +1,29 @@
+\documentclass[a4paper]{article}
+\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1.25in]{geometry}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\setlength{\parskip}{0.03cm plus4mm minus3mm}
+\RequirePackage{ltxcmds}[2010/12/07]
+\usepackage{array}
+\usepackage{hyperref}
+\renewcommand{\arraystretch}{1.5}
+%\setlength{\arrayrulewidth}{1mm}
+%opening
+\title{MQAM transmitter}
+
+\begin{document}
+
+\maketitle
+
+\input{m_qam_transmitter}
+\input{../binary_source/binary_source}
+\input{../m_qam_mapper/m_qam_mapper}
+\input{../discrete_to_continuous_time/discrete_to_continuous_time}
+\input{../pulse_shaper/pulse_shaper}
+\input{../iq_modulator/iq_modulator}
+
+
+\end{document} 

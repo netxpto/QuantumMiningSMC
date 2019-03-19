@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="68mm"
+   height="27.290819mm"
+   viewBox="0 0 68.000002 27.290816"
+   version="1.1"
+   id="svg4849"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="edfa_blocks.svg">
+  <defs
+     id="defs4843">
+    <marker
+       id="endMarker3-56-9-3-32-7"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline578-63-0-35-9-04" />
+    </marker>
+    <marker
+       id="endMarker3-56-9-3-32-8"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline578-63-0-35-9-2" />
+    </marker>
+    <marker
+       id="endMarker3-56-9-3-32-9"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline578-63-0-35-9-7" />
+    </marker>
+    <marker
+       id="endMarker3-56-9-3-32-7-7"
+       markerUnits="strokeWidth"
+       orient="auto"
+       markerWidth="8"
+       markerHeight="6"
+       viewBox="0 0 10 10"
+       refX="1"
+       refY="5">
+      <polyline
+         points="0,0 10,5 0,10 1,5"
+         fill="solid"
+         id="polyline578-63-0-35-9-04-8" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="8.0000002"
+     inkscape:cx="149.35593"
+     inkscape:cy="43.612415"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-path-clip="true"
+     inkscape:snap-perpendicular="true"
+     inkscape:snap-tangential="true"
+     gridtolerance="10"
+     inkscape:snap-path-mask="true"
+     objecttolerance="20"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-text-baseline="true"
+     inkscape:snap-center="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-grids="false"
+     fit-margin-top="0.3"
+     fit-margin-bottom="0.3"
+     fit-margin-right="0.3"
+     fit-margin-left="0.3"
+     inkscape:snap-to-guides="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:object-paths="true"
+     inkscape:snap-bbox="true"
+     inkscape:snap-global="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:bbox-nodes="true"
+     inkscape:bbox-paths="true"
+     inkscape:measure-start="0,0"
+     inkscape:measure-end="0,0">
+    <inkscape:grid
+       type="axonomgrid"
+       id="grid5486"
+       units="mm"
+       empspacing="5"
+       enabled="false"
+       originx="-70.798577"
+       originy="-23.234531" />
+    <sodipodi:guide
+       position="-36.157551,142.80874"
+       orientation="1,0"
+       id="guide5577"
+       inkscape:locked="false" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid5631"
+       originx="-70.798577"
+       originy="-23.234531" />
+    <sodipodi:guide
+       position="-10.088297,166.2113"
+       orientation="0,1"
+       id="guide7003"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-10.162818,101.24506"
+       orientation="1,0"
+       id="guide7005"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-10.088299,155.8988"
+       orientation="0,1"
+       id="guide7007"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="10.561984,161.05504"
+       orientation="0,1"
+       id="guide7044"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="15.718239,145.60214"
+       orientation="0,1"
+       id="guide4493"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-30.973128,106.42948"
+       orientation="0,1"
+       id="guide1143"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-30.973128,96.060619"
+       orientation="0,1"
+       id="guide1145"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="15.627235,109.38903"
+       orientation="1,0"
+       id="guide1649"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-5.018218,114.59046"
+       orientation="0,1"
+       id="guide2153"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-5.018218,87.899639"
+       orientation="0,1"
+       id="guide2155"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="7.8133644,118.78961"
+       orientation="1,0"
+       id="guide2239"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="33.772073,111.79086"
+       orientation="1,0"
+       id="guide2277"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="59.917559,120.47341"
+       orientation="1,0"
+       id="guide2279"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="46.783102,98.285469"
+       orientation="0,1"
+       id="guide2517"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="77.815848,101.24505"
+       orientation="0,1"
+       id="guide2702"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="85.681168,101.28049"
+       orientation="1,0"
+       id="guide2709"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="101.26722,103.32381"
+       orientation="1,0"
+       id="guide2870"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-30.922206,92.969759"
+       orientation="1,0"
+       id="guide3762"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-34.46673,91.634689"
+       orientation="0,1"
+       id="guide3764"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-34.455008,96.060619"
+       orientation="1,0"
+       id="guide3766"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="67.465388,53.497658"
+       orientation="1,0"
+       id="guide5469"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="72.604638,53.497668"
+       orientation="0,1"
+       id="guide6174"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="163.39784,39.276027"
+       orientation="1,0"
+       id="guide7452"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="72.604638,40.197417"
+       orientation="0,1"
+       id="guide7702"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="72.659438,35.770537"
+       orientation="0,1"
+       id="guide7704"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="72.604638,66.843068"
+       orientation="0,1"
+       id="guide7706"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="72.659438,9.0797167"
+       orientation="0,1"
+       id="guide7708"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-5.003993,65.311598"
+       orientation="1,0"
+       id="guide7710"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-10.127422,37.379817"
+       orientation="0,1"
+       id="guide7712"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="67.420218,61.435098"
+       orientation="0,1"
+       id="guide7714"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="67.475008,14.854147"
+       orientation="0,1"
+       id="guide7716"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="170.963,37.209677"
+       orientation="0,1"
+       id="guide8549"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="92.327178,29.065677"
+       orientation="1,0"
+       id="guide1577"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="92.327178,3.7979565"
+       orientation="0,1"
+       id="guide1579"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="98.615369,45.292218"
+       orientation="1,0"
+       id="guide1581"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-10.35186,-10.960027"
+       orientation="0,1"
+       id="guide1583"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-29.271099,-10.960027"
+       orientation="1,0"
+       id="guide1585"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="95.208858,0.53125644"
+       orientation="1,0"
+       id="guide5655"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-32.722934,3.7979565"
+       orientation="1,0"
+       id="guide5657"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-5.129458,-32.404267"
+       orientation="0,1"
+       id="guide2804"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-5.003993,-19.058847"
+       orientation="0,1"
+       id="guide3343"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="97.399259,-16.997067"
+       orientation="0,-1"
+       id="guide3347"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="97.399579,-16.997067"
+       orientation="1,0"
+       id="guide3349"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(255,0,142)" />
+    <sodipodi:guide
+       position="-9.8492701,-64.599713"
+       orientation="0,1"
+       id="guide3530"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-18.462753,-59.260726"
+       orientation="1,0"
+       id="guide7999"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-4.8716989,-35.276567"
+       orientation="0,1"
+       id="guide1915"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-4.8716989,-38.543277"
+       orientation="0,1"
+       id="guide1943"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="14.854648,-14.075287"
+       orientation="-1,6.7421888e-007"
+       id="guide1975"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="14.751634,-24.557027"
+       orientation="0,1"
+       id="guide1977"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="14.610063,-37.393247"
+       orientation="0,1"
+       id="guide1979"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-3.7822289,-100.7419"
+       orientation="0,1"
+       id="guide2235"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-12.791074,-84.458664"
+       orientation="0,1"
+       id="guide2318"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-23.82073,-78.108619"
+       orientation="0,1"
+       id="guide2330"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-23.936003,-94.396688"
+       orientation="0,1"
+       id="guide2334"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-20.584086,-78.107623"
+       orientation="1,0"
+       id="guide2338"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0.12154317,31.881617"
+       orientation="0,1"
+       id="guide2722"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="47.012198,26.990807"
+       orientation="0,1"
+       id="guide3720"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="47.012198,0.29999644"
+       orientation="0,1"
+       id="guide3722"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="15.627237,5.4844166"
+       orientation="0,1"
+       id="guide3724"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="15.627237,21.806377"
+       orientation="0,1"
+       id="guide3726"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="47.012198,13.645407"
+       orientation="0,1"
+       id="guide3728"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata4846">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-70.79857,-246.47467)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.58749998px;line-height:1.25;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="71.696159"
+       y="143.76811"
+       id="text2369"><tspan
+         sodipodi:role="line"
+         id="tspan2367"
+         x="71.696159"
+         y="145.15718"
+         style="stroke-width:0.26458332" /></text>
+    <g
+       transform="translate(28.057236,155.57104)"
+       id="g6948-2-2-9">
+      <rect
+         ry="1.6426992"
+         y="107.55377"
+         x="58.642368"
+         height="10.312506"
+         width="10.312506"
+         id="rect4741-0-4-7"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.05634046;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
+      <text
+         style="font-size:3.17499995px;stroke-width:0.26458332"
+         id="text600-6-9-0"
+         y="116.79738"
+         x="59.287136">
+        <tspan
+           style="font-weight:bold;font-size:1.58749998px;font-family:Calibri;fill:#000000;fill-opacity:1;stroke-width:0.26458332;stroke-opacity:1"
+           id="tspan598-6-5-1"
+           font-size="6.0000"
+           font-weight="bold">B1</tspan>
+      </text>
+      <text
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111112px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
+         id="text576-18-2-1"
+         y="112.27387"
+         x="63.806202">
+        <tspan
+           y="112.27387"
+           x="63.806202"
+           sodipodi:role="line"
+           id="tspan4876">Ideal</tspan>
+        <tspan
+           y="114.03776"
+           x="63.806202"
+           sodipodi:role="line"
+           id="tspan6162">Amplifier</tspan>
+      </text>
+    </g>
+    <g
+       id="g2097-3-5-1"
+       transform="translate(54.012143,142.22563)">
+      <g
+         transform="translate(0,13.328407)"
+         id="g6948-2-4-0-2-1">
+        <rect
+           ry="1.6426992"
+           y="107.55377"
+           x="58.642368"
+           height="10.312506"
+           width="10.312506"
+           id="rect4741-0-5-8-3-0"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.05634046;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
+        <text
+           style="font-size:3.17499995px;stroke-width:0.26458332"
+           id="text600-6-8-1-9-2"
+           y="116.79738"
+           x="59.287136">
+          <tspan
+             style="font-weight:bold;font-size:1.58749998px;font-family:Calibri;fill:#000000;fill-opacity:1;stroke-width:0.26458332;stroke-opacity:1"
+             id="tspan598-6-7-1-0-3"
+             font-size="6.0000"
+             font-weight="bold">B1</tspan>
+        </text>
+        <text
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111112px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
+           id="text576-18-1-0-4-1"
+           y="112.27387"
+           x="63.806202">
+          <tspan
+             y="112.27387"
+             x="63.806202"
+             id="tspan5480-5-4-4-5-2"
+             sodipodi:role="line">MQAM</tspan>
+          <tspan
+             y="114.03776"
+             x="63.806202"
+             id="tspan5482-7-6-5-0-7"
+             sodipodi:role="line">Transmitter</tspan>
+        </text>
+      </g>
+      <rect
+         ry="1.4044482"
+         y="104.59421"
+         x="58.659367"
+         height="26.600479"
+         width="10.278509"
+         id="rect4741-61-5-0-1"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.09033708;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
+      <text
+         style="font-size:3.17499995px;stroke-width:0.26458332"
+         id="text600-0-2-9-0"
+         y="130.12578"
+         x="59.287136">
+        <tspan
+           style="font-weight:bold;font-size:1.58749998px;font-family:Calibri;fill:#000000;fill-opacity:1;stroke-width:0.26458332;stroke-opacity:1"
+           id="tspan598-43-1-9-6"
+           font-size="6.0000"
+           font-weight="bold">B3</tspan>
+      </text>
+      <text
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111112px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
+         id="text576-5-7-3-9"
+         y="118.36642"
+         x="63.838928">
+        <tspan
+           id="tspan2208-0-6"
+           y="118.36642"
+           x="63.838928"
+           sodipodi:role="line">Add</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(28.071995,139.24908)"
+       id="g6948-86-9-6-2">
+      <rect
+         ry="1.6426992"
+         y="107.55377"
+         x="58.642368"
+         height="10.312506"
+         width="10.312506"
+         id="rect4741-1-7-8-1"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.05634046;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
+      <text
+         style="font-size:3.17499995px;stroke-width:0.26458332"
+         id="text600-68-6-2-05"
+         y="116.79738"
+         x="59.287136">
+        <tspan
+           style="font-weight:bold;font-size:1.58749998px;font-family:Calibri;fill:#000000;fill-opacity:1;stroke-width:0.26458332;stroke-opacity:1"
+           id="tspan598-3-7-7-0"
+           font-size="6.0000"
+           font-weight="bold">B2</tspan>
+      </text>
+      <text
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111112px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
+         id="text576-0-0-7-3"
+         y="112.27387"
+         x="63.806202">
+        <tspan
+           y="112.27387"
+           x="63.806202"
+           sodipodi:role="line"
+           id="tspan4880-9">White</tspan>
+        <tspan
+           y="114.03776"
+           x="63.806202"
+           sodipodi:role="line"
+           id="tspan6150">Noise</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(31.245347,155.55359)"
+       id="g5687-37-4-3-7-7">
+      <path
+         d="m 65.891793,112.71046 14.457801,1e-5"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.191;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#endMarker3-56-9-3-32-7)"
+         id="path583-8-7-8-3-5"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <rect
+       ry="0.79374999"
+       y="267.33807"
+       x="101.334"
+       height="1.8520935"
+       width="6.4732876"
+       id="rect5879-9-7-7-0-1-0-9"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.38569054;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke" />
+    <text
+       style="font-size:3.17499995px;stroke-width:0.26458332"
+       x="102.49054"
+       y="268.73441"
+       id="text587-6-7-5-9-0-3-8">
+      <tspan
+         font-size="6.0000"
+         id="tspan585-3-2-6-2-7-3-3"
+         style="font-size:1.58749998px;font-family:Calibri;fill:#000000;fill-opacity:1;stroke-width:0.26458332;stroke-opacity:1">EDFA1</tspan>
+    </text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:1.58749998px;line-height:1.25;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="104.58847"
+       y="266.58328"
+       id="text2377-5-6-3"><tspan
+         sodipodi:role="line"
+         x="104.58847"
+         y="266.58328"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:1.58749998px;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan8451-0">Optical Signal</tspan></text>
+    <g
+       transform="translate(31.260106,139.27982)"
+       id="g5687-37-4-3-7-5">
+      <path
+         d="m 65.891793,112.71046 14.457801,1e-5"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.191;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#endMarker3-56-9-3-32-8)"
+         id="path583-8-7-8-3-6"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <rect
+       ry="0.79374999"
+       y="251.0643"
+       x="101.334"
+       height="1.8520935"
+       width="6.4732876"
+       id="rect5879-9-7-7-0-1-0-7"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.38569054;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke" />
+    <text
+       style="font-size:3.17499995px;stroke-width:0.26458332"
+       x="102.4917"
+       y="252.46063"
+       id="text587-6-7-5-9-0-3-0">
+      <tspan
+         font-size="6.0000"
+         id="tspan585-3-2-6-2-7-3-6"
+         style="font-size:1.58749998px;font-family:Calibri;fill:#000000;fill-opacity:1;stroke-width:0.26458332;stroke-opacity:1">EDFA2</tspan>
+    </text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:1.58749998px;line-height:1.25;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="104.58847"
+       y="250.20746"
+       id="text2377-5-6-31"><tspan
+         sodipodi:role="line"
+         x="104.58847"
+         y="250.20746"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:1.58749998px;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan8451-7">Optical Signal</tspan></text>
+    <g
+       transform="translate(57.117572,147.40962)"
+       id="g5687-37-4-3-7-0">
+      <path
+         d="m 65.891793,112.71046 14.457801,1e-5"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.191;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#endMarker3-56-9-3-32-9)"
+         id="path583-8-7-8-3-3"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3712"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6px;line-height:1.25;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,36.869844,203.14756)"><flowRegion
+         id="flowRegion3714"><rect
+           id="rect3716"
+           width="96.799797"
+           height="65.78167"
+           x="109.32182"
+           y="242.54446" /></flowRegion><flowPara
+         id="flowPara3718"></flowPara></flowRoot>    <g
+       transform="translate(5.3036368,155.5706)"
+       id="g5687-37-4-3-7-7-7">
+      <path
+         d="m 65.891793,112.71046 14.457801,1e-5"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.191;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#endMarker3-56-9-3-32-7-7)"
+         id="path583-8-7-8-3-5-3"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <text
+       style="font-size:3.17499995px;stroke-width:0.26458332"
+       x="74.80674"
+       y="267.07217"
+       id="text587-6-7-5-9-0-3-8-8">
+      <tspan
+         font-size="6.0000"
+         id="tspan585-3-2-6-2-7-3-3-5"
+         style="font-size:1.58749998px;font-family:Calibri;fill:#000000;fill-opacity:1;stroke-width:0.26458332;stroke-opacity:1">Input Signal</tspan>
+    </text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:1.58749998px;line-height:1.25;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="78.646759"
+       y="265.0838"
+       id="text2377-5-6-3-4"><tspan
+         sodipodi:role="line"
+         x="78.646759"
+         y="265.0838"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:1.58749998px;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan8451-0-3">Optical Signal</tspan></text>
+    <text
+       style="font-size:3.17499995px;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+       x="130.73744"
+       y="258.62842"
+       id="text587-6-7-5-9-0-3-8-8-2">
+      <tspan
+         font-size="6.0000"
+         id="tspan585-3-2-6-2-7-3-3-5-5"
+         style="font-size:1.58749998px;font-family:Calibri;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.26458332;stroke-opacity:1">Output Signal</tspan>
+    </text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:1.58749998px;line-height:1.25;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="130.75096"
+       y="256.64005"
+       id="text2377-5-6-3-4-6"><tspan
+         sodipodi:role="line"
+         x="130.75096"
+         y="256.64005"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:1.58749998px;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan8451-0-3-0">Optical Signal</tspan></text>
+  </g>
+</svg>

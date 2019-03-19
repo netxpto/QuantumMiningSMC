@@ -1,0 +1,89 @@
+\clearpage
+
+\section{Local Oscillator}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& local\_oscillator.h \\
+		\textbf{Source File}   &:& local\_oscillator.cpp \\
+	\end{tabular}
+\end{tcolorbox}
+
+This block simulates a local oscillator with constant power and initial phase. It produces one output complex signal and it doesn't accept input signals.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|cccc}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		opticalPower & double & any & $1\text{e}-3$ \\ \cline{1-4}
+		outputOpticalWavelength & double & any & $1550\text{e}-9$ \\ \cline{1-4}
+		outputOpticalFrequency & double & any &  SPEED\_OF\_LIGHT / outputOpticalWavelength \\ \cline{1-4}
+		phase0 & double & $\in \left[0,\frac{\pi}{2}\right]$ & $0$ \\ \cline{1-4}
+		samplingPeriod & double & any & $0.0$ \\ \cline{1-4}
+        laserLW & double & any & $0.0$ \\ \cline{1-4}
+        laserRIN & double & any & $0.0$ \\ \cline{1-4}
+	\end{tabular}
+	\caption{Local oscillator input parameters}
+	\label{table:LO_in_par}
+\end{table}
+
+%
+%\begin{itemize}
+%	\item opticalPower\{ 1e-3 \}
+%	\item wavelength\{ 1550e-9 \}
+%	\item frequency\{ SPEED\_OF\_LIGHT / wavelength \}
+%	\item phase\{ 0 \}
+%	\item samplingPeriod\{ 0.0 \}
+%\end{itemize}
+
+\subsection*{Methods}
+
+LocalOscillator() {}
+\bigbreak
+LocalOscillator(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig)\{\};
+\bigbreak
+void initialize(void);
+\bigbreak
+bool runBlock(void);
+\bigbreak
+void setSamplingPeriod(double sPeriod);
+\bigbreak
+void setOpticalPower(double oPower);
+\bigbreak
+void setOpticalPower\_dBm(double oPower\_dBm);
+\bigbreak
+void setWavelength(double wlength);
+\bigbreak
+void setPhase(double lOscillatorPhase);
+\bigbreak
+void setLaserLinewidth(double laserLinewidth);
+\bigbreak
+double getLaserLinewidth();
+\bigbreak
+void setLaserRIN(double LOlaserRIN);
+\bigbreak
+double getLaserRIN();
+
+\subsection*{Functional description}
+
+This block generates a complex signal with a specified initial phase given by the input parameter \textit{phase0}. The phase noise can be simulated by adjusting the laser linewidth in parameter \textit{laserLW}. The relative intensity noise (RIN) can be also adjusting according to the parameter \textit{laserRIN}.
+
+\pagebreak
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 0
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:} Optical signal
+
+\subsection*{Examples}
+
+\subsection*{Sugestions for future improvement}
+
+

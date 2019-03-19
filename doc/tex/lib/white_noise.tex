@@ -1,0 +1,34 @@
+\documentclass[../../sdf/tex/BPSK_system.tex]{subfiles}
+\graphicspath{{../../images/}}
+%opening
+\onlyinsubfile{\title{White Noise}}
+\date{}
+
+\begin{document}
+
+\onlyinsubfile{\maketitle}
+
+\subsection*{Input Parameters}
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item setNoiseSpectralDensity
+	\end{itemize}
+\end{multicols}
+
+\subsection*{Functional Description}
+
+This block generates white noise with a user defined spectral density. If the output signal is complex, the noise is calculated independently for the real and imaginary parts with half of the spectral density in each.
+
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 0
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Real, Complex or Complex\_XY signal (ContinuousTimeContinuousAmplitude)
+
+\end{document}

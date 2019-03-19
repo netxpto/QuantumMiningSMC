@@ -1,0 +1,62 @@
+\clearpage
+
+\section{Load Ascii}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& load\_ascii.h \\
+		\textbf{Source File}   &:& load\_ascii.cpp \\
+        \textbf{Version}       &:& 20190205 (Daniel Pereira)\\
+	\end{tabular}
+\end{tcolorbox}
+
+This block loads signals from any ascii file into the netxpto simulation environment.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|p{60mm}|c|ccc}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type}   & \textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		samplingPeriod & double              & any                                                  & $1.0$                \\ \cline{1-4}
+        symbolPeriod   & double              & any                                                  & $1.0$                \\ \cline{1-4}
+        asciiFileName  & string              & any                                                  & InputFile.txt        \\ \cline{1-4}
+        delimiterType  & delimiter\_type     & CommaSeperatedValues, ConcatenatedValues             & CommaSeperatedValues \\ \cline{1-4}
+        dataType       & signal\_value\_type & BinaryValue, RealValue, ComplexValue, ComplexValueXY & BinaryValue          \\ \cline{1-4}
+	\end{tabular}
+	\caption{Load ascii input parameters} 
+	\label{table:LoadAscii_in_par}
+\end{table}
+
+\subsection*{Methods}
+
+LoadAscii() {}
+\bigbreak
+LoadAscii(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig)\{\};
+\bigbreak
+void initialize(void);
+\bigbreak
+bool runBlock(void);
+\bigbreak
+void setSamplingPeriod(double sPeriod);
+\bigbreak
+void setSymbolPeriod(double sPeriod);
+\bigbreak
+void setDataType(signal\_value\_type dType);
+\bigbreak
+void setAsciiFileName(string aFileName);
+
+\subsection*{Functional description}
+
+This block loads signals from a .txt file and generates a signal with a specified data type given by the input parameter \textit{dataType} and with a specified delimiter type given by the input parameter \textit{delimiterType}.
+
+\subsection*{Input Signals}
+
+\textbf{Number:} 0
+
+\subsection*{Output Signals}
+
+\textbf{Number:} 1\\
+\textbf{Type:} Optical signal, Electrical signal, Complex signal, Binary signal (user defined)
+

@@ -1,0 +1,97 @@
+\clearpage
+
+\section{White Noise}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& white\_noise\_20180420.h \\
+		\textbf{Source File}   &:& white\_noise\_20180420.cpp \\
+	\end{tabular}
+\end{tcolorbox}
+
+\maketitle
+This block generates a gaussian pseudo-random noise signal with a given spectral density. It can be initialized with three different seeding methods to allow control over correlation and reproducibility:
+
+\begin{enumerate}
+	\item DefaultDeterministic
+	\item RandomDevice
+	\item Selected
+\end{enumerate}
+
+This block does not accept any input signal. It produces can produce a real or complex output, depending on the used output signal.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|c}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type} &\textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		seedType 		 & enum 	& DefaultDeterministic, RandomDevice, Selected & RandomDevice \\ \cline{1-4}
+		spectralDensity  & real 	& > 0  			& $1.5\times10^{-17}$ \\ \cline{1-4}
+		seed 	   		 & int 		& $\in$ [1, $2^{32}-1$] 	& 1 \\ \cline{1-4}
+		samplingPeriod	 & double 	& > 0 & 1.0 \\ \cline{1-4} \cline{1-4}
+	\end{tabular}
+	\caption{White noise input parameters}
+	\label{table:noise_in_par}
+\end{table}
+
+\subsection*{Methods}
+
+WhiteNoise(vector<Signal *> \&InputSig, vector<Signal *> \&OutputSig) :Block(InputSig, OutputSig){};
+\bigbreak	
+void initialize(void);
+\bigbreak
+bool runBlock(void);
+\bigbreak
+void setNoiseSpectralDensity(double SpectralDensity) { spectralDensity = SpectralDensity; }
+\bigbreak
+double const getNoiseSpectralDensity(void){ return spectralDensity; }
+\bigbreak
+void setSeedType(SeedType sType){ seedType = sType; };
+\bigbreak
+SeedType const getSeedType(void){ return seedType; };
+\bigbreak
+void setSeed(int newSeed) { seed = newSeed; }
+\bigbreak
+int getSeed(void){ return seed; }
+
+\subsection*{Functional description}
+
+The \textit{seedType} parameter allows the user to select between one of the three seeding methods to initialize the pseudo-random number generators (PRNGs) responsible for generating the noise signal.
+
+
+\textbf{DefaultDeterministic}: Uses default seeds to initialize the PRNGs. These are different for all generators used within the same block, but remain the same for sequential runs or different \textit{white\_noise} blocks. Therefore, if more than one \textit{white\_noise} block is used, another seeding method should be chosen to avoid producing the exact same noise signal in all sources.
+
+\textbf{RandomDevice}: Uses randomly chosen seeds using \textit{std::random\_device} to initialize the PRNGs.
+
+\textbf{SingleSelected}: Uses one user selected seed to initialize the PRNGs. The selected seed is passed through the variable \textit{seed}. If more than one generator is used, additional seeds are created by choosing the next sequential integers. For instance, if the user selected seed is $10$, and all the four PRNGs are used, the used seeds will be $[10, 11, 12, 13]$.
+
+The noise is obtained from a gaussian distribution with zero mean and a given variance. The variance is equal to the noise power, which can be calculated from the spectral density $n_0$ and the signal's bandwidth $B$, where the bandwidth is obtained from the defined sampling time $T$.
+
+\begin{equation}
+N = n_0 B = n_0 \frac{2}{T}
+\end{equation}
+
+If the signal is complex, the noise is calculated independently for the real and imaginary parts, and the spectral density value is divided by two, to account for the two-sided noise spectral density.
+
+
+%\subparagraph*{AllSelected}
+%Uses user selected seeds to initialize the PRNGs. The selected seed is passed through the variable \textit{seed}. If more than one generator is used, additional seeds are created by choosing the next sequential integers.
+
+\subsection*{Input Signals}
+
+
+\subparagraph*{Number:} 0
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1 or more
+
+\subparagraph*{Type:} RealValue, ComplexValue or ComplexValueXY
+
+\subsection*{Examples}
+
+\paragraph*{Random Mode}
+
+\subsection*{Suggestions for future improvement}

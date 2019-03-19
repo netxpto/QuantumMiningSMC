@@ -1,0 +1,51 @@
+\clearpage
+
+\section{Alice QKD}
+
+\maketitle
+This block is the processor for Alice does all tasks that she needs. This block accepts binary, messages, and real continuous time signals. It produces messages, binary and real discrete time signals.
+
+
+\subsection*{Input Parameters}
+
+	\begin{itemize}
+		\item double RateOfPhotons\{1e3\}
+	
+		\item int StringPhotonsLength\{ 12 \}
+	\end{itemize}
+
+\subsection*{Methods}
+    AliceQKD (vector <Signal*> \&inputSignals, vector <Signal*> \&outputSignals) : Block(inputSignals, outputSignals) \{\};
+
+	void initialize(void);
+
+	bool runBlock(void);
+
+	void setRateOfPhotons(double RPhotons) \{ RateOfPhotons = RPhotons; \};
+	double const getRateOfPhotons(void) \{ return RateOfPhotons; \};
+
+	void setStringPhotonsLength(int pLength) \{ StringPhotonsLength = pLength; \};
+	int const getStringPhotonsLength(void) \{ return StringPhotonsLength; \};
+
+
+\subsection*{Functional description}
+
+This block receives a sequence of binary numbers (1's or 0's) and a clock signal which will set the rate of the signals produced to generate single polarized photons. The real discrete time signal \textbf{SA\_1} is generated based on the clock signal and the real discrete time signal \textbf{SA\_2} is generated based on the random sequence of bits received through the signal \textbf{NUM\_A}. This last sequence is analysed by the polarizer in pairs of bits in which each pair has a bit for basis choice and other for direction choice.
+
+This block also produces classical messages signals to send to Bob as well as binary messages to the mutual information block with information about the photons it sent.
+
+\subsection*{Input Signals}
+\paragraph*{Number}: 3
+\paragraph*{Type}: Binary, Real Continuous Time and Messages signals.
+
+\subsection*{Output Signals}
+\paragraph*{Number}: 3
+\paragraph*{Type}: Binary, Real Discrete Time and Messages signals.
+
+\subsection*{Examples}
+
+
+\subsection*{Sugestions for future improvement}
+
+
+

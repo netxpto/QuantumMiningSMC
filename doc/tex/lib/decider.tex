@@ -1,0 +1,37 @@
+\documentclass[../../sdf/tex/BPSK_system.tex]{subfiles}
+\graphicspath{{../../images/}}
+%opening
+\onlyinsubfile{\title{Bit Decider}}
+\date{ }
+
+\begin{document}
+
+\onlyinsubfile{\maketitle}
+
+\subsection*{Input Parameters}
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item setPosReferenceValue
+		\item setNegReferenceValue
+	\end{itemize}
+\end{multicols}
+
+\subsection*{Functional Description}
+
+This block accepts one real discrete signal and outputs a binary string, outputting a 1 if the input sample is above the predetermined reference level and 0 if it is below another reference value The reference values are defined by the values of \textit{PosReferenceValue} and \textit{NegReferenceValue}.
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Real signal (DiscreteTimeContinuousAmplitude)
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Binary (DiscreteTimeDiscreteAmplitude)
+
+
+\end{document}

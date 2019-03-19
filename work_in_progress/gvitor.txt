@@ -1,0 +1,234 @@
+Sort term goal:	
+	- vai ler 2 entradas de um ficheiro (2 na Alice e 2 no Bob)
+	- implementar a função moda com 4 parametros de entradas
+	- colocar o sistema a funcionar entre duas máquinas no laboratoria
+
+Medium term:
+	- vai ler 2 entradas de um ficheiro (2 na Alice e 2 no Bob)
+	- implementar a função moda com 4 parametros de entradas
+	- colocar o sistema a funcionar entre duas máquinas no laboratoria
+	- alterar as chaves do AES (ler de um ficheiro)
+	- o ficheiro com as chaves tem que ser escrito usando o sistema de QRNG (não é para o Gonçalo fazer)
+
+
+2018-12-06
+TO BE DONE
+
+	descrever a class AES_key
+
+	documentar tudo, o colocar o código fonte para se poder compilar (usando QT)
+
+	ligar à base dados da CoimbraGenomics (Nelson Muga)
+
+	nuno (OT cláasico)
+
+	Gonçalo: documentar a aplicação chaves<=cliente<----TCP--->servidors<=chaves
+
+Next meeting: 06/12, 16h30m
+
+
+2018-11-13
+TO BE DONE
+
+	documentar tudo, o colocar o código fonte para se poder compilar (usando QT)
+
+	ligar à base dados da CoimbraGenomics (Nelson Muga)
+
+	nuno (OT cláasico)
+
+	Gonçalo: documentar a aplicação chaves<=cliente<----TCP--->servidors<=chaves
+
+Next meeting: 27/11, 16h30m
+
+
+2018-11-13
+TO BE DONE
+
+	documentar tudo, o colocar o código fonte para se poder compilar (usando QT)
+
+	ligar à base dados da CoimbraGenomics (Nelson Muga)
+
+	alterar à chave do AES (ler de um ficheiro, ver quantos bits são necessários), interface com o QRNG (falar com o Daniel Pereira)
+	a Alice e o QRNG em duas máquinas distintas. (Alice vai haver um cliente que pede ao servidor que está no QRNG)  
+
+Next meeting: 20/11, 16h30m
+
+
+2018-10-30
+TO BE DONE
+
+	- colocar a funcionar no laboratório do IT, a moda com GUI
+
+	- documentar tudo detalhamente
+
+	- tentar resolver a questão dos bugs
+
+Next meeting: 13/11, 16h
+
+2018-10-30
+TO BE DONE
+
+	- fazer uma aplicação para a Alice e outra para o Bob, C++, ler de um ficheiro de texto
+
+	- tentar resolver a questão dos bugs
+
+	- documentar tudo em detahe
+
+	- Nelson e o Nuno, instalam a moda
+	- Nelson fala com o CoimbraGenomics
+
+Next meeting: 6/11, 17h 
+
+
+2018-10-08
+TO BE DONE
+
+	- implementar a moda, assumindo valores entre 0 e 9999
+	- documentar
+
+	- corrigir a documentação
+
+next meeting: 30/10, 16h
+
+2018-10-08
+TO BE DONE
+
+	- implementar a moda
+
+	- ANP - vou pedir a um aluno para impmementar o AND nas máquinas do laboratório
+
+next meeting: 16/10, 17h
+
+2018-10-02
+TO BE DONE
+	- melhorar a documentação
+
+	- criar uma secção Open Issues (os problemas)
+
+	- implementar a moda
+
+next meeting: 8/10, 16h15m
+
+2018-09-21
+TO BE DONE
+
+	avançar na secção da programação (descrever a estrutura dos ficheiros)
+		escolher um exemplo e correr um exemplo, e documentar
+
+
+	implementar a função moda para uma variavel binária
+		dois ficheiro txt, alice.txt o que está no ficheiro é isto 8, 10	
+				   bob.txt o que está no ficheiro 13, 5
+
+	colocar a funcionar em duas nmáquinas no laboratório
+
+	documentar todo bem
+
+Next meeting: 1/10, 16h15m
+
+2018-09-13
+TO BE DONE
+
+	melhorar a documentação, ver as notas no ficheiro pdf
+
+	avançar na secção da programação (descrever a estrutura dos ficheiros)
+
+	implementar a função moda para uma variavel binária
+		exemplo
+			Alice
+				8, 10 (quer dizer o valor 0 ocorreu 8 vezes e o valor 1 ocorreu 10 vezes) (16 bits para representar cada input)
+
+			Bob
+				13, 5 (quer dizer o valor 0 ocorreu 13 vezes e o valor 1 ocorreu 5 vezes)
+
+			Output
+				0 (quer dizer que 0 ocorreu mais vezes que o 1, no caso de empate deveria ser 01)
+
+	colocar a funcionar em duas máquinas no laboratória
+
+Next meeting: 20/9, 16h
+
+
+2018-09-04
+TO BE DONE
+
+	Perceber e documentar a relação entre o TinyGarble e o JustGarble
+
+	o Justgarble usa o AES e usa chaves simétricas, perceber qual a rotina que gera e distribui as chaves e ver como é que posso substituir essa rotina por outra que vai buscar as chaves a um ficheiro
+
+	testar e documentar outros exemplos para além do AND
+
+	melhorar a documentação
+
+Next meeting: 13/9, 14h
+
+2018-08-20
+TO BE DONE
+
+	Focar no TinyGarble (Linux / Windows)
+	Executar a gate AND
+	Escolher outro exemplo 
+	
+	## Ver como é que eu passo as chaves ##
+
+	Documentar isto bem.
+
+	Instalar no meu PC
+
+Next meeting: 4/9, 14h30m
+	
+
+2018-07-19
+TO BE DONE
+
+	- usando o TinyGarble, implementar a partir de VHDL e depois a partir de C/C++
+
+	- instala-se esta lisbscapi (windows), fazer aquilo que fez com o TinyGarble nesta libraria era bom
+
+	- documentar todo com detalhe
+
+	- enviar um e-mail e fazer um push
+
+Next meeting: início de setembro
+
+2018-07-10
+TO BE DONE
+
+	explicar a instalação do TinyGarble
+
+	continuar a explorar o TinyGarble
+	associar aquilo que estamos a fazer ao flowchart e ao diagrama de blocos
+
+	especificar que estamos a testar a entrada Verilog
+
+Next meeting: 19/7, 13h30
+
+2018-06-22
+TO BE DONE
+
+	1) Estudar a aplicação TinyGarbled (melhorar aquela sub-secção)
+	2) Inserir as refer~encias (JabRef)
+
+Next meeting: 21/6, 10h
+
+
+2018-05-23
+TO BE DONE
+
+	- Dentro do secure multi-party computation, criar uma sub-secção intitulada Synthesis Tools
+		1) identificar todas as ferramentas disponiveis (tinygarbled)
+		2) fazer uma caraterização delas (tabela)
+
+	- pull request
+
+Next meeting: 21/6, 10h
+
+2018-05-23
+TO BE DONE
+
+	- ler, perceber a secção 1.4
+
+	- pesquisar as ferramenta de síntese, análise comparativa
+
+Next meeting: 12/6, 10h
+

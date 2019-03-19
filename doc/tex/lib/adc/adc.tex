@@ -1,0 +1,70 @@
+\clearpage
+
+\section{ADC}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& adc$\_*$.h \\
+		\textbf{Source File}   &:& adc$\_*$.cpp \\
+        \textbf{Version}       &:& 20180423 (Celestino Martins) \\
+	\end{tabular}
+\end{tcolorbox}
+
+This super block block simulates an analog-to-digital converter (ADC), including signal resample and quantization. It receives two real input signal and outputs two real signal with the sampling rate defined by ADC sampling rate, which is externally configured using the resample function, and quantized signal into a given discrete values.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|cccc}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Unity} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-5}
+        samplingPeriod & -- & double & any & $--$ \\ \cline{1-5}
+        rFactor       & --    & double & any & $1$ \\ \cline{1-5}	
+		resolution & bits  & double & any & $inf$ \\ \cline{1-5}	
+        maxValue   & volts & double & any & $1.5$ \\ \cline{1-5}	
+        minValue   & volts & double & any    & $-1.5$ \\ \cline{1-5}	
+	\end{tabular}
+	\caption{ADC input parameters}
+	\label{table:ADC_in_par}
+\end{table}
+
+\subsection*{Methods}
+
+ADC(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig);
+\bigbreak
+//void setResampleSamplingPeriod(double sPeriod) { B1.setSamplingPeriod(sPeriod); B2.setSamplingPeriod(sPeriod); };
+\bigbreak
+void setResampleOutRateFactor(double OUTsRate) { B01.setOutRateFactor(OUTsRate); B02.setOutRateFactor(OUTsRate); }
+\bigbreak
+void setQuantizerSamplingPeriod(double sPeriod) { B03.setSamplingPeriod(sPeriod); B04.setSamplingPeriod(sPeriod); }
+\bigbreak
+void setSamplingPeriod(double sPeriod) { B03.setSamplingPeriod(sPeriod); };
+\bigbreak
+void setQuantizerResolution(double nbits) { B03.setResolution(nbits); B04.setResolution(nbits); }
+\bigbreak
+void setQuantizerMaxValue(double maxvalue) { B03.setMaxValue(maxvalue); B04.setMaxValue(maxvalue);}
+\bigbreak
+void setQuantizerMinValue(double minvalue) { B03.setMinValue(minvalue); B04.setMinValue(minvalue); }
+
+\subsection*{Functional description}
+
+This super block is composed of two blocks, resample and quantizer. It can perform the signal resample according to the defined input parameter \textit{rFactor} and signal quantization according to the defined input parameter \textit{nBits}.
+
+
+\pagebreak
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 2
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 2
+
+\subparagraph*{Type:} Electrical complex signal
+
+\subsection*{Examples}
+
+\subsection*{Sugestions for future improvement}
+
+

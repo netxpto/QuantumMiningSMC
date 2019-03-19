@@ -1,0 +1,43 @@
+\clearpage
+
+\section{Rotator Linear Polarizer}
+
+\maketitle
+This block accepts a Photon Stream signal and a Real discrete time signal. It produces a photon stream by rotating the polarization axis of the linearly polarized input photon stream by an angle of choice.
+
+
+\subsection*{Input Parameters}
+    \begin{itemize}
+		\item m\{2\}
+		\item axis \{ \{1,0\}, \{$\frac{\sqrt{2}}{2}$,$\frac{\sqrt{2}}{2}$ \} \}
+	\end{itemize}
+
+\subsection*{Methods}
+
+RotatorLinearPolarizer(vector <Signal*> \&inputSignals, vector <Signal*> \&outputSignals) : Block(inputSignals, outputSignals) \{\};
+
+void initialize(void);
+
+bool runBlock(void);
+
+void setM(int mValue);
+
+void setAxis(vector <t\_iqValues> AxisValues);
+
+\subsection*{Functional description}
+This block accepts the input parameter m, which defines the number of possible rotations. In this case m=2, the block accepts the rectilinear basis, defined by the first position of the second input parameter axis, and the diagonal basis, defined by the second position of the second input parameter axis.
+This block rotates the polarization axis of the linearly polarized input photon stream to the basis defined by the other input signal. If the discrete value of this signal is 0, the rotator is set to rotate the input photon stream by $0^\circ$, otherwise, if the value is 1, the rotator is set to rotate the input photon stream by an angle of $45^\circ$.
+
+
+\subsection*{Input Signals}
+\paragraph*{Number}: 2
+\paragraph*{Type}: Photon Stream and a Sequence of 0's and '1s (DiscreteTimeDiscreteAmplitude)
+
+\subsection*{Output Signals}
+\paragraph*{Number}: 1
+\paragraph*{Type}: Photon Stream
+
+\subsection*{Examples}
+
+
+\subsection*{Sugestions for future improvement} 

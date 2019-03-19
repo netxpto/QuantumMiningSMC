@@ -1,0 +1,72 @@
+% !TEX root = ../../main_netxpto.tex
+\clearpage
+
+\section{IIR Filter}
+
+\begin{refsection}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& iir\_filter\_*.h \\
+		\textbf{Source File}   &:& iir\_filter\_*.cpp \\
+		\textbf{Version}	   &:& 20180718 (Andoni Santos)
+	\end{tabular}
+\end{tcolorbox}
+
+\subsection*{Input Parameters}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{Name}  		 & \textbf{Type}  & \textbf{Default Value}    	\\\hline
+%		Confidence     		 & double         & 0.95              	\\\hline
+%		LowestMinorant & double         & $1\times10^{-10}$ \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\subsection*{Methods}
+IIR\_Filter() {}
+\bigbreak
+IIR\_Filter(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig){}
+\bigbreak
+void initialize(void)
+\bigbreak
+bool runBlock(void)
+\bigbreak
+void setBCoeff(vector<double> newBCoeff)
+\bigbreak
+void setACoeff(vector<double> newACoeff)
+\bigbreak
+int getFilterOrder(void)
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1 or 2\\
+\textbf{Type}: OpticalSignal or TimeContinuousAmplitudeContinuousReal
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1 or 2\\
+\textbf{Type}: OpticalSignal or TimeContinuousAmplitudeContinuousReal
+
+\subsection*{Functional Description}
+This method implements Infinite Impulse Response Filters. Currently it does so by Canonic Realization~\cite{jeruchim06}.
+
+\subsection*{Theoretical Description}
+
+\subsection*{Known Issues}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% bibliographic references for the section ----------------------------
+\clearpage
+\printbibliography[heading=subbibliography]
+\end{refsection}
+\addcontentsline{toc}{subsection}{Bibliography}
+\cleardoublepage
+% ---------------------------------------------------------------------

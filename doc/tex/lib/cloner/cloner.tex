@@ -1,0 +1,55 @@
+\clearpage
+
+\section{Cloner}
+\label{sec:cloner}
+\begin{refsection}
+
+\begin{tcolorbox}	
+\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+\textbf{Header File}    &:& cloner\_*.h \\
+\textbf{Source File}    &:& cloner\_*.cpp \\
+\textbf{Version}        &:& 20190114 (Daniel Pereira)
+\end{tabular}
+\end{tcolorbox}
+
+\subsection*{Input Parameters}
+
+This block takes no input parameters.
+
+
+\subsection*{Methods}
+
+\begin{itemize}
+  \item Cloner(vector<Signal *> \&InputSig, vector<Signal *> \&OutputSig) :Block(InputSig,OutputSig)\{\};
+  \item void initialize(void);
+  \item bool runBlock(void);
+\end{itemize}
+
+
+
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1\\
+\textbf{Type}: Real, Complex, Complex\_XY, Binary
+
+
+\subsection*{Output Signals}
+
+\textbf{Number}: Arbitrary\\
+\textbf{Type}: Same as input
+
+\subsection*{Functional Description}
+
+This block accepts a signal and outputs a number of copies of the input. The number of the copies is set by the number of output signals given to the block. The block adapts dynamically.
+
+\subsection*{Theoretical Description}\label{bercalc}
+
+
+% bibliographic references for the section ----------------------------
+\clearpage
+\printbibliography[heading=subbibliography]
+\end{refsection}
+\addcontentsline{toc}{subsection}{Bibliography}
+\cleardoublepage
+% --------------------------------------------------------------------- 

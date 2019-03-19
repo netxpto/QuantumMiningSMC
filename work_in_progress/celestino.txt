@@ -1,0 +1,664 @@
+short term: colocar a funcionar blind phase compensation in real-time (QPSK, 16-QAM)
+medium-term: escrever um artigo com o sistema do Andoni + FPGA (blind) em real-time
+
+
+2019-02-19
+
+	- vamos usar os ficheiros de testes no AWG para testar o sistema + documentar + colocar os ficheiros de teste num diretorio
+
+	- documentar os resultados do teste da FPGA com os ficheiros de teste do AWG
+
+	- pesquisar uma nova placa de ADCs (https://www.xilinx.com/products/boards-and-kits/zcu111.html)
+
+next mmeting: 22/2, 15h30m
+
+2019-01-30
+
+	- concluir calibração das ADCs + documentar
+
+	- vamos usar os ficheiros de testes no AWG para testar o sistema + documentar + colocar os ficheiros de teste num diretorio
+
+	- documentar os resultados do teste da FPGA com os ficheiros de teste do AWG
+
+next meeting: 5/2, 16h
+
+2019-02-13
+
+	- calibração das ADCs (documentar este processo)
+	- ver também proposta para uma nova placa
+ 
+next meeting: 19/2, 14h
+
+2018-12-19
+
+	- colocar mais detalhe na documentação, referir o código
+
+	- simulação, colcoar vários diretorios, uma só com o CPE e outro com o DSP do Ricardo + CPE
+
+	- teste AWG <-> ADC <-> FPGA <-> Constelação
+
+	- estruturar um artigo para ECOC (sistema de transmissão do Andoni + CPE versus Viterbi)
+
+next meeting: 3/1, 15h30m
+
+2018-12-04
+
+	- colocar mais detalhe relativamente ao blocos do DSP
+		- especificar as interfaces (números de bits em paralelo, e a taxa)
+		- especificar o que faz
+
+	- tentar corrigir a implementação do blind phase recovery
+
+	- slides (envia-me o link do overleaf)
+
+next meeting: 19/12, 10h
+	
+
+
+2018-12-04
+
+	- abrir na documentação uma secção relativa à integração
+		- descrever os vários módulos
+		- colocar aqui os resultados
+
+	- simular no netxpto o sistema do Ricardo
+
+Next meeting: 11/12, 15h30m
+	
+
+2018-11-19
+
+	- integração com a parte do Ricardo
+	- simular no netxpto o sistema do VHDL completo
+	- documentar
+
+Next meeting: 26/11, 18h30
+
+2018-11-12
+
+	- resolver a parter do unwrap;
+	- integração com a parte do Ricardo
+	- simular no netxpto o sistema do VHDL completo
+	- documentar
+
+Next meeting: 19/11, 18h30
+	
+2018-11-07
+
+	- acabar a optimização do código
+	- integrar na FPGA com a parte do Ricardo
+	- simular o VHDL todo, Ricardo + Celestino
+	- documentar
+
+Next meeting: 12/11, 10h
+
+2018-10-30
+
+	- acabar a optimização do código
+	- integrar na FPGA com a parte do Ricardo
+	- simular o VHDL todo, Ricardo + Celestino
+	- documentar
+
+Next meeting: 7/11, 10h
+
+2018-10-23
+TO BE DONE
+
+	- acabar o poster
+
+	- fazer a integração na FPGA (com o código do Ricardo)
+
+	- melhorar a documentação
+
+	- pensar na estrutura do artigo (https://www.overleaf.com)
+		- mais teórico de fundo - JLT
+		- mais experimental - OFC/ECOC
+
+next meeting: 30/10, 16h
+
+2018-10-15
+TO BE DONE
+
+	- melhorar a documentação
+
+	- finalizar a implementação na FPGA
+
+	- pensar na estrutura do artigo (https://www.overleaf.com)
+		- mais teórico de fundo - JLT
+		- mais experimental - OFC/ECOC
+
+	- draft postar para a avaliação da comissãod e gestão
+		FOCAR O ARTIGO NA RECUPERAÇÃO DE fase
+		lista de artigos
+
+next meeting: 22/10, 11h
+
+
+2018-10-02
+TO BE DONE
+
+	- melhorar a documentação
+
+	- falar com o Andoni para acertar integração no sistema laboratorial
+
+	- finalizar a implementação na FPGA
+
+next meeting: 15/10, 11h
+
+2018-10-02
+TO BE DONE
+
+	- melhorar a documentação
+	- colocar a funcionar na FPGA e depois colocar no sistema do Andonni
+
+next meeting: 8/10, 19h
+
+2018-09-28
+TO BE DONE
+
+	documentar corretamente o CPE e verificar se o sistema está a funcionar bem com o Viterbi
+
+	implementar o BPS seguinte a implementação do Viterbi
+
+	sobrepor os sinais do simulador com os sinais VHDL	
+
+next meeting: 2/10, 15h
+
+2018-09-24
+TO BE DONE
+
+	- colcoar todo o detalhe na documentação do bloco CPE
+
+next meeting: 28/9, 16h
+
+2018-09-14
+TO BE DONE
+
+	fazer um bloco down_samplig.cpp e down_sampling.h com a class DownSamplig, com apenas um parametros de entrada que será o donwSamplingFactor, variavel de estado que será skip 
+		inicial coloca o skip=0  e coloca a amostra de entrada na saída  
+		depois faz skip++, quando skip = numero de samples per symbol coloca o skip=0 e coloca entrada na saída
+		é preciso ajustar samplingPerior = samplingPeriod/downSamplingFactor
+
+	colocar o bloco de down_sampling antes do real_to_complex
+
+	alterar o simular VHDL para gravar no formato double
+
+	sobrepor os sinais do simulador com os sinais VHDL
+
+Next meetinf: 18/9, 16h
+
+2018-09-06
+TO BE DONE
+
+	- realizar a simulação em VHDL e sobrepor os resultadas da simulação em C++ com a simulação em VHDL
+
+Next meeting: 13/9, 17h
+
+
+2018-07-20
+TO BE DONE
+
+	- colocar na documentação / lib o bloco RealToComplex
+
+	- correr o testbench figure 6.13 (vai enviar um email com conhecimento para o anp@ua.pt a perguntar quando é que a alteação está pronta)
+
+	- comparar os sinais S21.sgn e S22.sgn com S21_vhdl.sgn e S22_vhdl.sgn
+
+	- optimizar o código
+
+	- colocar na FPGA e testar no sistema do Andoni (finais de Agosto, inícios Setembro)
+
+Next meeting: semana 20/8	
+
+
+2018-07-10
+TO BE DONE
+
+	- no simulador netxpto converter o sinal de saída de complex para 2 reais ComplexToReal / documentar lib
+
+	- atualizar os resultadas da simulação
+
+	- atualizar a documentação relativa ao VHDL (4 sinais de entrada)
+
+	- falar com o André
+
+	- concluir o algoritmos, e validalo comparando com os resultados do simualdor
+
+Next meeting: 19/7, 10h
+
+
+2018-06-27
+TO BE DONE
+
+	- colocar o VHDL no repositório
+
+	- simular o VDHL no simulador, usando os sinais *.sgn	- André Mourato <andremourato@ua.pt>
+
+
+Next meeting: 10/7, 11h (ou às 10h com o André)
+
+
+
+2018-06-20
+TO BE DONE
+
+	
+	- melhorar a documentação relativa à implementação em VHDL
+
+	- simular o VDHL no simulador, usando os sinais *.sgn
+
+Next meeting: 27/6, 14h
+
+2018-05-06
+TO BE DONE
+
+	- colocar 4 artigos conferencias no site do IT
+
+		- OFC 2018
+
+		- C. S. Martins, S. B. Amado, S. M. Rossi, A. Chiuchiarelli, J. D. Reis, A.Carena, F. P. Guiomar and A. N. Pinto, Low-Complexity Chromatic Dispersion Equalizer for 400G Transmission Systems (Invited), Encontro com a Ciência e Tecnologia em Portugal, Lisbon, Portugal, July, 2017;
+		
+		- C. S. Martins, S. B. Amado, R. M. Ferreira, A. Shahpari, A. L. Teixeira, F. P. Guiomar, A. N. Pinto, Real-Time Demonstration of Low-Complexity Time-Domain Chromatic Dispersion Equalization, International Conference on Transparent Optical Networks ICTON, Girona, Spain, Th.B4.7, July, 2017;
+
+		- C. S. Martins, S. B. Amado, S. M. Rossi, A. Chiuchiarelli, J. D. Reis, A. Carena, F. P. Guiomar and A. N. Pinto, Low-Complexity Chromatic Dispersion Equalizer for 400G Transmission Systems, OSA Optical Fiber Communications - OFC, Los Angeles, United States, Vol. Th2A.56, pp. 1 - 3, March, 2017;
+
+
+	- melhorar a documentação relativa à implementação em VHDL
+
+	- simular o VDHL no simulador, usando os sinais *.sgn
+
+	- continuar com a implementação do VHDL
+
+Next meeting: 13/6, 10h
+
+2018-04-02
+TO BE DONE
+
+	colocar o artigo no site do IT
+
+	criar no documento uma sub-secção para documentar a implementação em VHDL
+		colocar um diagrama de blocos com a implementação
+
+	continuar com a implementação/teste do VHDL
+
+	implemantar o blind em vhdl e simular no netxpto
+
+Next meeting: 5/6, 11h
+
+2018-04-02
+TO BE DONE
+
+	colocar o artigo no site do IT
+
+	criar no documento uma sub-secção para documentar a implementação em VHDL
+		colocar um diagrama de blocos com a implementação
+
+	continuar com a implementação/teste do VHDL
+
+	implemantar o blind em vhdl e simular no netxpto
+
+Next meeting: 15/5, 11h
+
+
+2018-04-24
+TO BE DONE
+
+	colocar o artigo no site do IT
+
+	alterar real2complex.cpp para real_to_complex_<time_tag>.cpp
+
+	concluir a documentação dos blocos novos no docuemnto (secção library) >(ordem alfabética) (alterar CPE Carrier Phase Compensation)
+
+	usar um tipo enumerado {Viterbi, Blind}, explicar melhor quais são os parâmetros para o Viterbi e para o Blind
+
+	criar um folder no linkplanner/sdf/dsp_phase_compensation/vhdl para colocar o código VHDL
+
+	implemantar o blind em vhdl e simular no netxpto
+
+Next meeting: 2/5, 15h30
+
+2018-04-20
+TO BE DONE
+
+	submeter os ficheiros para JLT e incluir a o artigo no site do IT
+	
+	incluir as referencias na documentação do sdf
+
+	recolocar a simulação a funcionar, colocando os time tags no blocos
+
+	colcoar mais detalhe na documentação relativamente à implementação dos algortimos em C++
+
+	implemantar o blind em vhdl e simular no netxpto
+
+Next meeting: 24/4, 15h
+	
+
+2018-03-06
+TO BE DONE
+	concluir, documentar e testar os blocos resample e quantizer (quantizer é a antiga ADC)
+	fazer o superbloco para a adc (exemplo homodyne receiver)
+	colocar o real to complex e o CarrierPhaseEstimation dentro do superblock DSP
+	documentar de forma mais detalhado o sistema todo com o Viterbi
+
+	RoF: descrição analitica de um sistema de transmissão coerente, em que um sinal RF é enviado na componente I
+	     obter uma descrição AM/AM e AM/PM (numa primeira fase será linear) (numa segunda fase será não linear devida ao modulador IQ e ao aumento da potência do sinal RF)
+	     reabrir a secção do Doc
+		- passar para lá aquilo que foi discutido na reunião
+
+Next meeting: 20/3, 11h
+
+
+2018-02-10
+TO BE DONE
+
+	colocar o sistema a funcionar com o recetor aberto, e documentar
+
+	resolver o assunto da patente
+
+	incluir o recetor homidino de forma discreta, depois do pulse shaper incluir um bloco de resample (bloco novo), um bloco de quantization (bloco novo), um bloco de DSP (bloco novo), sampler (já existe), ...
+
+	documentar, mostrando resultados, e documentar também os dois novos blocos (resample e quantization).
+
+Next meeting: 6/3/2018, 11h
+
+2018-02-10
+TO BE DONE
+	incluir o recetor homidino de forma discreta, depois do pulse shaper incluir um bloco de resample (bloco novo), um bloco de quantization (bloco novo), um bloco de DSP (bloco novo), sampler (já existe), ...
+
+	documentar, mostrando resultados, e documentar também os dois novos blocos (resample e quantization).
+
+Next meeting: 27/2/2018, 11h
+
+
+2018-02-06
+TO BE DONE
+	
+	atualizar a documentação
+		teórica
+		simulação
+		libraria
+
+	incluir o recetor homodino no sistema de forma discreto
+
+	pensar como é que vou alterar o recetor homodino para incluir o efeito da ADC e incluir um bloco de DSP
+
+Next meeting: 14/2, 17h
+
+
+2018-01-30
+TO BE DONE
+	criar um sistema QPSK com oscillador local externo e com ruído de fase
+	obter uma constelação com bananas
+	
+	atualizar a documentação
+		teórica
+		simulação
+		libraria
+Next meeting: 6/2, 10h30m
+
+2018-01-10
+TO BE DONE
+	- usar como base o sistema QPSK_Transmitter (criar um sistema novo)
+
+	- adicionar o oscilador local no transmissior (IQ Modulator)
+
+	- adicionar ruido de fase ao oscilador local
+
+        - ver a constelação com o ruído de fase do oscilador local
+
+	- documentação => local_oscillator, QPSK Transmitter
+
+Next meeting: 23/1, 14h
+
+
+2018-01-10
+TO BE DONE
+	- organização do capítulo vai seguir o capítulo BPSK_system
+	- definição e motivação do problema
+	- descrição teória do algoritmo, baseado no artigo que há-de estar na bibliografia
+
+Next meeting: 16/1, 15h
+
+2017-12-06
+TO BE DONE
+
+	- RoF, (aguardar o contacto até meio da semana se ele não contactar voltar a ligar ao aluno do Prof.Rui Dinis)
+		Theoretical analysis - basear-me no artigo da Globecomm até ao sinal da figura 2, reproduzir o sinal da figura 2 (teórica)
+		Onde é que eu meço o sinal da figura 2 na simulação Densidade Espectral de Potência da potência do sinal S7 ?
+		Qual a forma do filtro eletrico depois do PIN?
+
+	- paper, enviar-me o pdf até ao final da semana, para rever até á próxima reunião
+
+next meeting: 13/12, 15h
+
+
+2017-11-30
+TO BE DONE
+
+	- RoF, (aguardar o contacto até meio da semana se ele não contactar voltar a ligar ao aluno do Prof.Rui Dinis)
+		Theoretical analysis - basear-me no artigo da Globecomm até ao sinal da figura 2, reproduzir o sinal da figura 2 (teórica)
+		Onde é que eu meço o sinal da figura 2 na simulação Densidade Espectral de Potência da potência do sinal S7 ?
+		Qual a forma do filtro eletrico depois do PIN?
+
+
+
+	- gráficos
+		colocar a figura 1 consistente com a expressão (1), ver que expressões é que são necessárias
+		- melhorar a Figura 7
+		- completar a figura 8 com os pontos que faltam, e melhora r legenda
+
+Next meeting: 6/12, 15h
+
+2017-11-22
+TO BE DONE
+
+	- RoF, (ligar ao aluno do Prof.Rui Dinis)
+		Theoretical analysis - basear-me no artigo da Globecomm até ao sinal da figura 2, reproduzir o sinal da figura 2 (teórica)
+		Onde é que eu meço o sinal da figura 2 na simulação Densidade Espectral de Potência da potência do sinal S7 ?
+		Qual a forma do filtro eletrico depois do PIN?
+
+
+	- gráficos
+		colocar a figura 1a consistente com a expressão (1)
+		- melhorar fig 1a) e 1b), com a legenda
+		- melhorar a Figura 7
+		- completar a figura 8 com os pontos que faltam, e melhora r legenda
+		
+	- finalizar as conclusões
+
+Next meeting: 27/11, 11h15m
+
+2017-11-16
+TO BE DONE
+
+	- RoF
+		Theoretical analysis - basear-me no artigo da Globecomm até ao sinal da figura 2, reproduzir o sinal da figura 2 (teórica)
+		Onde é que eu meço o sinal da figura 2 na simulação Densidade Espectral de Potência da potência do sinal S7 ?
+
+	- artigo RSS-DBP-TD-SSFM
+		
+		- limar o abstract (melhorias finais)
+
+	- gráficos
+		- melhorar fig 1a) e 1b), com a legenda
+		- acabar fig 2, com a legenda
+		- finalizar fig 3, com a legenda
+		- finalizar fig 4, com a legenda
+		- finalizar fig 5, com a legenda
+
+	- melhorar conclusão
+
+
+2017-11-14
+TO BE DONE
+
+	- RoF
+		Theoretical analysis - basear-me no artigo da Globecomm até ao sinal da figura 2, reproduzir o sinal da figura 2 (teórica)
+		Onde é que eu meço o sinal da figura 2 na simulação Densidade Espectral de Potência da potência do sinal S7 ?
+
+		
+	
+
+		- gráficos
+			fig 1a -> melhorar (1 span)
+			fig 1b -> melhorar (eixo doas xx no dominio do tempo e chamar aos slots S1 e S2)
+			fig 2 -> substituir band por slot
+			fig 5 -> Quantization Precision (bits)
+			fig 6 -> uniformizar o aspecto com ográfico 4 e 5
+			fig 7 -> DS-R-TD-DBP
+
+		- legendar corretamente todas as figuras (melhorar)
+
+		- escrever as conclusões
+		- melhorar a introdução, ser mais objetivo
+
+NEXT Meeting: quinta-feira, 14h 
+
+
+
+2017-11-01
+TO BE DONE
+	- presentation for group meeting (10 minutes)
+		- artigo RSS-DBP-TD-SSFM
+
+	- RoF
+		ler o artigo do Tiago (ICTON)
+		apresentar um diagrama de blocos detalhado para o transmissor, o objetivo será reproduzir o resultado da Fig. 2
+
+	- artigo RSS-DBP-TD-SSFM
+		- titulo (revisão final)
+		- finalizar o abstract (revisão final)
+
+		- gráficos
+			fig 1a -> melhorar 
+			fig 1b -> melhorar
+			fig 2 -> ok
+			fig 3 -> ok
+			fig 4 -> ok
+			fig 5 -> ok
+			fig 6 -> ok
+			fig 7 -> ok
+
+		- legendar corretamente todas as figuras
+
+		- escrever as conclusões
+		- melhorar a introdução, ser mais objetivo
+
+NEXT Meeting: quarta-feira, 14h 
+
+
+2017-10-31
+TO BE DONE
+	- presentation for group meeting (10 minutes)
+		- artigo RSS-DBP-TD-SSFM
+
+	- artigo RSS-DBP-TD-SSFM
+		- finalizar o abstract (revisão final)
+		- finalizar os gráficos + legendas (revisão final)
+		- escrever as conclusões
+		- melhorar a introdução, ser mais objetivo
+
+	- RoF
+		avançar com descrição da simulação
+			diagrama de blocos concluido
+			
+
+Next meeting: 3/11 (sexta), 9h30m
+
+2017-10-26
+TO BE DONE
+	- RoF
+		avançar com descrição da simulação
+			diagrama de blocos concluido
+			identificação dos blocos disponiveis e dos blocos que é necessário construir
+
+	- artigo RSS-DBP-TD-SSFM
+		- finalizar o abstract 
+		- finalizar os gráficos + legendas
+		- melhorar a introdução, ser mais objetivo
+
+Next meeting: 31/10 (terça), 9h30m 	
+
+
+
+2017-10-06
+TO BE DONE
+  - artigo RSS-DBP-TD-SSFM
+	- finalizar o abstract (multi-band quandtization, step randomization versus complexity reduction, performance improvement) 
+	- resumo, melhor a notação 
+	- melhorar a introdução, ser mais objetivo
+	- explicar melhor o passo aleatório
+	- explicar melhor o conceito de sub-bandas (2 sub-bandas)
+
+	- testar duas distribuições (uniforme e a gaussiana) e ver o impacto do desvio-padrão
+	- concluir qual a melhor distribuição e qual o valor ótimo para o desvio padrão
+
+	- testar 2, 3, 4 bandas
+	- largura das bandas
+
+	- figura de mérito BER
+	
+
+  - detalhar modelo de simulação, transmissor (RoF)
+	- introdução ao trabalho
+	- diagram de blocos a simular
+	- 
+  - Diagrama de bloco para QPSK transmiter no dominio da frequencia / ANP, vai tentar corrigir os erros do código
+
+
+
+2017-10-03
+TO BE DONE
+  - artigo RSS-DBP-TD-SSFM
+	- resumo, melhor a notação 
+	- melhorar a introdução, ser mais objetivo
+	- explicar melhor o passo aleatório
+	- explicar melhor o conceito de sub-bandas (2 sub-bandas)
+
+	- testar duas distribuições (uniforme e a gaussiana) e ver o impacto do desvio-padrão
+	- concluir qual a melhor distribuição e qual o valor ótimo para o desvio padrão
+
+	- testar 2, 3, 4 bandas
+	- largura das bandas
+
+	- figura de mérito BER
+	
+
+  - detalhar modelo de simulação, transmissor (RoF)
+	- introdução ao trabalho
+	- diagram de blocos a simular
+	- 
+  - Diagrama de bloco para QPSK transmiter no dominio da frequencia / ANP, vai tentar corrigir os erros do código
+
+
+
+2017-09-26
+TO BE DONE
+  - melhorar a introdução ao artigo sobre SSFM time domain
+  - detalhar modelo de simulação, transmissor (RoF)
+  - Diagrama de bloco para QPSK transmiter no dominio da frequencia / ANP, vai tentar corrigir os erros do código
+
+
+2017-09-25
+DONE
+ - enviar pdf do artigo compensação não linear no dominio do tempo para o e-mail para discutirmos
+
+TO BE DONE
+  - detalhar modelo de simulação, transmissor
+  - Diagrama de bloco para QPSK transmiter no dominio da frequencia / ANP, vai tentar corrigir os erros do código
+
+
+2017-09-21
+TO BE DONE
+ - Diagrama de bloco com o sistema RoF a simular, incluir no manual do netxpto - RoF System
+ 
+ - enviar pdf do artigo compensação não linear no dominio do tempo para o e-mail para discutirmos
+ 
+
+2017-09-11
+Patent revision (DONE)
+
+TO BE DONE
+- finalize frequency domain filter implementation
+- integrate the nonlinear compensation with the D-FIR-CDE
+- ROF compensation of optical nonlinearity

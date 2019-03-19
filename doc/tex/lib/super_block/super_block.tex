@@ -1,0 +1,37 @@
+\clearpage
+
+\section{Super Block}
+
+
+\subsection*{Input Parameters}
+\begin{itemize}
+  \item bool saveInternalSignals\{ false \};
+\end{itemize}
+
+
+
+\subsection*{Methods}
+\begin{enumerate}
+  \item \textbf{SuperBlock(vector<Signal *> \&inputSignal, vector<Signal *> \&outputSignal) :Block(inputSignal, outputSignal)\{ setSaveInternalSignals(false); \}}
+  
+  \item \textbf{void initialize(void)}
+  It starts by initializing each block of the super block. Then, it writes the header of each block using the information (ie sampling period, symbol period and first value to be saved) related with the information contained in the outputSignals of each block. Finally, it sets the symbol and sampling period of each output of the super block based on the information contained in the output of the last block of the super block with the same index.
+
+  \item \textbf{bool runBlock(void)}
+  It starts to run each block od the super block. Then, for each outputSignal of the super block it tests the number of samples in the output signal of the last block in the super block (\textit{ready()} and also the space in the output signal of the super block (\textit{space()}). It gets the value type if the output signal of the last block in the super block and according with that it gets the value and put the value from the output signal of the last block into an output signal of the super block.
+  
+  \item \textbf{void terminate(void)}
+  It terminates each block of the super block and closes the output signal of the last block.
+  
+\end{enumerate}
+  
+
+\subsubsection{Set Methods}
+\begin{itemize}
+  \item void setModuleBlocks(vector<Block*> mBlocks)\{ moduleBlocks = mBlocks; \};
+  \item void setSaveInternalSignals(bool sSignals);
+  \item bool const getSaveInternalSignals(void)\{ return saveInternalSignals; \};
+\end{itemize}
+
+
+

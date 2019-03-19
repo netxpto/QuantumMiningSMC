@@ -1,0 +1,103 @@
+\clearpage
+
+\section{Bit Error Rate}
+\label{sec:bit_error_rate}
+\begin{refsection}
+
+\begin{tcolorbox}	
+\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+\textbf{Header File}    &:& bit\_error\_rate\_*.h \\
+\textbf{Source File}    &:& bit\_error\_rate\_*.cpp \\
+\textbf{Version}        &:& 20171810 (Daniel Pereira)\\
+                        &:& 20181424 (Mariana Ramos)
+\end{tabular}
+\end{tcolorbox}
+
+\subsection*{Input Parameters}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Name           & Type           & Default Value     \\ \hline
+alpha          & double         & 0.05              \\ \hline
+m              & integer        & 0                 \\ \hline
+lMinorant      & double         & $1\times10^{-10}$ \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection*{Methods}
+
+\begin{itemize}
+  \item BitErrorRate(vector<Signal *> \&InputSig, vector<Signal *> \&OutputSig) :Block(InputSig,OutputSig)\{\};
+  \item void initialize(void);
+  \item bool runBlock(void);
+  \item void setConfidence(double P) \{ alpha = 1-P; \}
+  \item void setMidReportSize(int M) \{ m = M; \}
+  \item void setLowestMinorant(double lMinorant) \{ lowestMinorant=lMinorant; \}
+\end{itemize}
+
+
+
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 2\\
+\textbf{Type}: Binary (DiscreteTimeDiscreteAmplitude)
+
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1\\
+\textbf{Type}: Binary (DiscreteTimeDiscreteAmplitude)
+
+\subsection*{Functional Description}
+
+This block accepts two binary strings and outputs a binary string, outputting a 1 if the two input samples are equal to each other and 0 if not. This block also outputs \textit{.txt} files with a report of the estimated Bit Error Rate (BER), $\widehat{\text{BER}}$ as well as the estimated confidence bounds for a given probability $\alpha$. In version \textbf{20181113} instead of the previous binary output string, this block outputs a 0 if the two input samples are equal and 1 if not.
+\par
+The block allows for mid-reports to be generated, the number of bits between reports is customizable, if it is set to 0 then the block will only output the final report. In version \textbf{20180424} this block can operate mid-reports using a CUMULATIVE mode, in which the BER is calculated in a cumulative way taking into account all received bits, coincidences and errors, or in a RESET mode, in which at each \textbf{m} bits the number of received bits and coincidence bits is reset for the BER calculation.
+
+\subsection*{Theoretical Description}\label{bercalc}
+The $\widehat{\text{BER}}$ is obtained by counting both the total number received bits, $N_T$, and the number of coincidences, $K$, and calculating their relative ratio:
+\begin{equation}
+\widehat{\text{BER}}=1-\frac{K}{N_T}.
+\end{equation}
+The upper and lower bounds, $\text{BER}_\text{UB}$ and $\text{BER}_\text{LB}$ respectively, are calculated using the Clopper-Pearson confidence interval, which returns the following simplified expression for $N_T>40$~\cite{Almeida16}:
+\begin{align}
+\text{BER}_\text{UB}&=\widehat{\text{BER}}+\frac{1}{\sqrt{N_T}}z_{\alpha/2}\sqrt{\widehat{\text{BER}}(1-\widehat{\text{BER}})}+\frac{1}{3N_T}\left[2\left(\frac{1}{2}-\widehat{\text{BER}}\right)z_{\alpha/2}^2+(2-\widehat{\text{BER}})\right]\\
+\text{BER}_\text{LB}&=\widehat{\text{BER}}-\frac{1}{\sqrt{N_T}}z_{\alpha/2}\sqrt{\widehat{\text{BER}}(1-\widehat{\text{BER}})}+\frac{1}{3N_T}\left[2\left(\frac{1}{2}-\widehat{\text{BER}}\right)z_{\alpha/2}^2-(1+\widehat{\text{BER}})\right],
+\end{align}
+where $z_{\alpha/2}$ is the $100\left(1-\frac{\alpha}{2}\right)$th percentile of a standard normal distribution.
+
+\subsection*{Version 20181424}
+
+Version 20181424 allows the user to choose the type of middle reports he wants. So, the input parameter \textrm{mideRepType} can has the value \textit{Cumulative}, where the BER estimation is done by taking into account all samples acquired in a cumulative way, or \textit{Reset}, where the BER estimation is done by taking into account only the number of samples set as \textit{m} in each middle report.
+
+\begin{itemize}
+  \item \textbf{Input Parameters}
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+    Name           & Type           & Default Value     \\ \hline
+    midRepType     & MidReportType  & Cumulative \\ \hline
+    \end{tabular}
+  \end{table}
+
+  \item \textbf{Methods}
+  \begin{itemize}
+    \item void setMidReportType(MidReportType mrt) \{ midRepType = mrt; \};
+  \end{itemize}
+\end{itemize}
+
+
+
+
+% bibliographic references for the section ----------------------------
+\clearpage
+\printbibliography[heading=subbibliography]
+\end{refsection}
+\addcontentsline{toc}{subsection}{Bibliography}
+\cleardoublepage
+% --------------------------------------------------------------------- 

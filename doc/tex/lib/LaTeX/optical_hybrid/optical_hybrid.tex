@@ -1,0 +1,67 @@
+\clearpage
+
+\section{Optical hybrid}
+
+This block simulates an optical hybrid. It accepts two input signals corresponding to the signal and to the local oscillator. It generates four output complex signals separated by $90^\circ$ in the complex plane. Figure ~\ref{opticalhybrid} shows a schematic representation of this block.
+
+\begin{figure}[h]
+	\centering\includegraphics[width=0.6\textwidth]{../homodyne_receiver/figures/optical_hybrid.png}
+	\caption{Schematic representation of an optical hybrid}\label{opticalhybrid}
+\end{figure}
+
+\subsection*{Input Parameters}
+
+\begin{itemize}
+	\item outputOpticalPower\{ 1e-3 \} 
+	\item outputOpticalWavelength\{ 1550e-9 \}
+	\item outputOpticalFrequency\{ SPEED\_OF\_LIGHT / wavelength \}
+	\item powerFactor\{0.5\}
+\end{itemize}
+
+\subsection*{Methods}
+ 
+OpticalHybrid() {}
+\bigbreak
+OpticalHybrid(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig) {}
+\bigbreak
+void initialize(void)
+\bigbreak
+bool runBlock(void)
+\bigbreak
+void setOutputOpticalPower(double outOpticalPower)
+\bigbreak
+void setOutputOpticalPower\_dBm(double outOpticalPower\_dBm)
+\bigbreak
+void setOutputOpticalWavelength(double outOpticalWavelength)
+\bigbreak
+void setOutputOpticalFrequency(double outOpticalFrequency) 
+\bigbreak
+void setPowerFactor(double pFactor)
+
+\subsection*{Functional description}
+
+This block accepts two  input signals corresponding to the signal to be demodulated ($S$) and to the local oscillator ($L$). It generates four output optical signals given by $\textit{powerFactor}\times(S+L)$, $\textit{powerFactor}\times(S-L)$,$\textit{powerFactor}\times(S+iL)$, $\textit{powerFactor}\times(S-iL)$. The input parameter \textit{powerFactor} assures the conservation of optical power.
+
+\pagebreak
+
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 2
+
+\subparagraph*{Type:} Optical (OpticalSignal)
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 4
+
+\subparagraph*{Type:} Optical (OpticalSignal)
+
+\subsection*{Examples} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{../homodyne_receiver/figures/OpticalHybrid_output}
+	\caption{Example of one of the output signals of this block for a binary sequence 01}\label{OpticalHybrid_output}
+\end{figure}
+
+\subsection*{Sugestions for future improvement}

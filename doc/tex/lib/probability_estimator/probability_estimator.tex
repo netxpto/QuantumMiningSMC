@@ -1,0 +1,129 @@
+\clearpage
+
+\section{Probability Estimator}
+
+\maketitle
+
+This blocks accepts an input binary signal and it calculates the probability of having a value "1" \space or "0" \space according to the number of samples acquired and according to the z-score value set depending on the confidence interval. It produces an output binary signal equals to the input. Nevertheless, this block has an additional output which is a txt file with information related with probability values, number of samples acquired and margin error values for each probability value.
+
+In statistics theory, considering the results space $\Omega$ associated with a random experience and $A$ an event such that $P(A)=p\in]0,1[$. Lets $X:\Omega\longrightarrow\mathbb{R}$ such that
+
+\begin{eqnarray}
+		X(\omega) = 1&\textrm{ ,if } \omega \in A \nonumber \\
+		X(\omega) = 0&\textrm{ ,if } \omega \in \bar{A} \nonumber\\
+\end{eqnarray}
+
+This way, there only are two possible results: success when the outcome is $1$ or failure when the outcome is $0$. The probability of success is $P(X=1)$ and the probability of failure is $P(X=0)$,
+\begin{eqnarray}
+		P(X=1) =& P(A) & = p \nonumber\\
+		P(X=0) =&P(\bar{A})&=1-p  \nonumber\\
+\end{eqnarray}
+
+$X$ follows the Bernoulli law with parameter \textbf{p}, $X \sim \mathbf{B}(p)$, being the expected value of the Bernoulli random value $\textrm{E(X)}=p$ and the variance $\textrm{VAR(X)}=p(1-p)$ \cite{probabilitySheldon}.
+
+Assuming that \textit{N} independent trials are performed, in which a success occurs with probability \textit{p} and a failure occurs with probability \textit{1-p}. If \textit{X} is the number of successes that occur in the \textit{N} trials, \textit{X} is a binomial random variable with parameters \textit{(n,p)}. Since \textit{N} is large enough, \textit{X} can be approximately normally distributed with mean $np$ and variance $np(1-p)$.
+\begin{equation}\label{eq:binomialtonormal}
+  \frac{X-np}{\sqrt{np(1-p)}}\backsim \emph{N}(0,1).
+\end{equation}
+In order to obtain a confidence interval for \textit{p}, lets assume the estimator $\hat{p}=\frac{X}{N}$ the fraction of samples equals to $1$ with regard to the total number of samples acquired. Since $\hat{p}$ is the estimator of \textit{p}, it should be approximately equal to \textit{p}. As a result, for any $\alpha \in {0,1}$ we have that:
+
+\begin{equation}\label{eq:eq1}
+   \frac{X-np}{\sqrt{n\hat{p}(1-\hat{p})}} \backsim \emph{N}(0,1) 
+\end{equation}
+
+
+\begin{align}\label{eq:eq2}
+  \nonumber
+  P \{-z_{\alpha/2} < \frac{X-np}{\sqrt{n\hat{p}(1-\hat{p})}} < z_{\alpha/2}\} &\approx& 1-\alpha \\ \nonumber
+  P \{-z_{\alpha/2}\sqrt{n\hat{p}(1-\hat{p})}<np-X<z_{\alpha/2}\sqrt{n\hat{p}(1-\hat{p})}\} &\approx& 1-\alpha \\
+  P\{\hat{p}-z_{\alpha/2}\sqrt{\hat{p}(1-\hat{p})/n} <p<\hat{p}+z_{\alpha/2}\sqrt{\hat{p}(1-\hat{p})/n}\} &\approx& 1-\alpha
+\end{align}
+
+This way, a confidence interval for \textit{p} is approximately $100(1-\alpha)$ percent.
+
+\subsection*{Input Parameters}
+
+	\begin{itemize}
+		\item zscore \linebreak
+		(double)
+    \item fileName \linebreak
+		(string)
+	
+	\end{itemize}
+
+\subsection*{Methods}
+
+ProbabilityEstimator(vector$\langle$Signal *$\rangle$ \&InputSig, vector$\langle$Signal *$\rangle$ \&OutputSig) :Block(InputSig, OutputSig)\{\};
+\bigbreak	
+void initialize(void);
+\bigbreak	
+bool runBlock(void);
+\bigbreak	
+void setProbabilityExpectedX(double probx)
+double getProbabilityExpectedX()
+\bigbreak	
+void setProbabilityExpectedY(double proby)
+double getProbabilityExpectedY()
+\bigbreak
+void setZScore(double z)
+double getZScore()
+
+
+\subsection*{Functional description}
+
+This block receives an input binary signal with values "0" \space or "1" \space and it calculates the probability of having each number according with the number of samples acquired. This probability is calculated using the following formulas:
+\begin{equation}\label{eq:prob1}
+  \textrm{Probability}_{1}=\frac{\textrm{Number of 1's}}{\textrm{Number of Received Bits}}
+\end{equation}
+
+\begin{equation}\label{eq:prob0}
+  \textrm{Probability}_{0}=\frac{\textrm{Number of 0's}}{\textrm{Number of Received Bits}}.
+\end{equation}
+
+The error margin is calculated based on the z-score set which specifies the confidence interval using the following formula:
+
+\begin{equation}\label{eq:marginerror}
+  \textrm{ME} = \textrm{z}_{\textrm{score}}\times \sqrt{\frac{\hat{p}(1-\hat{p})}{N}}
+\end{equation}
+
+being $\hat{p}$ the expected probability calculated using the formulas above and $N$ the total number of samples.
+
+This block outputs a txt file with information regarding with the total number of received bits, the probability of 1, the probability of 0 and the respective errors.
+
+\subsection*{Input Signals}
+
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:} Binary
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 2
+
+\subparagraph*{Type:} Binary
+\subparagraph*{Type:} txt file
+
+\subsection*{Examples}
+
+
+Lets calculate the margin error for N of samples in order to obtain $X$ inside a specific confidence interval, which in this case we assume a confidence interval of $99\%$.
+
+We will use \textit{z-score } from a table about standard normal distribution, which in this case is $2.576$, since a confidence interval of $99\%$was chosen, to calculate the expected error margin,
+
+\begin{eqnarray}
+  \nonumber % Remove numbering (before each equation)
+  \textrm{ME} &=&  \pm z_{\alpha/2}\frac{\sigma}{\sqrt{N}} \\
+  \textrm{ME} &=& \pm z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{N}},
+\end{eqnarray}
+
+where, \textrm{ME} is the error margin, $z_{\alpha/2}$ is the \textit{z-score} for a specific confidence interval, $\sigma = \sqrt{\textrm{VAR(X})} = \sqrt{\hat{p}(1-\hat{p})}$ is the standard deviation and $N$ the number of samples.
+
+This way, with a $99\%$ confidence interval, between $(\hat{p}-\textrm{ME}) \times 100$  and $(\hat{p}+\textrm{ME}) \times 100$ percent of the samples meet the standards.
+
+
+
+\subsection*{Sugestions for future improvement}
+
+
+

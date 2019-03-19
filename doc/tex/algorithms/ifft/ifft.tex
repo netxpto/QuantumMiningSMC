@@ -1,0 +1,57 @@
+%\documentclass[a4paper]{article}
+%\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1.25in]{geometry}
+%\usepackage{amsmath}
+%\usepackage{multicol}
+%\usepackage{graphicx}
+%\usepackage{subfig}
+%\usepackage{amssymb}
+%%\RequirePackage{ltxcmds}[2010/12/07]
+%%opening
+%\title{Linear Filtering in Frequency-Domain}
+%\author{ }
+%\date{ }
+%\begin{document}
+%
+%\maketitle
+\clearpage
+\section{IFFT}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=white!20, 
+text width=9em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=white!20, 
+text width=15em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=white!20, node distance=3cm,
+minimum height=3em]
+
+
+This is the generalized IFFT algorithm which facilitates frequency domain to time domain conversion. First, the frequency domain input signal separated into real and imaginary part. The implementation of the IFFT can be carried out by swaping the position of the real and imaginary part of the FFT functions. In other words, the function $FFT(imaginary,real)$ calculates the IFFT of the frequency domain signal applied at the input. Following that, the output of the IFFT function normalized to get exact time domain signal.
+
+\begin{center}
+\begin{figure}[ht]
+
+\begin{center}
+\begin{tikzpicture}[node distance = 2cm, auto]
+%Place nodes
+\node [block] (input) { Input signal\\$Frequency$ $Domain$ \\ $Complex$};
+\node [block, below of=input, node distance=3cm] (ifft) {Calculate IFFT};
+%\node [decision, below of=n, node distance=4cm] (decide) {Check if $n=2^N$ };
+%\node [block, right of=decide, node distance=6cm] (Bluestein) {Execute Bluestein algorithm};
+\node [block, below of=ifft, node distance=3cm] (normalize) {Normalize};
+\node [block, below of=normalize, node distance=3cm] (output) {Output signal\\$Time$ $Domain$ \\$Real$ or $Complex$};
+%% Draw edges
+\path [line] (input) -- (ifft);
+\path [line] (ifft) -- (normalize);
+%\path [line] (decide) -- node [near start] {No} (Bluestein);
+%\path [line] (decide) -- node [near start] {yes} (Radix-2);
+%\path [line] (Radix-2) -- (output);
+\path [line] (normalize) -- (output);
+\end{tikzpicture}
+\end{center}
+\vspace{0.5cm}
+\caption{Top level architecture of the IFFT algorithm}
+\label{Top_level_FFT }
+\end{figure}
+\end{center}
+

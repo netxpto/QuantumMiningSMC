@@ -1,0 +1,52 @@
+\clearpage
+
+\section{Load Signal}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& load\_signal.h \\
+		\textbf{Source File}   &:& load\_signal.cpp \\
+        \textbf{Version}       &:& 20190205 (Daniel Pereira)\\
+	\end{tabular}
+\end{tcolorbox}
+
+This block loads signals from a .sgn file into the netxpto simulation environment.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|p{60mm}|c|ccc}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type}   & \textbf{Values} &   \textbf{Default}  \\ \cline{1-4}
+		sgnFileName        & string          & any             & InputFile.sgn       \\ \cline{1-4}
+	\end{tabular}
+	\caption{Load signal input parameters} 
+	\label{table:LoadSignal_in_par}
+\end{table}
+
+\subsection*{Methods}
+
+LoadSignal() {}
+\bigbreak
+LoadSignal(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig)\{\};
+\bigbreak
+void initialize(void);
+\bigbreak
+bool runBlock(void);
+\bigbreak
+void setSgnFileName(string sFileName);
+
+\subsection*{Functional description}
+
+This block loads signals from a .sgn file into a signal with symbol and sampling period set by the input .sgn file and type set by the output signal (make sure that the output signal has the correct format, otherwise it will be corrupted).
+
+\subsection*{Input Signals}
+
+\textbf{Number:} 0
+
+\subsection*{Output Signals}
+
+\textbf{Number:} 1\\
+\textbf{Type:} Binary signal, Integer signal, Complex signal, Complex XY signal, Photon signal,  Photon Multipath signal,  Photon Multipath XY signal
+

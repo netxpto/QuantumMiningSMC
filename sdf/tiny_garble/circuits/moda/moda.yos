@@ -1,0 +1,11 @@
+read_verilog ../syn_lib/*.v
+read_verilog moda.v 
+hierarchy -check -top moda
+proc; fsm; flatten; opt;
+techmap; opt; 
+dfflibmap -liberty ../asic_cell_yosys_extended.lib
+abc -liberty ../asic_cell_yosys_extended.lib -script ../script.abc; 
+opt; clean; 
+opt_clean -purge
+stat -liberty ../asic_cell_yosys_extended.lib
+write_verilog -noattr -noexpr moda_net.v

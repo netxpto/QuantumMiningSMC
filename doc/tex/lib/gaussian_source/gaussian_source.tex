@@ -1,0 +1,60 @@
+\clearpage
+
+\section{Gaussian Source}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& gaussian\_source.h \\
+		\textbf{Source File}   &:& gaussian\_source.cpp \\
+	\end{tabular}
+\end{tcolorbox}
+
+This block simulates a random number generator that follows a Gaussian statistics. It produces one output real signal and it doesn't accept input signals.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|cccc}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		mean & double & any & $0$ \\ \cline{1-4}
+		Variance & double & any & $1$ \\ \cline{1-4}
+	\end{tabular}
+	\caption{Gaussian source input parameters}
+	\label{table_Gaussian_Source}
+\end{table}
+
+
+\subsection*{Methods}
+
+GaussianSource() {}
+\bigbreak
+GaussianSource(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig)\{\};
+\bigbreak
+void initialize(void);
+\bigbreak
+bool runBlock(void);
+\bigbreak
+void setAverage(double Average) ;
+
+\subsection*{Functional description}
+
+This block generates a complex signal with a specified phase given by the input parameter \textit{phase}.
+
+\pagebreak
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 0
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:} Continuous signal (TimeDiscreteAmplitudeContinuousReal)
+
+\subsection*{Examples}
+
+\subsection*{Sugestions for future improvement}
+
+

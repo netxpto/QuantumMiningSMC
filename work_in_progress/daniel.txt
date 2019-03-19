@@ -1,0 +1,771 @@
+objetivo médio prazo: escrever um artigo sobre a compensação digital do desvio de frequência em sistemas de baixo baud-rate.
+
+objetivo curto prazo:
+		- secção III vamos criar duas subsecções 
+		III.1 - vamos estudar o low baud rate (apresentar dois gráficos) (df = 1 GHz, Br [200 , 3*10e9])
+		III.2 - vamos estudar o large frequency deviation (apresentar dois gráficos), a 600 Mbaud (1 MHz - 10 GHz)
+		III.3 - o impacto do ruído de fase (Br = 600 MBaud, df = 1GHz, (10kHz - 1MHz)
+		III.4 - o frequency drift (arranjar um modelo simples para o frequency drift)
+
+2019-02-01
+
+	- implementar o DSP no netxpto (focando no desvio de frequncia) e validando com dados laboratoriais (Andoni)
+
+	- 
+
+2019-01-22
+
+
+	- documentar aquilo que está a ser feito (colocar no netxpto.pdf) (simulação e os dois sistemas sequencial e o delay-line)
+
+	- calcular um intervalode confiança para o EVM (pesquisa bibliográfia)
+
+	- simular o sistema com um dado laser linewidth = 100 KHz, sem desvio de frequência e sem desvio de fase => EVM (comparar com um resultado teórico)
+
+	- desvio de frequência 1 MHz, 1 GHz, 5 GHz, 10 GHz (4 curvas), no eixo dos xx baud-rate (Br [1 kHz , 10e9])
+
+	- traçar um gráfico - obter um conjunto de constelações (constelação sem desvio de frequencia, e mais umas quantas)
+
+Next meeting: 1/2, 9h
+
+
+2019-01-22
+
+	- calcular um intervalode confiança para o EVM (pesquisa bibliográfia)
+
+	- simular o sistema com um dado laser linewidth = 100 KHz, sem desvio de frequência e sem desvio de fase => EVM (comparar com um resultado teórico)
+
+	- desvio de frequência 1 MHz, 1 GHz, 5 GHz, 10 GHz (4 curvas), no eixo dos xx baud-rate (Br [1 kHz , 10e9])
+
+	- traçar um gráfico - obter um conjunto de constelações (constelação sem desvio de frequencia, e mais umas quantas)
+
+Next meeting: 29/1, 9h
+
+2019-01-15
+
+	- avançar com a subsecção III.1
+	- documentar no mainn_etxpto
+
+Next meeting: 22/1, 9h
+
+
+2019-01-03
+
+	- Secção III - a) low baud rate
+	- Fazer um bloco para estimar a EVM (explicar depois bem como se calcula a EVM)
+	- Reproduzir a figura 5	
+	- setup do nosso sistema
+
+Next meeting; 15/1, 9h
+
+2018-12-19
+
+	- limiar as últimas arestas da secção II
+
+	- fazer um update to bloco do SNR para estimar também a EVM
+
+	- obter o gráfico no simulador igual ao da figura 4, mas com a escala do yy linear.
+
+Next meeting: 3/1, 14h30m
+
+2018-12-13
+
+	- finalizar a secção II
+
+	- implementar o modelo para simular com a implementação do algoritmo baseado num filtro FIR
+
+	- depois vamos estudar:
+		- low-baud rate
+		- frequency mismatch
+		- frquency drif (número de taps do filtro FIR)
+		- laser linewidth
+
+
+Next meeting: 19/12, 9h
+		
+
+2018-12-06
+
+	- concluir a secção II
+
+	- Começar com a simulação (descrever a simulação), avançar com a secção III
+
+	- quando tiveres os slides passar aqui
+
+Next meeting: 13/12, 10h
+
+
+2018-11-28
+
+	- preparar uma pequena apresentação sobre o QRNG (5-10 minutos), para a reunião do projeto QuantumMining, 5/12, 14h30m-18h;
+
+	- fechar a secção II e título
+
+	- incluir o gráfico melhorado da fig. 3 na secção II, juntamento com uma discussão
+
+	- fazer aintrodução da secção III, e avançar na III.1	
+		
+Next meeting: 6/12, 11h		
+
+	
+
+
+2018-11-19
+
+	- concluir a introdução (minor changes), concluir a secção II (explicação do algoritmo) (minor changes)
+
+	- pensar na estrutura da secção III, validação numérica do método
+
+Next meeting: 27/11, 14h30m
+	
+
+2018-11-07
+
+	- preparar bem a visita
+
+	- colocar na pasta da workshop o latex dos slides
+
+
+	- finalizar a introdução (minor things)
+	- melhorar a descrição do algoritmo (ver a notação e colocar mais detalhe)
+
+	(1 página para a introdução, 1 página para descrição)
+
+
+
+Next meeting: 16/11, 11h00m
+
+2018-10-29
+
+	#### Frequency Recovery ####
+
+	- finalizar a introdução
+	- melhorar a descrição do algoritmo
+
+
+	### Slides ####
+
+	Avançar +detalhe
+
+Next meeting: 5/11, 8h30m
+
+
+2018-10-22
+
+	- Concluir o poster do IT
+
+	#### QRNG ####
+
+	- avançar na documentação (parte na teórica, parte experimental, apresentação)
+
+		doc/tex/sdf/cv_quantum_random_number_generator
+		doc/tex/sdf/cv_quantum_random_number_generator/labview
+		doc/tex/sdf/cv_quantum_random_number_generator/slides
+
+	- pesquisa bibliográfica QRNG
+
+	- apresentação QRNG based on Vacuum Noise (apresentação de 20 minutos, 15 slides, TQ)
+
+
+	#### Frequency Recovery ####
+
+	- acabar a introdução
+	- melhorar a descrição do algoritmo
+
+
+Next meeting: 29/10, 9h
+
+
+2018-10-15
+
+
+
+	#### Frequency Recovery ####
+
+	- acabar a introdução
+	- acabar a descrição do algoritmo
+	
+Next meeting: 22/10, 9h
+
+2018-10-08
+
+	#### QRNG ####
+
+	- avançar na documentação (parte na teórica, parte experimental, apresentação)
+
+		doc/tex/sdf/cv_quantum_random_number_generator
+		doc/tex/sdf/cv_quantum_random_number_generator/labview
+		doc/tex/sdf/cv_quantum_random_number_generator/slides
+
+	- pesquisa bibliográfica QRNG
+
+	- apresentação QRNG based on Vacuum Noise (apresentação de 20 minutos, 15 slides, TQ)
+
+	#### Frequency Recovery ####
+
+	- acabar a introdução
+	- acabar a descrição do algoritmo
+	
+Next meeting: 15/10, 8h30
+
+2018-10-01
+TO BE DONE
+
+	#### QRNG ####
+
+	- avançar na documentação (parte na teórica, parte experimental, apresentação)
+
+		doc/tex/sdf/cv_quantum_random_number_generator
+		doc/tex/sdf/cv_quantum_random_number_generator/labview
+		doc/tex/sdf/cv_quantum_random_number_generator/slides
+
+	- pesquisa bibliográfica QRNG
+
+	- apresentação QRNG based on Vacuum Noise (apresentação de 20 minutos, 15 slides, TQ)
+
+	#### Frequency Recovery ####
+
+	- melhorar a introdução
+	- melhorar a descrição do algoritmo
+	
+Next meeting: 8/10, 10h
+
+2018-09-24
+TO BE DONE
+
+	- avançar na documentação (parte na teórica, parte experimental, apresentação)
+
+		doc/tex/sdf/cv_quantum_random_number_generator
+		doc/tex/sdf/cv_quantum_random_number_generator/labview
+		doc/tex/sdf/cv_quantum_random_number_generator/slides
+
+	- pesquisa bibliográfica QRNG
+
+
+	- artigo receupração de fase
+		- melhorar a introdução
+		- escrever a primeira secção a explicar o método
+
+
+Next meeting: 1/10
+
+2018-09-17
+TO BE DONE
+
+	- avançar na documentação (parte na teórica, parte experimental)
+
+		sdf/cv_quantum_random_number_generator
+		sdf/cv_quantum_random_number_generator/labview
+
+	- fazer um bloco do netxpto loadAscii 
+		loadAscii{{}, {&out}}
+
+			input parameters
+				asciiFileName
+				asciiFormat {char8, }
+
+	
+
+	- artigo receupração de fase
+		- melhorar a introdução
+		- escrever a primeira secção a explicar o método
+
+Next meeting: 25/9
+
+
+2018-09-06
+TO BE DONE
+
+	- acrescentar a secção do QRNG ao documento (duas secções, uma sobre a geração quântica, outra sobre os testes do NIST)
+	- aplica os testes aos dois (gerados no Netxpto e aos gerados quanticamente)
+
+	- melhorar a introdução
+
+	- avançar com a secção 1, explicar a arquitetura do transmissor e do recetor e explicar o método de compensação do desvio de frequência
+
+	- secção 2, análise comparativa entre o nosso método e os métodos clássicos
+
+	- avançar com a simulacao
+
+Next meeting: 17/9, 9h
+
+
+2018-07-19
+TO BE DONE
+	
+	- avançar com a introdução no artigo
+
+	- avançar com a simulacao
+
+
+Next meeting: 6/9, 15h
+
+2018-06-29
+TO BE DONE
+	
+	- melhor e organizar melhor o texto
+
+	- começar com o trabalho de simulacao, baseado no sistema do Andoni
+
+
+Next meeting: 19/7, 17h
+
+
+2018-06-20
+TO BE DONE
+	
+	- poster ciencia 2018
+	- artigo globecom
+
+	- analise comparativa das técnicas clássicas e quanticas existentes considerando três aspetos (symbol rate, frequency deviation (1Gbaud & 100Mbaud), phase noise (1Gbaud & 100Mbaud))
+
+Next meeting: 17h, 26/6
+
+2018-06-13
+TO BE DONE
+
+	- organizar melhor o documento / ideias
+	- melhorar figuras (2 ou 3 figuras)
+	- melhorar os gráficos com resultados (6 graficos = 2 (delta_f e low symbol rate) + 1 (ratio) + 3/4) 
+
+
+Next meeting: 20/6, 16h
+
+
+2018-06-06
+TO BE DONE
+
+	- organizar melhor o documento, focar nos dois métodos (frentes de onda diferente e mesma frente de onda no transmissor, laser em continuo do Rx)
+	- otimizar o sistema considerando a relação de amplitude entre o piloto e o sinal quântico, e também rácio
+	- colocar tudo o resto em future work
+
+Next meeting: 13/6, 14h
+
+
+2018-05-29
+TO BE DONE
+
+	- continuar a melhor, nomeadamente a parte da descrição do método novo com as variantes (2/3)
+
+Next meeting: 6/5, 16h
+
+2018-05-23
+TO BE DONE
+
+	- falar com o Andoni, para verificar se o método para compensar o desvio de frequência clássico é o mesmo
+
+	Melhorar: tem que ser claro qual é o problema remanescente
+
+2018-05-17
+TO BE DONE
+
+	dificuldade a operar a baixos débitos (traçar gráfico em função da taxa de símbolos, e incluir no gráfico curvas para diferentes números de amostras por símbolo)
+
+	acrescentar duas novas seções
+		tem que ser claro qual é o problema remanescente
+		tenho que ser capaz de deixar claro a novidade da minha proposta
+
+	descrever também os métodos clássicos
+
+	focar na análise comparativa das técnicas (desvio de frequência, ruído de fase, desvio de frequência e ruído de fase)
+
+	validar a proposta aplicando a diferentes cenários usando uma figura de mérito
+		- sequencial (sem self-reference)
+		- self reference (só no Tx)
+		- self reference (só no Tx e no Rx)
+
+Next meeting: 24/5, 10h
+
+
+2018-05-08
+TO BE DONE
+
+	estrutural melhor a secção (artigo)
+
+	estado da arte (clássica - quantica)
+	tem que ser claro qual é o problema remanescente
+	tenho que ser capaz de deixar claro a novidade da minha proposta
+	explicar em detalhe a proposta
+	validar a proposta aplicando a diferentes cenários usando uma figura de mérito
+		- aos dois esquemas do transmissor
+		- comparar com os outros disponiveis
+
+Next meeting: 17/5, 9h
+
+2018-04-26
+TO BE DONE
+	
+	Melhorar o estado da arte
+
+	Melhor a descrição do novo método, deixando claro as vantagens (hipotéticas)
+
+
+Next meeting: 8/05, 9h
+
+
+2018-04-17
+TO BE DONE
+	
+	Avançar o estado da arte (no manual do simulador)
+
+	Avançar com a secção do nosso método (no manual do simulador)
+
+	Artigo escrever a introdução
+
+Next meeting: 24/04, 10h
+
+2018-04-05
+TO BE DONE
+	introduzir a bibliografia na secção cv_system (ler e introduzir a bibliografia)
+	na secção do cv_system deve uma descrição mais detalhado do estado da arte
+
+	trabalhar no artigo (introdução)
+
+Next meeting: 10/04, 14h
+
+2018-04-01
+TO BE DONE
+	trabalhar no artigo (introdução)
+
+Next meeting: 05/04, 10h
+
+2018-03-20
+TO BE DONE
+
+	artigo: Frequency and Phase Recovery in Continuous Variables Quantum Communications Systems
+
+	Introdução
+	Estrutura do Artigo
+		Introdução
+		System Architectures (DSP)
+		Self-Coeherence Reference Pulse
+		Sequential Reference Pulse
+		Comparative Results Analyse
+		Conclusions
+
+Next meeting: 27/3, 10h
+
+2018-03-06
+TO BE DONE
+
+	artigo: DSP for Continuous Variables Quantum Communications Systems
+		
+	artigo teórico + simulação
+
+	https://www.overleaf.com (abrir uma conta e criar um documento em formato IEEE/OSA JLT)
+	colocar o link no doc
+
+
+	num sistema quântico, como não vou conseguir medir diretamete sobre os impulsos tenho que usar um impulso
+		- de duas frentes diferentes
+		- da mesma frequente onda
+
+	desvio de fase
+	ruído de fase
+	desvio de frequência
+	skew
+
+	Introdução
+
+		paragrafo 1 (curto 5 ou 6 frases)
+			motivação / relevância do problema
+			definir o problema
+
+		paragrafo 2 (longo) (15 ou 30 frases)
+			estado da arte
+				DSP Clássicos - Sistemas Quântuicos de CV - DSP para Sistemas Quânticos
+			com raras exceções, cada frase deve ter um referência.
+			ver o capítulo do intradyne CV, Nuno Silva, tem um estado da arte
+
+		paragrafo 3 (curtissimo, 2 ouo 3 frases)
+			novidades
+
+		paragrafo 4 (curto 5 ou 6 frases)
+			estrutura do meu artigo
+
+		
+
+Next meeting: 20/3, 14h
+
+
+
+2018-02-27
+TO BE DONE
+	melhorar e complementar o trabalho teórico
+
+	pensar numa estrutura para um artigo de comparação das três técnicas (multiplexagem temporal com impulsos diferentes, a multiplexagem na polarização, multiplexagem temporal com o mesmo impulso),
+	analisar o sistema em termos de BER para potências dos sinias quânticos muitos
+
+next meeting: 6/3, 14h
+
+2018-02-20
+TO BE DONE
+	continuar com o estudo teórico detalhado,
+		olhar com mais detalhe para o problema dos desvios de fase
+		c) assumindo laser ideal s/ ruído de fase e com desvio de frequência fixo
+		d) assumindo laser realista
+
+	- parte da simulação, partir do m_qam_system, abrir m_qam_transmitter e o m_qam_receiver
+		será necessário construir o bloco mux 2:1
+
+	- parte experimental é para ir avançando, usando o mesno oscillador no TX e no Rx
+
+next meeting: 27/2, 14h
+
+
+2018-02-09
+TO BE DONE
+	- parte teórica, atualizar a descrição teórica considerando o novo cenário com o IQ modulator (parte a)
+		a) assumindo laser ideal s/ ruido de fase e s/ flutuações na frequência
+		b) assumindo laser ideal s/ flutuações na frequência
+		c) assumindo laser ideal s/ ruído de fase
+		c) assumindo laser realista
+
+	- parte da simulação, partir do m_qam_system, abrir m_qam_transmitter e o m_qam_receiver
+		será necessário construir o bloco mux 2:1
+
+	- parte experimental é para ir avançando, usando o mesno oscillador no TX e no Rx
+
+next meeting: 16/2, 16h
+
+
+
+2018-02-06
+TO BE DONE
+	Curso prazo:
+		Melhores a descrição da parte teórica (mudar a posição do acousto-otico e incluir a linha de atraso para posicionar o ponto grande no eixo I)
+
+		Simulação ajustar a parte
+
+Next meeting: 9/1, 11h
+
+2018-01-30
+TO BE DONE
+	Curso prazo:
+		Melhores a descrição da parte teórica, e obtenhas os resultados de simulação (como está)
+
+	Médio Prazo:
+		Desfasamento entre:
+			- S_L(t)
+			- SA(t)
+
+		obter várias constelações para diferentes valores de desfasamento
+
+			- Impacto do ruído de fase
+
+			- Impacto do ruído elétrico
+
+			- Impacto do ruído quântico
+
+Next meeting: 6/1, 9h30m
+
+2018-01-24
+TO BE DONE
+
+	Rever parte teórica com cuidado - a parte teórica tem que acabar com uma estimativa para o BER
+
+	Colocar na simulação os sinais teórico lado a lado com o sinal de simulação
+
+	Colocar na parte experimental os sinais teórico - de simulação - experimetal
+
+Next meeting:
+30/01/2018, 14h
+
+
+
+2018-01-16
+TO BE DONE
+
+	#### Parte Experimenal ####
+
+	colocar na parte experimental um esquema com os nomes dos sinais
+
+	colocar os resultados experimentais na parte experimenal, com os nomes dos sinais
+
+	Para além dos diagramas de olho, colocar a sequência temporal [0, 10 * Ts], e a constelação
+
+	1) depois do modulador acousto-otico
+
+	2) depois do IQ modulator
+
+	3) depois do One-Period Dealy Line
+
+	4) obter constelação depois do beam combiner
+
+	5) obter os outros sinais da parte experimental
+
+	colocar o homodyne detector desmontado noutra figura (2 figuras, uma para o I e outra para o Q)
+
+
+	#### Parte teórica #####
+
+	rever a parte teórica
+
+	#### Parte simulação ####
+
+	colocar só o esquema
+
+	tabela com os blocos necessários para a simualação (os que existem e os que faltam)
+
+
+	
+
+
+
+2018-01-09
+TO BE DONE
+	- obter um diagrama de olho do sinal S3(t) e S5(t), sobre 2 Ts
+		legenda como é que o diagrama de olho foi obtido
+
+	- colocar a delay line
+
+	- atualizar a figura da sequência no temp com T_H ~ 0.5 * Ts
+
+
+	- atualizar a figura do setup, com a referência aos sinais
+
+	- desmontar o homodyne detector
+
+	- colocar a figura do setup da simulação 
+
+	- colocar as figuras com os resultados da simulação , vizualiser diagramas de olho do S3 e do S5
+
+
+
+2018-01-03
+TO BE DONE
+	
+
+	- desmontar o homodyne detector
+
+	- colocar a delay line
+
+	- colocar os gráficos lá em cima
+
+	- aumentar o T_H ~ 0.5 * Ts
+
+	- começar com a simulação devagar
+
+
+2018-01-03
+TO BE DONE
+	- colocar os vários passo a passo S_1(t), ..., S_A(t)
+
+	- obter a constelação antes do VOA
+
+
+2017-12-20
+TO BE DONE
+
+	Detalhar o esquema experimental
+
+	Colocar uma tabela entre os nomes dos blocos e os equipamentos laboratoriais
+
+	Descrição teórica dos sinais à saída do emissor (sinal modulador + sinal de referência) e os 4 sinais antes do detetor balanceado.
+
+	Colocar resultados no tempo da intensidade dos sinais antes do hibrido e depois do hibrido. 
+
+
+2017-12-05
+TO BE DONE
+	Montagem Experimental (PRIORITÁRIO)
+		obter um gráfico, BER versus número de fotões por impulso (back-to-back), utilizando os detetores da thorlabs, num regime clássico
+
+	Simulação
+		simular o setup experimental e obter um gráfico do BER versus número de fotões, num regime clássico
+
+	Teorica
+		Protocolo CV-QKD (descrever)
+		Pos-Prosseamenteo Digital
+
+
+Next meeting: 12/12, 15h
+
+
+2017-11-28
+TO BE DONE
+	colocar as figuras com aspeto consistente com as outras
+	colcocar as figuras nos diretórios figures e figures_raw
+
+	colocas o setup a funcionar com os recetores da Thorlabs e com uma frequencia que seja compativel e back-to-back e só com um laser
+	colocar resultaods experimentais
+	BER vs número de fotões dos impulsos quânticos (explicar como é que estimas o número de fotões dos impulsos quânticos)
+
+	teórica, explicas em detalhe o protocolo usado para gerar as chaves (análogo aquilo que está feito na secção 5.7.1)
+
+Next meeting: 5/12, 15h
+
+2017-11-22
+TO BE DONE
+	- CV Quantum Transmission System
+		descrever o setup experimental
+		mostrar os resultados experimentais
+
+
+Next meeting: 28/11, 13h30
+
+
+2017-11-16
+TO BE DONE
+
+	- ultimos detalhes BPSK (última revisão)
+
+	- trabalhar no CV Quantum transmission System
+		descrição do setup experimental e preparar a bancada para o dia 25/11
+
+Next meeting: 22/11, 14h
+
+2017-11-07
+TO BE DONE
+	- Finalizar BPSK (última revisão)
+
+	- Finalizar apresentação (última revisão)
+
+	- Atualizar a secção do CV Quantum Transmission System
+
+2017-11-02
+TO BE DONE
+	- concluir doc BPSK (o que está no pdf, nomeadamente o BER em unidades log10)
+	- alterar o bloco BER, de modo a adicionar um parametro de entrada que com o nome, lowestMinorante{1E-10}
+	- alterar o bloco do BER para verificar se o BER estimado é inferior ao lowestMinorante se for inferior devolver uma mensagem de erro.
+
+	Apresentação reunião de grupo
+		- como se fosse a defesa da dissertação
+
+2017-10-18
+TO BE DONE
+	- concluir o doc do BPSK
+
+	- concluir o código do bloco homodyne receiver	
+
+
+2017-10-12
+TO BE DONE
+	concluir o documento
+		parte do SDF/BPSK
+		parte do Bit Error rate
+		parte do local oscillator
+
+Incluir no cabeçalho o diretório do sistema.
+
+
+2017-10-06
+TO BE DONE
+- atualizar o doc do sd/BPSK system
+	Colocar o cabeçalho e a introdução
+	Atualizes com figuras o sdf/BPSK
+		obter os pontos simulados do BER com o intervalo de confiança e sobrepor a curva teórica.
+
+- actualizar no lib 
+	local_oscillator
+	bit_error_rate (bastante detalhe)
+	ver os outros blocos que usaste no BPSK transmission system
+
+
+2017-09-28
+TO BE DONE
+- system BPSK with BER measurement
+
+2017-09-22
+TO BE DONE
+- system BPSK with BER measurement

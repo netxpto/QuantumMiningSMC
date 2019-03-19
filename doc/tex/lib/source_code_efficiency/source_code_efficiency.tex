@@ -1,0 +1,46 @@
+\clearpage
+
+\section{Source Code Efficiency}
+
+\begin{tcolorbox}	
+\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+\textbf{Header File}   &:& source\_code\_efficiency\_*.h \\
+\textbf{Source File}   &:&  source\_code\_efficiency\_*.cpp \\
+\textbf{Version}       &:& 20180621 (MarinaJordao)
+\end{tabular}
+\end{tcolorbox}
+
+
+\subsection*{Input Parameters}
+
+This block accepts one input signal and it produces one output signal. To perform this block, two input variables are required, probabilityOfZero and sourceOrde.
+
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|p{60mm}|c|ccp{60mm}}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		probabilityOfZero & double & from 1 to 0 & $0.45$ \\ \cline{1-4}
+		sourceOrder & int & 2, 3 or 4 & $2$ \\ \cline{1-4}
+	\end{tabular}
+	\caption{Source Code Efficiency input parameters}
+	\label{table:sink_in_par}
+\end{table}
+
+
+\subsection*{Functional Description}
+
+This block estimates the efficiency of the message, by calculating the entropy and the length of the message.
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1\\
+\textbf{Type}: Binary
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1\\
+\textbf{Type}: Real   (TimeContinuousAmplitudeContinuousReal)
+
+%\end{document}

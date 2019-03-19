@@ -1,0 +1,71 @@
+\clearpage
+
+\section{Electrical Signal Generator}
+
+\maketitle
+This block generates time continuous amplitude continuous signal, having only one output and no input signal.
+
+\subsection{ContinuousWave}
+Continuous Wave the function of the desired signal. This must be introduce by using the function \textit{setFunction(ContinuousWave)}. This function generates a continuous signal with value 1. However, this value can be multiplied by a specific gain, which can be set by using the function \textit{setGain()}. This way, this block outputs a continuous signal with value $1 \times \textrm{gain}$.
+
+\subsection*{Input Parameters}
+
+	\begin{itemize}
+		\item ElectricalSignalFunction signalFunction{}\linebreak
+		(ContinuousWave)
+		\item samplingPeriod\{\}\linebreak
+        (double)
+		\item symbolPeriod\{\} \linebreak
+        (double)
+		
+	\end{itemize}
+
+\subsection*{Methods}
+
+ElectricalSignalGenerator() \{\};
+\bigbreak	
+void initialize(void);
+\bigbreak	
+bool runBlock(void);
+\bigbreak	
+void setFunction(ElectricalSignalFunction fun)
+ElectricalSignalFunction getFunction()
+\bigbreak	
+void setSamplingPeriod(double speriod)
+double getSamplingPeriod()
+\bigbreak
+void setSymbolPeriod(double speriod)
+double getSymbolPeriod()
+
+\bigbreak	
+void setGain(double gvalue) 
+double getGain() 
+
+
+\subsection*{Functional description}
+
+The \textit{signalFunction} parameter allows the user to select the signal function that the user wants to output.
+
+\subparagraph*{Continuous Wave}
+Outputs a time continuous amplitude continuous signal with amplitude 1 multiplied by the gain inserted.
+
+
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 0
+
+\subparagraph*{Type:}No type
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1 
+
+\subparagraph*{Type:} TimeContinuousAmplitudeContinuous
+
+\subsection*{Examples}
+
+
+\subsection*{Sugestions for future improvement}
+
+Implement other functions according to the needs.
+

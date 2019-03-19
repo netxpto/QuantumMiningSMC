@@ -1,0 +1,56 @@
+\documentclass[../../sdf/tex/BPSK_system.tex]{subfiles}
+\graphicspath{{../../images/}}
+%opening
+\onlyinsubfile{\title{Homodyne Receiver}}
+\date{}
+
+\begin{document}
+
+\onlyinsubfile{\maketitle}
+
+\subsection*{Introduction}
+
+This super-block compresses the function of the following blocks:
+\begin{itemize}
+\item Photodiode;
+\item Trans-Impedance Amplifier;
+\end{itemize}
+\noindent
+This compression allows for a cleaner code.
+
+\subsection*{Input Parameters}
+
+\begin{itemize}
+	\item Responsivity
+	\item Gain
+	\item ElectricalNoiseSpectralDensity
+	\item RollOffFactor
+	\item ImpulseResponseTimeLength
+	\item ImpulseResponseLength
+	\item PassiveFilterMode
+\end{itemize}
+
+\subsection*{Functional Description}
+
+The input signals are evaluated by coherent detection and an electrical signal is generated from this evaluation. A diagram of the blocks that constitute this super-block, with the corresponding relations is presented in Figure~\ref{fig:physicalsystem}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{./lib/figures/blockdiagram_receiver.png}
+\caption{Homodyne Receiver Block Diagram.}
+\label{fig:physicalsystem}
+\end{figure}
+
+\subsection*{Inputs}
+
+\textbf{Number}: 2
+
+\textbf{Type}: Complex or Complex\_XY (OpticalSignal)
+
+\subsection*{Outputs}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Real Signal (ContinuousTimeContinuousAmplitude)
+
+\end{document} 

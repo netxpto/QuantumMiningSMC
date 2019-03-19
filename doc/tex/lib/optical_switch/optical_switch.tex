@@ -1,0 +1,35 @@
+\clearpage
+
+\section{Optical Switch}
+
+\maketitle
+This block has one input signal and two input signals. Furthermore, it accepts an additional input binary input signal which is used to decide which of the two outputs is activated. 
+
+
+\subsection*{Input Parameters}
+    No input parameters.
+
+\subsection*{Methods}
+
+OpticalSwitch(vector <Signal*> \&inputSignals, vector <Signal*> \&outputSignals) : Block(inputSignals, outputSignals) \{\};
+
+void initialize(void);
+
+bool runBlock(void);
+
+
+\subsection*{Functional description}
+This block receives an input photon stream signal and it decides which path the signal must follow. In order to make this decision it receives a binary signal (0's and 1's) and it switch the output path according with this signal.
+
+\subsection*{Input Signals}
+\paragraph*{Number}: 1
+\paragraph*{Type}: Photon Stream
+
+\subsection*{Output Signals}
+\paragraph*{Number}: 2
+\paragraph*{Type}: Photon Stream
+
+\subsection*{Examples}
+
+
+\subsection*{Sugestions for future improvement} 

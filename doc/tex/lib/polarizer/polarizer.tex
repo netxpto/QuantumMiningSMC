@@ -1,0 +1,44 @@
+\clearpage
+
+\section{Polarizer}
+
+\maketitle
+This block is responsible of changing the polarization of the input photon stream signal by using the information from the other real time discrete input signal. This way, this block accepts two input signals: one photon stream and other real discrete time signal. The real discrete time input signal must be a signal discrete in time in which the amplitude can be 0 or 1. The block will analyse the pairs of values by interpreting them as basis and polarization direction.
+
+
+\subsection*{Input Parameters}
+
+	\begin{itemize}
+		\item m\{4\}
+		\item Amplitudes \{ \{1,1\}, \{-1,1 \}, \{-1,-1 \}, \{ 1,-1\} \}
+	\end{itemize}
+
+\subsection*{Methods}
+
+Polarizer (vector <Signal*> \&inputSignals, vector <Signal*>\&outputSignals) : Block(inputSignals, outputSignals) \{\};
+
+void initialize(void);
+
+bool runBlock(void);
+
+void setM(int mValue);
+
+void setAmplitudes(vector <t\_iqValues> AmplitudeValues);
+
+
+\subsection*{Functional description}
+Considering m=4, this block atributes for each pair of bits a point in space. In this case, it is be considered four possible polarization states: $0^\circ$, $45^\circ$, $90^\circ$ and $^135^\circ$.
+
+
+\subsection*{Input Signals}
+\subparagraph*{Number}: 2
+\subparagraph*{Type}: Photon Stream and a Sequence of 0's and '1s (DiscreteTimeDiscreteAmplitude).
+
+\subsection*{Output Signals}
+\subparagraph*{Number}:1
+\subparagraph*{Type}: Photon Stream
+
+\subsection*{Examples}
+
+
+\subsection*{Sugestions for future improvement} 

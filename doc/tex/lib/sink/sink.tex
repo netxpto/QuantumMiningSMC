@@ -1,0 +1,58 @@
+\clearpage
+
+\section{Sink}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& sink\_*.h \\
+		\textbf{Source File}   &:& sink\_*.cpp \\
+        \textbf{Version}       &:& 20180523 (Andr\'e Mourato)
+	\end{tabular}
+\end{tcolorbox}
+
+This block accepts one input signal and it does not produce output signals. It takes samples out of the buffer until the buffer is empty. It has the option of displaying the number of samples still available.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|p{30mm}|c|ccp{60mm}}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		numberOfSamples & long int & any & $-1$ \\ \cline{1-4}
+        displayNumberOfSamples & bool & true/false & true \\ \cline{1-4}
+	\end{tabular}
+	\caption{Sink input parameters}
+	\label{table:sink_in_par}
+\end{table}
+
+\subsection*{Methods}
+%
+Sink(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig)
+\bigbreak
+bool runBlock(void)
+\bigbreak
+void setAsciiFilePath(string newName)
+\bigbreak
+string getAsciiFilePath()
+\bigbreak
+void setNumberOfBitsToSkipBeforeSave(long int newValue)
+\bigbreak
+long int getNumberOfBitsToSkipBeforeSave()
+\bigbreak
+void setNumberOfBytesToSaveInFile(long int newValue)
+\bigbreak
+long int getNumberOfBytesToSaveInFile()
+\bigbreak
+void setNumberOfSamples(long int nOfSamples)
+\bigbreak
+long int getNumberOfSamples const()
+\bigbreak
+void setDisplayNumberOfSamples(bool opt)
+\bigbreak
+bool getDisplayNumberOfSamples const()
+
+
+\subsection*{Functional Description}
+
+The Sink block discards all elements contained in the signal passed as input. After being executed the input signal's buffer will be empty.

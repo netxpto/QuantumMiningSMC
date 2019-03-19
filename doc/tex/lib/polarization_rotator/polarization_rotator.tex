@@ -1,0 +1,74 @@
+\clearpage
+
+\section{Polarization\_rotator\_20170113}
+
+\maketitle
+This block simulates a rotation of polarization input photon stream signal by using the information from the two real time continuous amplitude discrete input signals, which have information in Jones space about the rotation angle theta($\theta$) and the elevation angle phi ($\phi$) . This way, this block accepts three input signals: one photon stream and other two real continuous time amplitude discrete signals. The real discrete time input signals must be a signal discrete in time in which the amplitude corresponds to the value of the angle in degrees. This block will do the rotation based on a matrix calculation.
+
+\subsection*{Input Parameters}
+ This block has no input parameters.
+
+\subsection*{State Variables}
+ This block has two state parameters which initializes the angles $\theta$ and $\phi$ which will lead to any rotation of the polarization of the input signal. These variables must be controlled using the two input signals.
+	\begin{itemize}
+		\item double theta \{0.0\}
+		\item double phi \{0.0\}
+	\end{itemize}
+
+\subsection*{Methods}
+
+Polarizer (vector <Signal*> \&inputSignals, vector <Signal*>\&outputSignals) : Block(inputSignals, outputSignals) \{\};
+
+void initialize(void);
+
+bool runBlock(void);
+
+
+\subsection*{Functional description}
+This block caused a rotation in polarization of the photon stream input signal. This rotation is controlled from the two input signals which correspond to rotation angle ($\theta$) and elevation angle ($\phi$) in the Poincare sphere. The representation is done is Jones Space. The photon stream input signal is represented by a matrix $2 \times 1$:
+
+\begin{equation}\label{eq:inputphoton}
+  S_{in}=\left[
+  \begin{array}{c}
+    A_x \\
+    A_y
+  \end{array}
+  \right]
+\end{equation}
+
+and the matrix that represents the polarization rotator is:
+
+\begin{equation}\label{eq:rotatormatrix}
+  M=\left[
+  \begin{array}{cc}
+    cos(\theta) & sin(\theta)e^{-i\phi} \\
+    -sin(\theta)e^{i\phi} & cos(\theta)
+  \end{array}
+  \right]
+\end{equation}
+
+This way the photon stream signal which outputs this block will be:
+\begin{eqnarray}
+ \nonumber % Remove numbering (before each equation)
+    S_{out} &=& M \times S_{in} \\
+    S_{out} &=&\left[
+  \begin{array}{c}
+    A_{x}cos(\theta)+A_{y}sin(\theta)e^{-i\phi} \\
+    -A_{x}sin(\theta)e^{i\phi}+A_{y}cos(\theta)
+  \end{array}
+  \right]
+\end{eqnarray}
+
+
+\subsection*{Input Signals}
+\subparagraph*{Number}: 3
+\subparagraph*{Type}: 1 Photon Stream and 2 ContinuousTimeDiscreteAmplitude.
+
+\subsection*{Output Signals}
+\subparagraph*{Number}:1
+\subparagraph*{Type}: Photon Stream
+
+\subsection*{Examples}
+
+
+\subsection*{Sugestions for future improvement} 

@@ -1,0 +1,648 @@
+Long term goal: um sistema quântico com variavies continuas em real-time em que os resultados experimentais batam certo com a simulação e descrição teórica.
+Medium term goal: caracterização de um sistema M-QAM a trabalhar a low baud rate (300 Mbaud) (no regime clássico e no regime quântico) => low_baud_m_qam_system => artigo
+Sort term goal:	um sistema M-QAM a trabalhar a 16 Gbud e a 4 Gbaud => m_qam_system (medir a SNR tendo por base o PSD => BER) => guiao de RO
+
+Artigo estrutura: high baud-arte vs low baud-rate / classical vs quantum / with and without LLO
+
+- regime clássico (sem e com oscilador local gerado localmente)
+- regime quântico (sem e com oscilador local gerado localmente)
+
+
+2019-02-26
+
+	- rever documentação / completar a documentação
+
+	- considerar o caso do ampliificador otico (o que é que consegumos ganhar com o amplificador ótico)
+
+Next meeting: 15/3, 14h
+
+
+2019-02-26
+
+	- rever documentação 
+
+	- completar com constelações os resultados
+
+	- obter os resultados considerando o ruído quântico (sobrepor resultaods teórico com simulados)
+
+Next meeting: 8/3, 16h
+
+2019-02-26
+
+	- rever documentação (esquema do sistema alta nível)
+
+	- obter o gráfico para o BER em função do ganho elétrico
+
+	- obter o gráfico para o BER em função da potência do LO (sem ruído quântico)
+
+Next meeting: 1/3, 16h
+
+2019-02-20
+
+	- rever o recetor (ruído térmico)
+	- ISI ver o impacto do comprimento da resposta impulsional 
+	- ruído elétrico (considerar que o recetor está a operar a uma dada tempoeratura, e sem ganho e com uma dada potência do LO (1mW))
+		- o ruído térmico não pode depender da taxa de amostragem
+		- atenuar o sinal ótico (sensibilidade do meu recetor)
+	- colocarmos o ganho elétrico + ruído (matched filter)
+	- aumentar a potência do LO (sem ruído quântico)
+	- adicone o ruído quântico
+
+Next meeting: 26/2, 15h
+
+
+2019-02-05
+
+	- melhor a descrição
+
+	- 1º sub-secção da simulação (ISI) => verificar que com o root-raised cosine a ISI = 0 (concluir)
+	- 2º ruído elétrico (com uma dada NF) + fixar o LO (1mW) , aumentando a atenução ótica, (com e sem ruído elétrico) => constelação perfeita
+		modelo para o ruído elétrico deve dempender da temperatura e do ganho do amplificador elétrico
+	- 3º fixar um dado ganho para o amplifciador+ fixar o LO (1mW)=> (variar a atenuação) estabelece um sensibilidade para o meu recetor 
+	- 4º simulação aumentar a potência do meu LO => cosntelação ~perfeita
+	- 5º adicionar o ruído quântico no LO => o meu sistema limitado pelo ruído
+	- 6º secção ruído ótico para compensar as perdas da fibra => matched-filter, mostrar que o ruíd é gaussiana (com sinal e sem sinal)
+
+
+Next meeting: 19/2, 11h
+
+2019-02-05
+
+	- alterar o setup de simulação de modo a incluir a fibra, o amplificador ótico, e o local oscilator
+
+	- 1º sub-secção da simulação (ISI) => verificar que com o root-raised cosine a ISI = 0
+	- 2º secção ruído ótico para compensar as perdas da fibra => matched-filter, mostrar que o ruíd é gaussiana (com sinal e sem sinal)
+	- 3º retirar o amplificador ótico, deixando ficar a atenuação => constelação perfeita
+	- 4º simulação só com o ruído térmico do recetor (ruído adicioanda antes do filtro elétrico) + fixar o LO (1mW)=> (variar a atenuação) estabelece um sensibilidade para o meu recetor 
+	- 5º simulação aumentar a potência do meu LO => cosntelação ~perfeita
+	- 6º adicionar o ruído quântico no LO => o meu sistema limitado pelo ruído
+
+
+	- mostrar constelações, mostrar sinais no domínio do tempo, diagramas de olho, calcular o BER
+
+Next meeting: 13/2, 14h
+ 
+
+	
+
+
+	
+2019-01-29
+
+	- colocar o script matlab junto a figura de ISI
+
+	- focar agora na parte de simulação
+		- separar a simulação para o ficheiro tex diferente
+		- primeiro sem ruído
+			descrever com mais detalhe e mostrar os sinais nos vários pontos
+		- simulação com ruído
+			descrever com mais detalhe e mostrar os sinais nos vários pontos
+			comparar com os resultados teóricos (só com o ruido da ASE)	
+
+
+Next meeting: 5/2, 11h
+
+
+2019-01-22
+
+	- concluir a parte teórica
+
+Next meeting: 29/1, 11h
+
+2019-01-18
+
+	- terminar a parte teórica, até à expressão para o BER
+
+Next meeting: 22/1, 15h
+
+2019-01-18
+
+	- terminar a parte teórica, até à expressão para o BER
+
+Next meeting: 18/1, 15h30m
+
+
+2019-01-10
+
+	- ver com cuidado a formulação analítica das secções 
+			6.2.2.1 - QPSK Transmitter
+			6.2.2.2 - QPSK Receiver
+	e tentar concluir a parte da escrita
+
+	- começar a secção relativa ao ISI
+
+
+Next meeting: 15/1, 16h
+
+2019-01-08
+
+	- finalizar a parte teórica QPSK
+		6.2.2.1 - QPSK Transmitter
+		6.2.2.2 - QPSK Receiver
+		6.2.2.3 - ISI - raised cosine
+		6.2.2.4 - Ruído
+		6.2.2.5 - Bit Error Rate
+		(bibliografia)
+
+Next meeting: 10/1, 17h
+
+2019-01-03
+
+	- rever o estudo teórico do sistema QPSK
+		6.2.2.1 - QPSK Transmitter
+		6.2.2.2 - QPSK Receiver
+		6.2.2.3 - Bit Error Rate
+		(bibliografia)
+
+Next meeting: 8/1, 11h
+
+2018-12-18
+
+	- rever tudo, limpar e fechar o sistema clássico
+
+Next meeting: 2/1, 11h
+
+
+2018-12-06
+
+	- escrever com rigor o procedimento experimental, e como é que é obtida cada curva
+
+	- sobrepor os gráficos com as curvas teóricas, experimentais e de simulação
+
+	- apresentação, 6 slides,
+		1- slides o objetivo do trabalho, metodologia
+		2- slide com o setup experimental
+		3- slide com os resultados a 16 Gbaud (teóricos, simulação e experimentais)
+		4- slide com os resultados a 4 Gbaud (teóricos, simulação e experimentais)
+		5- slide com os resultados a 1.25 Gbaud (teóricos, simulação e experimentais)
+		6- Estado do trabalho e passos futuros (aplicar o DSP em real-time, e avançar o regime quântico a 1.25 Gbaud)
+
+Next meeting: 18/12, 14h30m
+
+2018-11-26
+
+	- estimar o intervalo de confiança das medições experimentais
+
+	- colocar o oscilar a 45º e depois por DSP extrair a informação das duas polarizações
+
+	- retirar valores 1.25 Gbaud, 4 Gbaud, 16 Gbaud
+
+	- documentar todo com muito cuidado
+
+	- colocar aqui o DSP do Celestino em tempo real
+
+	- vamos para o regime quantico
+
+Next meeting: 5/12, 10h
+
+2018-11-19
+TO BE DONE
+
+	colocar nos gráficos 6.28 a) e b) os pontos da simulação
+
+	ler os artigos relativos as desbalanceamento do hibrido para ver qual é o possivel impacto disso na performance do sistema
+
+	ler e rescrever o documento todo
+
+	para depois prepararmos uma apresentação de todo o trabalho feito
+
+next meeting: 26/11, 17h30
+
+
+2018-11-09
+TO BE DONE
+
+	colocar os sinais a 1.25G.
+
+	ler e rescrever o documento todo.
+
+next meeting: 19/11, 17h
+
+2018-11-02
+TO BE DONE
+
+	- colocar um PC a entrada do recetor na entrada do oscilador local (verificar se só assim funciona);
+	- colocar um PC a entrada do recetor na entrada do sinal (verificar se só assim funciona);
+	- colocar um PC antes do modulador IQ (depois do coupler)
+	
+	- descrever isto no documento
+
+	- colocar a limpo a informação relativa ao sistema a 16 Gbaud, 4 Gbaud, 1.25 Gbaud
+
+	- trabalhar no guiao (versao resumida do netxpto/doc)
+
+Next meeting: 9/11, 11h15m
+
+2018-10-19
+TO BE DONE
+
+	- colocar um PC a entrada do recetor na entrada do oscilador local (verificar se só assim funciona);
+	- colocar um PC antes do modulador IQ (depois do coupler)
+	
+	- descrever isto no documento
+
+	- colocar a limpo a informação relativa ao sistema a 16 Gbaud, 4 Gbaud, 1.25 Gbaud
+
+	- trabalhar no guiao (versao resumida do netxpto/doc)
+
+Next meeting: 22/10, 17h30m
+
+2018-10-08
+TO BE DONE
+
+	confirmar a hipotese: as descrepâncias devem-se a um problema do ajuste do bias do modulador IQ
+	confirmar a hipotese: se o sinal gerador pelo AWG tem um pre-enfase nas baixas frequências (sobrepor os sinais no dominio do tempo)
+	detalhar bem no netxpto/doc
+
+	trabalhar no guiao (versao resumida do netxpto/doc)
+
+	falar com o Celestino para colocar o sistema a funcionar em real-time (1.25 Gbaud) =>	Preparar o setup do sistema a 300 Mbaud regime clássico
+
+Next meeting: 15/10, 10h
+
+
+2018-09-28
+TO BE DONE
+
+	confirmar a hipotese: as descrepâncias devem-se a um problema do ajuste do bias do modulador IQ
+	confirmar a hipotese: se o sinal gerador pelo AWG tem um pre-enfase nas baixas frequências (sobrepor os sinais no dominio do tempo)
+	detalhar bem no netxpto/doc
+
+	trabalhar no guiao (versao resumida do netxpto/doc)
+
+	Preparar o setup do sistema a 300 Mbaud regime clássico
+	
+Next meeting: 8/10, 9h-10h
+
+2018-09-18
+TO BE DONE
+
+	analisar o sinal ótico, no dominio da frequência, figura 6.34, medir o espectro ótico (com várias resoluções), e sobrepor os resultados simulados
+	- Extinsion ratio do modulador
+	- ENOB das DACs
+	- Skew
+
+	- guiao RO - sistema de transmissao M-QAM
+
+		parte teórica (constelação, eye diagram, EVM, factor-Q, BER) => próxima semana
+
+		simulacao, sobrepor constelação, eye diagram, EVM, factor-Q, BER
+
+		experimental RAW, pre DSP, aplicar o DSP, e depois comparar constelação, diagram de olho, EVM. factor-Q, BER
+	
+Next meeting: 18/9, 15h	
+
+2018-09-06
+TO BE DONE
+
+	verificar a questão da adatação entre a saída do recetor Picometrix (16 GHz) e os osciloscópio
+	documentar a questão relativa ao receptor a Picometrix
+	enviar um e-mail para a Picometrix (escreves para eu ver na próxima reunião)
+	Rever toda a secção
+	Preparar um guião em que comparo resultados teórico - simulados - experimental 
+		- calcular a parte teórica
+		- receber os dados brutos / e pos-prcessados (matlab)
+
+
+	"repetir" aquilo que fizemos para o recetptor da Thorlabs (Low-baud rate) (regime clássico com oscilar do transmissor => oscalor local gerado no Rx) (planificação)
+
+
+Next meeting: 18/9, 15h
+
+2018-07-19
+TO BE DONE
+
+	- resolver o problema do espectro sem oscilador local, sem sinal e sem ruído ótico
+	- colocar o PSD em extenso
+	- documentação (reler a documentação, melhor a documentação final)
+	- eliminar a interferência dos 50 Hz (provar que aquilo é uma risca a 50 Hz)
+
+	- vai ficar a sobrar o problema da curva do BER a 4 Gbits (acho que é do DSP)(next step)
+
+
+2018-07-10
+TO BE DONE
+
+	- substituir no Rx o filtro eletrico de banda larga (idela) por um filtro do tipo Butterwordth, de forma a aproximar melhor o decaimento da PSD
+	- os gráficos da figura 6.40 e anteirores, usar o mesmo LO no Tx e Rx (verificar se resolve o problema da figura 6.40(a) BER experimental)
+	- obter gráficos exprimental vs simuador sem sinal (identicos aos da figura 6.42), com e sem o LO.
+	- acabar o bloco da PSD
+
+Next meeting: 19/7, 9h
+
+2018-06-27
+TO BE DONE
+
+	desenvovler um bloco que permita estimar a densidade espectral de potência
+	trabalhar nos espectros da fig 6.38
+
+Next meeting: 10/7, 9h
+
+2018-06-12
+TO BE DONE
+
+	- adicionar ruído no dominio ótico
+	- definir um protocolo para medir experimentalmente a SNR
+
+Next meeting: 20/6, 10h
+
+
+2018-06-12
+TO BE DONE
+
+	- atualizar o bloco SNR na library
+
+	- adicionar uma secção sobre o SNR na parte da simulação (simulação vs theory)
+
+	- ver com cuidado a estimação do SNR tendo por base a medição da densidade espectral de potência
+
+
+Next meeting: 20/6, 10h
+
+
+
+
+2018-05-30
+TO BE DONE
+
+	- fechar o capitulo sobre o QAM (16 Gbaud e a 4 Gbaud)
+
+	- colocar no diretório sdf/m_qam_system/laboratorial_data un ficheiro readme.pdf a explicar em detalhe como foram obtidos os dados laboratoriais, adicionar também um folder tex/readme.tex + diretório figures
+
+Next meeting: 12/6, 9h
+
+
+
+2018-05-23
+TO BE DONE
+
+	- criar um novo capítulo no doc/tex/sdf/low_baud_m_qam_system, colocar toda a informação relativa aos sistemas a 500 Mbud, 1Gbaud, 2Gbaud, e vamos deixar ficar identificado os problemas (recuperação de frequência e fase e o desvio do bias)
+
+	- trabalhar no m_qam_system
+		criar duas sub-secções
+			- homodyne detection (com o mesmo LO)
+			- intradyne dection (com o desvio de fase e frequencia do LO compensado por DSP)
+
+	- focar no sistema homdyne a 16 Gbaud e analisar com detalhe a SNR estimation (procurar normas para estimar o SNR elétrico ITU-T)
+	
+	- criar uma pasta para armezar os sinais do osciloscópio (antes do DSP) (\sdf\m_qam_system\laboratorial_data)
+		16 Gbaud (intradyne detection)
+		4 Gbaud (intradyne dectetion)
+
+Next meeting: 30/5, 14h15m
+
+2018-05-17
+TO BE DONE
+
+	realizar experiências a 1 Gbaud, 3 a 600Mbaud
+
+	criar uma secção nova para discutir a forma como é estimada a SNR que é usada na expressão teórica para comparar com os dados experimentais a partir do espectro, definir intervalo e confiança
+
+	estimar a SNR a partir do BER, definir intervalos de confiança
+
+	traçar os gráficos
+
+	
+	trabalho futuro
+	análise comparativa com a simulação
+		colocar o EDFA na simulação
+		o ruído no recetor tem que ser de acordo com o datasheet
+		o ruído do EDFA tem que ser de acordo com o que está no datasheet
+
+Next meeting: 23/5, 14h30m
+
+
+2018-04-26
+TO BE DONE
+
+	melhorar a documentação
+
+	para o sistema a 4Gbaud usar o mesmo oscilador local no Tx/Rx, eventualmente como uma delay line para poder ajustar a fase
+
+Next meeting: 17/5, 10h
+
+
+
+2018-04-26
+TO BE DONE
+
+	parar para documentar melhor (mais detalhe, e organizar melhor)
+		rever parte teórica, corrgir pequenos erros
+
+		corrigir a documentação da parte experimental
+
+		melhorar substancial a documentação nomeadamente a descrição dos resultados experimetnais (diagramas de olho)
+		retirar da documentação o que não interessa
+
+Next meeting: 8/5, 10h
+
+2018-04-17
+TO BE DONE
+
+
+
+	############################################### (para a próxima semana)
+	colocar o sistema experimental a funcionar no melhor cenário com o melhor DSP
+	###############################################
+
+	##############################################
+	colocar a funcionar no cenário (clássico) que queremos QPSK com o nosso DSP
+	##############################################
+
+	melhorando a parte teórica
+
+	rever o bloco do white noise o parâmetro deveria ser bilateralSpectralDensity ou unilaterSpectralDensity (incluir no manual)
+
+        ###############################################      
+	- avançar com o bloco do cálculo da SNR, documentar devidamente incluindo referência
+	- rever a parte da simulação calculcar a SNR teórica e numérica para cada caso
+        ###############################################
+
+
+Next meeting: 24/4, 11h
+
+2018-03-22
+TO BE DONE
+        ############################################### (para a próxima semana)
+	- finalizar a parte teórica
+		colocar detalhe e fazer as contas		
+
+	- melhorar a edição (Theoretical Analysis / Simulation Analysis / Experimental Analysis / DSP)
+
+	- finalizar a compração entre a parte teórica e a simualação (fechar isto para apróxima reunião)
+        ###############################################
+
+        ###############################################      
+	- avançar com o bloco do cálculo da SNR, documentar devidamente incluindo referência
+	- rever a parte da simulação calculcar a SNR teórica e numérica para cada caso
+        ###############################################
+
+	############################################### (para a próxima semana)
+	colocar o sistema experimental a funcionar no melhor cenário com o melhor DSP
+	###############################################
+
+	##############################################
+	colocar a funcionar no cenário (clássico) que queremos QPSK com o nosso DSP
+	##############################################
+
+
+Next meeting: 17/4, 9h
+
+
+2018-03-22
+TO BE DONE
+	- rever a parte teórica
+		colocando as unidades em todas as grandezas
+		retirar qualquer referência à simulação
+
+	- rever a parte da simulação
+		calculcar a SNR teórica e numérica para cada caso
+
+
+	- avançar no módulo do SNR
+
+Next meeting: 28/3, 9h
+
+2018-03-08
+TO BE DONE
+	- rever parte teórica
+		expressão sem matched filter vs com matched fielter (lado a lado e escrita de forma análoga)
+		esclarecer bem o papel do matched filter
+
+	- simulação 
+		documentar melhor (escrever de forma que se perceba melhor)
+
+
+	- experimental
+		incluir os resultados obtidos no laboratório
+
+
+	- bloco para calcular a SNR (documentação)
+			- para alémd e obter um valor, quero obter um intervalo de confiança
+
+Next meeting: 22/3, 9h
+
+2018-03-01
+TO BE DONE
+	- rever a parte teórica: 
+		esclarecer a questão da potência Ps na expressão para a P_erro s/ matched filter
+		esclarecer o que é que é o A na expressão com matched filter
+		obter a expressão para a probabilidade de erro c/ matched filter usando os mesmos parâmetros que uso na expressão s/ matched filter
+		adicionar conclusões
+
+	- rever a parte da simulação
+		verificar se todos os blocos usados estão corretamente definidis na Library (doc)
+		especificar as condições em que foram obtidos todos os resultados
+		começar por tratar apenas a ISI 
+			1) raised-cosine no TX
+			2) raised-cosine no TX & RX
+			3) root-raised consine no TX & RX (ISI=0, e usas um matched filter) 
+			4) analisar para diferentes roll-offs
+		tratar a situação com ISI e ruído
+			1) só com o raised-cosine no TX (sem mathced filter)
+			2) com o root-raised cosine no TX e RX (com matched filter)
+		adicionar conclusões
+
+	- Parte experimental
+		colocar o diagrama correto da parte experimental
+		trabalhar no guião
+		usar na experiência sinais iguais aos usadas na simulação (rever a parte do AWG)
+
+
+	Objetivo a médio prazo: colocar o sistema clássico a funcionar -> sistema quântico
+
+Next meeting: 8/3, 9h
+
+
+2018-02-22
+TO BE DONE
+
+	- rever a parte teórica & simulação: 
+			Noise: o desempenho com o mathced filter é melhor do que sem filtro
+			ISI: raised-cosine (tx-rx) => ISI -> root-raised-cosine (tx-rx) => ISI = 0
+			Noise + ISI
+
+	- iniciar a parte de desenvolvimento dos blocos sobre o SNR
+
+	- parte experimental
+		- colocar o guião com o trabalho de RO no diretoria doc/tex/sdf/m_qam_system
+
+Next meeting: 1/3, 9h
+
+
+2018-02-16
+TO BE DONE
+	- escrever melhor a parte teórica (mais detalhe, nomeadamente o cáculo da nédia e variância com matched-filter), parte de simulação (mais resultados para as duas situações, sem e com matched filter)
+
+	- parte experimental
+		preparar o guião, trazer alguns resultados
+
+Next meeting: 22/2, 11h
+	
+
+
+2018-02-07
+TO BE DONE
+	- concluir a parte teórica e simulação 
+		- melhorar e completar o texto
+		- incluir mais resultados (diagramas de olho nos vários pontos do circuito) na parte da simulação
+			- caso sem ruído, e com ruído
+		
+	- avançar com a parte experimental (guião e obter resultados experimentais)
+
+Next meeting: 16/2, 14h
+
+
+
+2018-01-23
+TO BE DONE
+	- rever o docuemnto (aspeto de edição)
+
+	- na parte teórica incluir o efeito do filtro no recetor
+
+	- simulação: impementação de um filtro eletrico (?)
+
+	- avançar com a parte experimental (guião)
+
+	- corrigir o bloco do ruído (parametro seed)
+
+Next meeting: 7/2, 9h30m
+
+
+2018-01-23
+TO BE DONE
+	- conluir a parte teórica e simulação (adptando ao recetor da Thorlabs)
+	- abrir um secção com a parte experimental, esquema com o diagrama, ientificação do mateiral a usar
+
+Next meeting: 2018/01/30, 17h
+	
+
+2018-01-17
+TO BE DONE
+
+	- conlcuir a teoria 
+
+	- avançar para a simulação
+		todos os ficheiros usados devem ter um time_tag no final (*.cpp e *.h)
+		todos os blocos e sub-blocos devem ter uma entrada no help do Manual
+		tabela com uma anáise a estas duas situações
+
+Bibliografia
+	Mischa Schwartz, Information Transmission, Modulation and Noise
+	Carlson, Communication Systems
+
+Próxima Reunião: 
+	23/01, 17h
+	
+
+2018-01-09
+TO BE DONE
+
+Analisar o sistema M-QAM, para M=4, QPSK
+
+	- analise teórica (próxima semana)
+
+	- análise de simulação (começasses)
+
+	- análise experimentla (futuro)
+

@@ -1,0 +1,52 @@
+\clearpage
+
+\section{Clock}
+
+This block doesn't accept any input signal. It outputs one signal that corresponds to a sequence of Dirac's delta functions with a user defined \textit{period}.
+
+\subsection*{Input Parameters}
+
+\begin{itemize}
+	\item period\{ 0.0 \};
+	\item samplingPeriod\{ 0.0 \};
+\end{itemize}
+
+\subsection*{Methods}
+ 
+Clock() {}
+\bigbreak
+Clock(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig) {}
+\bigbreak
+void initialize(void)
+\bigbreak
+bool runBlock(void)
+\bigbreak
+void setClockPeriod(double per)
+\bigbreak
+void setSamplingPeriod(double sPeriod)
+
+\subsection*{Functional description}
+
+
+\pagebreak
+
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 0
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:} Sequence of Dirac's delta functions. (TimeContinuousAmplitudeContinuousReal)
+
+\subsection*{Examples} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{../homodyne_receiver/figures/Clock_output}
+	\caption{Example of the output signal of the clock}\label{Clock_output}
+\end{figure}
+
+\subsection*{Sugestions for future improvement}
+

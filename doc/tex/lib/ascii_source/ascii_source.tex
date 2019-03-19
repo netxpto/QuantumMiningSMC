@@ -1,0 +1,86 @@
+\clearpage
+
+\section{Ascii Source}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& ascii\_source\_*.h \\
+		\textbf{Source File}   &:& ascii\_source\_*.cpp \\
+        \textbf{Version}       &:& 20180828 (Andr\'e Mourato)
+	\end{tabular}
+\end{tcolorbox}
+
+\maketitle
+This block generates an ascii signal and can work in different modes:
+
+\begin{multicols}{3}
+\begin{enumerate}
+	\item Terminate
+	\item Cyclic
+	\item AppendZeros
+\end{enumerate}
+\end{multicols}
+
+This blocks doesn't accept any input signal. It produces any number of output signals.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|p{60mm}|c|ccp{60mm}}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		mode & AsciiSourceMode & Terminate, AppendZeros, Cyclic & Terminate \\ \cline{1-4}
+        asciiString & string & any & ``" \\ \cline{1-4}
+        asciiFilePath & string & any & ``text\_file.txt" \\ \cline{1-4}
+        numberOfCharacters & int & $ \in [0,\infty[$ & 1000 \\ \cline{1-4}
+
+	\end{tabular}
+	\caption{Binary source input parameters}
+	\label{table:bin_sour_in_par}
+\end{table}
+
+\subsection*{Methods}
+
+AsciiSource(vector$\langle$Signal *$\rangle$ \&InputSig, vector$\langle$Signal *$\rangle$ \&OutputSig) :Block(InputSig, OutputSig)\{\};
+\bigbreak	
+void initialize(void);
+\bigbreak	
+bool runBlock(void);
+\bigbreak
+void setMode(AsciiSourceMode m);
+\bigbreak
+AsciiSourceMode const getMode(void);
+\bigbreak
+void setAsciiString(string s);
+\bigbreak
+string getAsciiFilePath();
+\bigbreak
+void setNumberOfCharacters(int n);
+\bigbreak
+int getNumberOfCharacters();
+\bigbreak
+
+\subsection*{Functional description}
+
+The \textit{mode} parameter allows the user to select one of the operation modes of the ascii source.
+
+\subparagraph*{Terminate}
+The resulting ascii signal will be the $asciiString$ sequence of characters.
+
+\subparagraph*{AppendZeros}
+The resulting ascii signal will be a sequence of characters starting with $asciiString$ with zeros (null character) concatenated to the right until $numberOfCharacters$ characters have been generated.
+
+\subparagraph*{Cyclic}
+The resulting ascii signal will be a sequence of characters in which $asciiString$ is concatenated to the right of the string until $numberOfCharacters$ characters have been generated.
+
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 0
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1 or more
+
+\subparagraph*{Type:} Ascii
+

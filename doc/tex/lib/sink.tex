@@ -1,0 +1,35 @@
+\documentclass[../../sdf/tex/BPSK_system.tex]{subfiles}
+\graphicspath{{../../images/}}
+%opening
+\onlyinsubfile{\title{Sink}}
+\date{}
+
+\begin{document}
+
+\onlyinsubfile{\maketitle}
+
+\subsection*{Input Parameters}
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item displayNumberOfSamples
+		\item numberOfSamples
+	\end{itemize}
+\end{multicols}
+
+\subsection*{Functional Description}
+
+This block empties the input signal's buffer. If the parameter 'displayNumberOfSamples' is active, the number of emptied samples is displayed in the program output. The parameter 'numberOfSamples' tells the block the number of total number of samples to be emptied. Usually, this number is equal to number of samples produced in the simulation.\\
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1
+
+%\textbf{Type}: Complex or Complex\_XY optical signal (ContinuousTimeContinuousAmplitude)
+\textbf{Type}:  Binary, Integer, Real, Complex, Complex\_XY, Photon and Photon_MP
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 0
+
+\end{document}

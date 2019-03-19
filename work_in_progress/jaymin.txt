@@ -1,0 +1,225 @@
+Short term goal: simulate in VHDL IDE environment => simulation in Netxpto => implementation in the FPGA => validation in the lab
+Medium term goal: implement the QBER estimation module in the FPGA
+
+2018-12-19
+
+	- put in the open issues the state of project, mention that you need 4 generic I/O interfaces
+
+
+2018-12-13
+
+	- try to improve the specifications
+
+	- obtan the license to generate the bicode to the FPGA
+
+	- think about a way to read the parameters from the configuration file
+
+Next meeting: 19/12, 11h30m
+
+
+
+2018-12-06
+
+	- finish the specification / documentation / include and explain the simulation results
+
+	- upload it to the FPGA (start the tests in the FPGA) / Celestino
+
+	- think about a way to read the parameters from the configuration file
+
+	- prepare the slides for the 12/12, Wedndesday, 2.30 pm, 5 slides
+		1-> title
+		2-> purpose
+		3/4-> architecture
+		5-> the state of the work
+
+	(come to my office, Monday morning or Tuesday afternoon to show the slides)
+
+next meeting: 13/12, 9.00 am
+
+2018-11-26
+
+
+	work on the documentation (make clear which are the customizable parameters)
+
+	test and integrate all blocks
+
+	do the simulation VHDL IDE (to make sure the all blocks are working properly)
+
+
+next meeting: 5/12, 9.00 am
+
+2018-11-16
+TO BE DONE
+
+	document properly
+
+	do the specificatio of these blocks
+		- trigger_phase_syncronization 
+		- circular_buffer
+		- frame_synchronizer (include a state machine diagram)
+
+	code all the blocks, and test them individually
+
+	do the simulation VHDL IDE (to make sure the all blocks are working properly)
+
+	after we are going to do the simulation in the netxpto platform
+	after we are going to put this in the FPGA board
+	after we are going to insert this in the experimental setup
+
+next meeting: 23/11, 5.30 pm
+
+
+2018-11-09
+TO BE DONE
+
+	specify this blocks
+		- trigger_phase_syncronization 
+		- circular_buffer
+		- frame_synchronizer
+
+	code all the blocks, and test them individually
+
+	document properly
+
+	do the simulation VHDL IDE (to make sure the all blocks are working properly)
+
+	after we are going to do the simulation in the netxpto platform
+	after we are going to put this in the FPGA board
+	after we are going to insert this in the experimental setup
+
+next meeting: 16/11, 9 am
+
+2018-10-25
+TO BE DONE
+
+	specify this blocks
+		- trigger_phase_syncronization 
+		- circular_buffer
+		- frame_synchronizer
+
+	code all the blocks, and test them individually
+
+	document properly
+
+	do the simulation VHDL IDE (to make sure the all blocks are working properly)
+
+	after we are going to do the simulation in the netxpto platform
+	after we are going to put this in the FPGA board
+	after we are going to insert this in the experimental setup
+
+next meeting: 9/11, 9 am
+
+2018-10-25
+TO BE DONE
+
+	improve the documentation (improve the specification, more rigour and more detail)
+	- add a subsection for the QBER estimator, clock, output
+
+	advance with the VHDL implementation and simulation acording with documentation
+	- add the VHDL code in the documentation
+
+	put in the documentation some results/figures of the simulation in the VHDL IDE
+
+next meeting: 2/11, 9 am
+
+2018-10-08
+TO BE DONE
+
+	improve the documentation (improve the specification, more rigour and more detail)
+
+	advance with the VHDL implementation and simulation acording with documentation
+
+	put in the documentation some results/figures of the simulation in the VHDL IDE
+
+next meeting: 25/10, 2 pm
+
+
+2018-10-08
+TO BE DONE
+
+	improve the documentation
+
+	advance with the VHDL implementation and simulation acording with documentation
+
+	put in the documentation some results/figures of the simulation in the VHDL IDE
+
+next meeting: 15/10, 11h
+
+2018-10-01
+TO BE DONE
+
+	improve the documentation
+
+	advance with the VHDL implementation and simulation acording with documentation
+
+	put in the documentation some results/figures of the simulation in the VHDL IDE
+
+next meeting: 8/10, 11h
+
+
+2018-09-20
+TO BE DONE
+
+	- improve the documentation
+
+	- define a frame structure
+
+	- define the configuration file
+
+	- detail the blocks (Main and QBER)
+
+	- detail the experimental setup
+
+Next meeting: 28/9, 14h
+
+2018-09-13
+TO BE DONE
+
+	- improve the documentation
+
+	- define a frame structure
+
+	- define the main block (if it is below threshold do nothing and  if it is above turn a red led)
+
+Next meeting: 20/9, 10h
+
+
+2018-07-30
+TO BE DONE
+
+	 - document and specify better the system to be implemented
+
+	- write the VHDL code and put the code in the document
+
+	- simulate the system (next week we are going to discuss)
+
+next meeting: 13/9, 15h
+
+2018-07-30
+TO BE DONE
+
+	 - document and specify better the system to be implemented
+	
+	 - advance with the VHDL implementation (talk with Celestino and Mariana)
+	
+
+Next meeting: 6/9, 9h
+
+
+2018-07-20
+TO BE DONE
+
+	- do the documentation properly (ask Mariana and Celestino)
+
+	- implement the VHDL code, test it in the simulator testbench (ask Celestino)
+
+Next meeting: in the week of 20/8
+
+
+2018-07-17
+TO BE DONE
+
+	- implement in the FPGA the Bob processor (QBER estimator)
+
+
+Next meeting: 16/7, 15h30m

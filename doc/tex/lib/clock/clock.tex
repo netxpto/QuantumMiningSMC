@@ -1,0 +1,71 @@
+\clearpage
+
+\section{Clock}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& clock.h \\
+		\textbf{Source File}   &:& clock.cpp \\
+	\end{tabular}
+\end{tcolorbox}
+
+This block doesn't accept any input signal. It outputs one signal that corresponds to a sequence of Dirac's delta functions with a user defined \textit{period}.
+
+\subsection*{Input Parameters}
+
+%\begin{itemize}
+%	\item period\{ 0.0 \};
+%	\item samplingPeriod\{ 0.0 \};
+%\end{itemize}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|cccc}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		period & double & any & $0.0$ \\ \cline{1-4}
+		samplingPeriod & double & any & $0.0$ \\ \cline{1-4}
+	\end{tabular}
+	\caption{Binary source input parameters}
+	\label{table:clock_in_par}
+\end{table}
+
+\subsection*{Methods}
+
+Clock() {}
+\bigbreak
+Clock(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig) {}
+\bigbreak
+void initialize(void)
+\bigbreak
+bool runBlock(void)
+\bigbreak
+void setClockPeriod(double per)
+\bigbreak
+void setSamplingPeriod(double sPeriod)
+
+\subsection*{Functional description}
+
+
+\pagebreak
+
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 0
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:} Sequence of Dirac's delta functions. (TimeContinuousAmplitudeContinuousReal)
+
+\subsection*{Examples}
+
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=\textwidth]{./lib/clock/figures/Clock_output}
+%	\caption{Example of the output signal of the clock}\label{Clock_output}
+%\end{figure}
+
+\subsection*{Sugestions for future improvement}
+

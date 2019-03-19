@@ -1,0 +1,591 @@
+2018/2019 goals:
+	1) detalhar (teoricamente + simulação) o algoritmo para compensação da flutuação aleatória da polarização => artigo JLT
+	2) implementar e validar os resultados teórico e de simulação no laboratorio => artigo para uma boa conferência
+	3) implementar o QOKD usando codificação na polarização + o algoritomo para compensação da polarização => artigo JLT
+	4) Elaborar e defender o projeto de tese (até março de 2019)
+
+_______Artigo JLT___________________
+I - Introdução (1 página)
+II - Algorithm Description ( 2 página + 3 figuras)
+III - Impact of BER Estimation Quality ( 1 página + 1 figura )
+IV - Compensated Small Random Drifts (Karlson - Polarization Drif Model) (1 página + 1 figura)
+V - Case Study (Polarization drif model + Strong Perturbation) (artigo dos Liu 2019)(1 página + 1 figura)
+VI - Conclusions (1/2 pagina) + Referencias (1/2 página)
+
+TO BE DONE
+2019-01-10
+
+	melhorar a secção II
+	
+	
+Next meeting: 15/1, 10h
+
+
+
+TO BE DONE
+2019-01-08
+
+	Concluir a descrição do algoritmo, secção II, com 3 figuras (1-setup, 2-duas esferas com as rotações, 3-gráfico com diferentes pontos de partida para o BER (10, 15, 20, 25, 30 , 35, 40, 45)), 2 páginas
+	
+	
+Next meeting: 10/1, 15h30m
+
+TO BE DONE
+2019-01-02
+
+	- melhorar o gráfico com os resultados para um QBER inicial grande (2 gráficos um partindo de 25% outro partindo de um valor de QBER aleatório > 5%)
+	- expressão que nos de o número médio de bits necessário para levar abaixo do QBER limiar em função do número de erros usados para estimar o QBER
+
+Next meeting: 7/1, 11h
+
+TO BE DONE
+2018-12-03
+
+	- implementar o bloco de QBER
+		- dois sinais de entrada (um de dados (real)(0 e 1), e um de reset (real)(0 e 1))(o de reset faz com que o QBER seja escrito no ficheiro e limpa o QBER)
+		- parametros de entrada: window{-1}, grau de confiança, nome do ficheiro
+
+	- implementar o Random_SOP_Compensation
+		- um sinal de entrada (qber (real) ), três de saida (theta (real), phi(real), reset (real))
+		. parametros de entrada: skip, qberMax, qberMin, dTheta, dPhi
+
+	- preparar apresentação reunião QuantumMining, sobre o método de compensação do QBER (15 minutos, 12 slides)
+
+Next meeting: 10/12, 9h
+
+Next meeting: 7/1, 11h
+
+TO BE DONE
+2018-11-16
+
+
+	começar a simulação:
+		- obter o número médio e a variancia do número de qubits para levar o QBER para um valor inferior a QBER_MAX = 5%, partindo de 25%
+
+
+Next meeting: 16/11/2018, 10h
+
+
+TO BE DONE
+2018-11-09
+
+	finish section II.
+
+	começar a simulação:
+		- obter o número médio e a variancia do número de qubits para levar o QBER para um valor inferior a QBER_MAX = 5%, partindo de 25%
+
+
+Next meeting: 16/11/2018, 10h
+
+TO BE DONE
+2018-10-29
+
+
+	setup experimental do QOKD, o mais possivel no laboratório, e o mais claro possivel nos monitores
+
+	melhorar/concluir a section II
+
+	random polarization drift in discrete time
+	pensar como é que é possivel determinar a rotação inicial ótima, o delta_QBER_1, e o delta_QBER2 para uma dada taxa de sucesso.
+
+	escrever no doc a parte da implementação do interferometro (caracterização do modulador de fase)
+
+Next meeting: 5/11/2018, 8h30
+
+TO BE DONE
+2018-10-25
+
+
+	melhorar/concluir a section II
+
+	random polarization drift in discrete time
+	começar a descrever a simulação		
+
+	escrever no doc a parte da implementação do interferometro (caracterização do modulador de fase)
+
+Next meeting: 29/10/2018, 11h
+
+
+TO BE DONE
+2018-10-22
+
+	acabar o poster
+
+	melhorar/concluir a section II
+
+	pensar num plano para as simulações		
+
+	escrever no doc a parte da implementação do interferometro (caracterização do modulador de fase)
+
+Next meeting: 25/10/2018, 16h
+
+
+
+
+TO BE DONE
+2018-10-11
+
+	finalizar introdução e concluir a section I
+
+	escrever no doc a parte da implementação do interferometro (caracterização do modulador de fase)
+
+Next meeting: 15/10/2018, 18h
+
+
+TO BE DONE
+2018-10-08
+
+	finalizar introdução e concluir a section I
+
+	escrever no doc a parte da implementação do interferometro (caracterização do modulador de fase)
+
+Next meeting: 11/10/2018, 9h
+
+TO BE DONE
+2018-10-02
+
+	finalizar introdução + avançar na section I
+
+	escrever no doc a parte da implementação do interferometro (caracterização do modulador de fase)
+
+Next meeting: 2/10/2018, 14h
+
+TO BE DONE
+2018-09-28
+
+	continuar o artigo (concluir introdução) + avançar na section I
+
+	escrever no doc a parte da implementação do interferometro (caracterização do modulador de fase)
+
+Next meeting: 2/10/2018, 14h
+
+
+TO BE DONE
+2018-09-21
+
+	continuar o artigo (concluir introdução) + avançar na section I
+
+	escrever no doc a parte da implementação do interferometro (caracterização do modulador de fase)
+
+Next meeting: 25/9/2018, 11h
+
+
+2018-09-17
+
+	continuar o artigo (introdução) + section I
+
+	escrever no doc a parte da implementação do interferometro (caracterização do modulador de fase)
+
+Next meeting: 21/9/2018, 11h
+			 
+
+2018-09-11
+
+	continuar o artigo (introdução) + section I
+
+	escrever no doc a parte da implementação do interferometro (caracterização do modulador de fase)
+
+Next meeting: 17/9/2018, 10h
+	
+
+2018-08-28
+
+	continuar o artigo (introdução)
+
+	no laboratório (interferometro na polarização)
+
+Next meeting: 4/9/2018, 15h30m
+
+2018-08-20
+
+	Escrever o artigo 1)
+
+		Introdução
+			Parágrafo (pequeno, 5/6 frases): motivação e a identificação do problema
+			Parágrafo (grande, 20/30 frases): state of the art
+			Parágrafo (pequenino, 2/3 frases): novidade
+			paragráfo (pequeno, 3/4 frases): organização do artigo
+
+		Thoretical Description
+			Discrete time uncorrelated random rotations
+			Discrete time correlated random rotations
+			Continuous time correlated random rotations
+
+		Results
+			Sistema realista (para diferentes Dp, e diferentes BR)
+
+		Conclusions
+
+	Laboratório
+
+		Interferometro clássico (descrever teoricamento no documento)
+					
+Next meeting: 28/9, 15h		
+
+2018-07-19
+TO BE DONE
+
+	- parte teórica
+		1º passo - todo o tempo do mundo para estimar o QBER (rotações descorrelacioandas, em tempo discreto)
+		2º passo - rotações correlacionadas, em tempo discrete
+		3º passo - rotações correlacioandas, em tempo continuo
+
+		figuras de mérito
+			QBER médio
+			outage (percentagem do tempo acima do QBER_{MAX}
+			overhead (percentagem de bits de controlo)
+
+		parametetros de ajuste
+			QBER_{MIN}
+			L (comprimento da trama) (C+D)
+			ângulo de rotação
+
+	- parte experimental
+		clássica
+			interferometro 
+			saída impulso clássico {-45, 0, 45, 90}
+
+		forma dos impulsos
+			coseno elevado
+		
+		1º passo
+			impulsos largos (100 ns)
+
+		2º passo
+			impulsos estreitos (~1ns)
+		
+
+
+2018-07-17
+TO BE DONE
+
+	- melhorar o bloco SOP_modulator permitindo mais dois sianis de entrada um para o theta outro para o phi
+
+	- estudar a função QBER(\theta, \phi), calcule analiticamente curvas de BER constante
+
+	- obter um gráfico com o loco a variar na esfera (1x6)
+	- obter um gráfico com as curvas de BER
+
+	- descrever o algoritmo
+
+Next meeting: 16/7, 15h
+
+
+2018-06-20
+TO BE DONE
+
+	- acabar o poster Ciencia 2018
+
+Next meeting: 27/6, 16h
+
+
+2018-06-12
+TO BE DONE
+
+	- reescrever o bloco sop_modulator no library (alfa a bold, e verificar a questão da pinta)
+
+	- melhorar o Polarization Analyzis
+
+	- incluir na expressão do delta_p os parâmetros físicos da fibra length, e a PMD (vai colocar na sub-secção relativa à medição do delta_p)
+
+	- acabar o processo de estimação da auto-correlação numérico (histograma, valor, desvio padrão e os intervalos de confiança)
+
+	- colocar no mesmo gráfico a auto-correlação numérica com a auto-correlação teórica
+
+	- medir o delta_p no laboratório para uma fibra com 40 km
+
+	- calcular o QBER, para diferentes theta e phi, ou QBER(J)
+
+	- calcular vários valor do QBER para o delta_p em função do tempo
+
+	- escrever o esqueleto
+
+
+Next meeting: 20/6, 14h
+
+
+
+2018-06-05
+TO BE DONE
+
+	- reescrever o bloco sop_modulator no library
+
+	- incluir no mtools as ferramentas "Polarization Analyzis"
+
+	- incluir na expressão do delta_p os parâmetros físicos da fibra length, e a PMD (Nelson)
+
+	- QOKD vai incluir os gráficos do BER(theta), BER(S1, S2, 0), estender para a polarização elitica B(S1,S2,S3) (expressão teórica e uma curva numérica)
+
+	- incluir o modelo do SOP (ficheiro em minusculas sop_modulator_timetag.cpp) no sistemas QOKD e ver como o BER evolui com o tempo
+
+
+Next meeting: 12/6, 16h
+
+2018-05-29
+TO BE DONE
+
+	acabar BB84 (minor things) (fizesse o push e me disse)
+
+	acabar SMC
+
+	Ver a parte da polarização, relacionar o parâmetro p com o decaimento e com a PMD.
+
+
+Next meeting: 5/6, 16h15
+
+2017-05-22
+TO BE DONE
+
+	ver a documentação BB84 (minor things)
+
+	melhor SMC
+
+	Ver a parte da polarização, relacionar o parâmetro p com o decaimento e com a PMD.
+
+
+Next meeting: 29/5, 11h
+
+
+2017-05-15
+TO BE DONE
+
+	ver a documentação BB84 (minor things)
+	
+	ver a documentação BER (minor things)
+
+	melhor SMC
+
+	implementar a rotação aleatória da polarização (é necessário fazer algumas medições para ver a correlação temporal e na frequência, PMD)
+	
+
+Next meeting: 22/5, 10h
+
+2017-05-08
+TO BE DONE
+
+	continuar a parte do Secure Multiparty computation
+
+	finalziar o BB84
+
+	- melhorar o modulo BER estimator (rever)
+		1) escreva no ficheiro o número de erros usados para estimar o BER antes do number of received bits, "Number of errors = " 
+		2) nos mid-reports duas possibilidades (cumulativo ou reset)
+		3) acrescentar novo time tag
+		4) rever a documentação com cuidado (antiga e nova)
+
+	- implementação do algoritmo de controlo de polarização do Alvaro no QOKD
+
+
+Next meeting: Mariana, 15/5, 9h
+
+2017-05-04
+TO BE DONE
+
+	continuar a parte do Secure Multiparty computation
+
+	finalziar o BB84
+
+	- melhorar o modulo BER estimator (rever)
+		1) escreva no ficheiro o número de erros usados para estimar o BER antes do number of received bits, "Number of errors = " 
+		2) nos mid-reports duas possibilidades (cumulativo ou reset)
+		3) acrescentar novo time tag
+		4) rever a documentação com cuidado (antiga e nova)
+
+2018-04-17
+TO BE DONE
+
+	- melhorar o modulo BER estimator
+		1) escreva no ficheiro o número de erros usados para estimar o BER antes do number of received bits, "Number of errors = " 
+		2) nos mid-reports duas possibilidades (cumulativo ou reset)
+		3) acrescentar novo time tag
+		4) rever a documentação com cuidado (antiga e nova)
+
+
+	- verificar a documentação do BB84 (para fechar este assunto)
+		- time tags
+		- passar a figura 6.16 para a secção open issues (adicionar a EVE)
+		- refazer a figura 6.16 considerando a simulação efetivamente implementada
+
+
+	- abir um capítulo sobre Secure Multiparty Computation
+
+Next meeting: Mariana, 2/5, 16h30m
+
+2017-04-17
+TO BE DONE
+
+	- fechar o BB84 (gráficos, maior resolução na curva teórica para valores de theta a baixo de 1º, exigir pelo menos 10 erros para estimar o QBER)
+
+	- fazer uma nova versão do módulo do BER que escreva no ficheiro o número de erros usados para estimar o BER antes do number of received bits, "Number of errors = " 
+
+	- 
+
+Next meeting: 17/4, 16h
+
+
+2017-04-10
+TO BE DONE
+
+	- fechar o QRNG
+
+	- fechar o BB84
+
+	- mudar para o QOKD
+
+Next meeting: 17/4, 10h
+	
+2017-04-05
+TO BE DONE
+	- finalizar o quantum random number generator (compilar e correr, colocar bibliografia, reler uma ultima vez)
+
+	- finalizar o BB84 discrete (definir os input system parameters, simulation parameters, ver a questão do gráfico do BER, se necessário repetir as simulações com alpha 0.001)
+
+	- começar a trabalhar no drift da polarização (QOKD)
+
+Next meeting: 10/4, 10h
+
+2017-03-27
+TO BE DONE
+
+	- documentar com cuidado o BB84 (deve ir até ao ponto em que estimo o QBER com uma rotação deterministica, com a atenuação)
+
+	- depois vamos mudar para QOK
+		- estudar o impacto da polarization drift
+		- implementar o modelo para compensação do SOP drift
+		- melhorar o algoritmo usando técnicas de machine learning
+		- fazer uma análise comparative do overhead e BER com e sem machine learning
+
+	- Full article JLT
+
+		- implementação FPGA e a correr no laboratório em real-time
+
+	- Artigo para o OFC / Crypto / ECOC / Globecom
+
+	- arranjar bancada, nome, experiência, alertar para ninguem mexer sem falar consigo
+
+Next meeting: 5/11, 11h
+
+2017-03-20
+TO BE DONE
+	- melhorar o polarization rotator (Jones ou Stokes)
+	- entradas determinisiticos
+	- documentar detalhadamente
+	- testar o seu sistema, gráfico do QBER vs Theta, dados simulados vs resultados teóricos
+	- documentar tudo detalhadamente
+	- ler o artigo da nature com cuidado para implementar o modelo estocástico (discutir comigo e com o Nelson)
+
+
+	Artigo (Polarization Rotation in Quantum Communication Systems)
+
+	- deterministique (theory and simulation)
+	- stochastique	(theory and simulation)
+	- compensação da rotação (minimizar o overhead)
+	- cascade
+
+	Full Article JLT
+
+	- implementação FPGA e a correr no laboratório em real-time
+
+	Artigo para o OFC / Crypto / ECOC / Globecom
+	
+
+Next meeting: 27/3, 11h
+
+2017-02-21
+TO BE DONE
+	colocar o sistema a funcionar até à basis reconciliation
+
+Next meeting: 27/2, 15h
+
+2017-02-06
+TO BE DONE
+	
+	QRNG - ANP rever parte teórica e simulação (a parte experimental fica em suspense até cheagr o detector da IDQuantique a funcionar)
+
+	avançar também com a parte do BB84
+
+Next meeting: 6/2, 8h30m
+
+
+2017-01-31
+TO BE DONE
+	
+	parte teórica - descrever melhor a teoria (formulação analitica)
+
+	parte numérica - explicar bem os intervalos de confiança no bloco, explicar bem o multipath
+
+	continuar com a parte experimental
+
+	avançar também com a parte do BB84
+
+Next meeting: 6/2, 8h30m
+
+2017-01-23
+TO BE DONE
+        correções no documento e na simualção
+	analise a possibilidade de escrevermos uma letter sobre a simulação deste tipo de sistemas usando o multipath signals
+
+Next meeting: 30/1/2018, 9h30m
+
+2017-12-22
+TO BE DONE
+	acrescentar secção Open Issues
+
+	melhorar a função plotPhotonStream_20171211.m função
+
+2017-12-15
+TO BE DONE
+	finalizar o help para o clock, acrescentando o header
+	
+	corrigir o bug do número de componentes de x e y ser diferente
+
+
+2017-12-15
+TO BE DONE
+	alterar o nome do clock para clock_20171215.h e clock_20171215.cpp
+
+	colocar um help para o clock, acrescentando o autor
+
+	single_photon_sourceXY_20171215.h e *.cpp
+
+
+2017-12-13
+TO BE DONE
+	trocar o nome para bb84_with_discrete_variables
+
+
+2017-12-06
+TO BE DONE
+	colocar no doc um número para cada bloco
+	implemantar os blocos da Alice
+
+
+2017-11-30
+TO BE DONE
+	fazer o esqueleto dos blocos de modo a compilar, tudo o que não seja mexer no netxpto
+	fazer o help dos novos blocos
+
+2017-11-21
+TO BE DONE
+	diagramas de blocos da Alice, Bob, Eve (finalizar9
+
+	trabalhar no ficheiro  bb84_sdf.cpp, implementação da Alice
+
+Next meeting: 
+
+2017-11-14
+TO BE DONE
+Mariana
+	escrever os objetivos do trabalho (finalizar)
+	diagramas do sistema global (finalizar)
+	diagramas da Alice, Eve, Bob (finalizar)
+
+	comecar a escrever o ficheiro bb84_sdf.cpp
+
+
+2017-11-07
+TO BE DONE
+Mariana
+	escrever os objetivos do trabalho 
+	diagramas do sistema global
+	diagramas da Alice, Eve, Bob

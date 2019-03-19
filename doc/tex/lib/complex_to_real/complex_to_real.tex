@@ -1,0 +1,48 @@
+\clearpage
+
+\section{Complex To Real}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& complex\_to\_real$\_*$.h \\
+		\textbf{Source File}   &:& complex\_to\_real$\_*$.cpp \\
+        \textbf{Version}       &:& 20180717 (Celestino Martins) \\
+	\end{tabular}
+\end{tcolorbox}
+
+This super block converts a complex input signal into two real signals.
+
+\subsection*{Input Parameters}
+
+
+
+\subsection*{Methods}
+
+\begin{itemize}
+  \item ComplexToReal() \{\};
+  \item ComplexToReal(vector<Signal *> \&InputSig, vector<Signal *> \&OutputSig) :Block(InputSig,OutputSig)\{\};
+  \item void initialize(void);
+  \item bool runBlock(void);
+\end{itemize}
+
+\subsection*{Functional description}
+
+This super block converts a complex input signal into two real signals.
+
+
+\pagebreak
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 1
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 2
+
+\subparagraph*{Type:} Electrical complex signal
+
+\subsection*{Examples}
+
+\subsection*{Sugestions for future improvement}
+
+

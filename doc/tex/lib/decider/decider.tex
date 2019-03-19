@@ -1,0 +1,38 @@
+\clearpage
+
+\section{Bit Decider}
+
+\begin{tcolorbox}	
+\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+\textbf{Header File}   &:& bit\_decider.h \\
+\textbf{Source File}   &:& bit\_decider.cpp \\
+\textbf{Version}       &:& 20170818
+\end{tabular}
+\end{tcolorbox}
+
+\subsection*{Input Parameters}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Name           & Type   & Default Value     \\ \hline
+decisionLevel  & double &  0.0              \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection*{Functional Description}
+
+This block accepts one real discrete signal and outputs a binary string, outputting a 1 if the input sample is greater than the decision level and 0 if it is less or equal to the decision level.
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Real signal (DiscreteTimeContinuousAmplitude)
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Binary (DiscreteTimeDiscreteAmplitude)

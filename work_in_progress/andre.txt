@@ -1,0 +1,215 @@
+2018-08-23
+TO BE DONE
+
+	ajudar o Celestino a simular o código dele em VHDL
+
+	criar uma AsciiSource (ler de um ficheiro carateres ascii, ler de uma string) (Terminate, AppendZeros, Cyclic)
+
+		AsciiSourceMode mode{Terminate}
+		string ascciString{"ABCabc"}
+		string asciiFilePath{ "text_file.txt" };
+
+	sinal de saída ASCII
+
+	Bloco AsciiToBinary / BinaryToAscii
+
+Next meeting: 30/8, 16h
+
+
+2018-07-10
+TO BE DONE
+
+	testar a binarySource, Random (gerador de números aleatórios)
+
+	sub-secção geradores de números do C++ (Simulator Structure/ Random Numbers Generators)
+
+	documentar bem
+
+Next meeting: to be defined (seggunda quinzena de agosto)
+
+
+2018-06-27
+TO BE DONE
+
+	atualizar o sistema QPSK_Transmitter código e documentação
+
+	testar a binarySource, Random (gerador de números aleatórios)
+
+	sub-secção geradores de números do C++ (Simulator Structure/ Random Numbers Generators)
+
+Next meeting: 10/7
+
+
+2018-06-15
+TO BE DONE
+
+	alterar o bloco binary_source
+		suportar os modos: AsciiFileAppendZeros e AsciiFileCyclic
+
+	alterar o bloco sink_<mais recente>
+		adicionar os seguintes parametros de entrada:
+		- asciiFileName
+		- numberOfBitsToSkipBeforeSave
+		- numberOfBytesToSaveInFile
+	
+	testar isto no sistema QPSK_Transmitter
+
+	fazer e atualizar a documentação da binary_source e da sink
+
+Next meeting: 21/6, 14h
+
+
+2018-05-22
+TO BE DONE
+
+	alterar o bloco binary_source
+		quando chega ao final do ficheiro faz appendZeros=1 ou 0 se for 0 não gera mais nada, fazer igual ao caso em que excedeu o número de bits.
+		
+
+	log file, acrescentar o valor dos parametros lidos
+
+	input parameters permitir espaços antes e depois do igual
+
+Next meeting: 12/6, 15h
+
+
+2018-05-22
+TO BE DONE
+
+	verificar isto se o diretório não existir, criar o diretório
+
+	alterar o bloco binary_source
+
+2018-05-16
+TO BE DONE
+
+
+	no construtor do sinal eu deveria passar só um parâmetro => usa por defeito o 'signals', deveria ter outro construtor com fName e com o fName
+
+	se o diretório não existir, criar o diretório
+
+	colocar a funcionar o bb84_with_discrete_variables
+
+	documentação melhor
+
+Next meeting: 16/05, 15h30m
+
+2018-05-08
+TO BE DONE
+
+	resolver as coisas que estão assinaldas no ficheiro pdf
+
+	poder chamar o ficheiro da janela de comandos bpsk_system <input_parameters.txt> <output_directory> 
+	setFolderName(string fName)
+
+	colocar a funcionar o bpsk_system e o quantum_random_number_generator
+
+next meeting: 15/5, 16h
+
+2018-04-24
+TO BE DONE
+	PARA FAZER PARA A SEMANA
+	- resolver os problemas dos parâmetros de entrada
+	- documentar bem a parte da solução do problema do milionário
+	- resolver isto usando garbling circuits (detalhado)
+
+	PARA FAZER PARA A MÉDIO PRAZO
+	- solução com criptografia assimétrica (não é generalizavel, não é segura contra um computador quântico)
+	- o passo seguinte é encontrar soluções que se possam generalizar e como?
+	- os passos seguintes é encontrar soluções que se possam generalizar e que sejam seguras contra um computador quântico
+	- implementar ou pelos menos quantificar segurança e complexidade
+
+next meeting: 4/5, 10h
+
+
+
+
+2018-04-04
+TO BE DONE
+	- documentar a parte relativa ao log file, usando o sistema BPSK para ilustrar
+	- documentar bem a parte da solução do problema do milionário
+	- solução com criptografia assimétrica (não é generalizavel, não é segura contra um computador quântico)
+	- o passo seguinte é encontrar soluções que se possam generalizar e como?
+	- os passos seguintes é encontrar soluções que se possam generalizar e que sejam seguras contra um computador quântico
+	- implementar ou pelos menos quantificar segurança e complexidade
+
+next meeting: 11/4, 16h
+
+
+2018-03-26
+TO BE DONE
+	escrever MPC considerando a Alice & o Bob em sitios diferentes, e ilustar com o exemplo das duas mensagens
+
+	log file do simulador (apresentar uma solução sem codificar)
+
+Next Meeting: 20/3, 16h
+
+
+2018-02-27
+TO BE DONE
+	- fazer as ultimas alterações no BPSK
+
+	- iniciar o estudo do multiparty computation
+		- apresentação em latex e em inglês
+		- pesquisa bibliográfica
+
+Next meeting:
+
+
+2018-02-07
+TO BE DONE
+	- para concluir o BPSK é necessário colocar o projeto a funcionar com os ficheiros com o time tag.
+
+	- incluir a diretoria ghdl dentro do diretório vhdl_simulation, alterar SignalProcessing.vhd -> signal_processing.vhd
+
+	- voltar a escrever o cabeçalho no ficheiro de saída
+
+
+
+2018-01-31
+TO BE DONE
+	concluir a documentação relativa bpsk_system
+
+	incluir na plataforma um simulador the VHDL (ghdl.free.fr), incluir a informação no manual
+
+	correr o teu programa esqueleto
+
+	bloco para a ADC (para pensar)
+
+next meeting: 7/2, 10h30m
+
+
+2018-01-24
+TO BE DONE
+	rever o sistema bpsk_system
+
+	integração com simulação em VHDL
+
+next meeting:
+	30/1/2018, 15h
+	
+
+
+2018-01-16
+TO BE DONE
+	- quando se usa o msbuild gerar o executável na pasta sdf/bpsk_system
+
+	- resolver o problema da pasta signals
+		a diretorio signals é um propriedade do sinal, string folderName{ "signals" };
+		se o diretorio existir tudo bem, o programa avança, se o diretorio não existir ele deve perguntar se quer criar o diretorio, se sim cria e avança, e senão aborta.
+
+
+	- fazer refletir as alterações na documentação, nomeadamente a versão extendida do msbuild
+
+	- rever o projecto bpsk_system (todos os ficheiros deveriam ter o time stamp, nomeDoFicheiro_20180912.cpp/h (corrigir isto), todos os blocos deveriam ter um entrada no manual (identificar os que têm mas precisa de ser melhora e os que não têm)
+
+
+		
+
+
+2018-01-09
+TO BE DONE
+- colocar a funcionar o msbuild
+	- verificar porque é que os sinais não estão a ser gerados
+
+- rever e melhorar a documentação do sistema bpsk_system

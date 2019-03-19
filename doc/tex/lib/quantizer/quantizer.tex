@@ -1,0 +1,78 @@
+\clearpage
+
+\section{Quantizer}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& quantizer$\_*$.h \\
+		\textbf{Source File}   &:& quantizer$\_*$.cpp \\
+        \textbf{Version}       &:& 20180423 (Celestino Martins) \\
+	\end{tabular}
+\end{tcolorbox}
+
+This block simulates a quantizer, where the signal is quantized into discrete levels. Given a quantization bit precision, $resolution$, the outputs signal will be comprise $2^{nBits}-1$ levels.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|cccc}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Unity} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-5}
+		resolution & bits  & double & any & $inf$ \\ \cline{1-5}	
+        maxValue   & volts & double & any & $1.5$ \\ \cline{1-5}	
+        minValue   & volts & double & any    & $-1.5$ \\ \cline{1-5}	
+	\end{tabular}
+	\caption{Quantizer input parameters}
+	\label{table:quantizer_in_par}
+\end{table}
+
+
+\subsection*{Methods}
+
+Quantizer() {};
+\bigbreak
+Quantizer(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig)\{\};
+\bigbreak
+void initialize(void);
+\bigbreak
+bool runBlock(void);
+\bigbreak
+void setSamplingPeriod(double sPeriod) { samplingPeriod = sPeriod; }
+\bigbreak
+void setSymbolPeriod(double sPeriod) { symbolPeriod = sPeriod; }
+\bigbreak
+void setResolution(double nbits) { resolution = nbits; }
+\bigbreak
+double getResolution() { return resolution; }
+\bigbreak
+void setMinValue(double maxvalue) { maxValue = maxvalue; }
+\bigbreak
+double getMinValue() { return maxValue; }
+\bigbreak
+void setMaxValue(double maxvalue) { maxValue = maxvalue; }
+\bigbreak
+double getMaxValue() { return maxValue; }
+
+\subsection*{Functional description}
+
+This block can performs the signal quantization according to the defined input parameter \textit{resolution}.
+
+Firstly, the parameter \textit{resolution} is checked and if it is equal to the infinity, the output signal correspond to the input signal. Otherwise, the quantization process is applied. The input signal is quantized into $2^{resolution-1}$ discrete levels using the standard \textit{round} function.
+
+\pagebreak
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 1
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:} Electrical complex signal
+
+\subsection*{Examples}
+
+\subsection*{Sugestions for future improvement}
+
+

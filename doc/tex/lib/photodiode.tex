@@ -1,0 +1,80 @@
+\documentclass[../../sdf/tex/BPSK_system.tex]{subfiles}
+\graphicspath{{../../images/}}
+%opening
+\onlyinsubfile{\title{Photodiode}}
+\date{}
+
+\begin{document}
+
+\onlyinsubfile{\maketitle}
+
+\subsection*{Input Parameters}
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item setResponsivity
+		\item useNoise
+	\end{itemize}
+\end{multicols}
+
+\subsection*{Functional Description}
+
+This block accepts two complex signals and outputs one real signal built from an evaluation of the power of the input signals and their subsequent subtraction. The responsivity is defined by the value of \textit{Responsivity}. This block also adds random gaussian distributed shot noise with an amplitude defined by the power of the inputs. The shot noise is activated by the boolean variable set by the \textit{useNoise} parameter.
+
+
+\subsection*{Low pass representation conversion}
+
+The transmission of signal uses a carrier frequency, which is modulated in amplitude and in phase. Given the high frequency of this carrier signal ($\approx 10^(14) Hz$), the simulation of it would be very hard, so, the Low Pass Representation is used instead. In practice, after modulation, the signal shows a negative and a positive band in the frequency space. To obtain the Low Pass Representation, we start by filtering the signal, outputting only the positive band. This step reduces the energy of the signal to one half of the original. After that, a frequency downshift is made, using the negative of the frequency of the carrier signal.\\
+Because a local oscillator will output the Low Pass Representation of a beam, the output power will be $\tilde{P}=\frac{1}{2}P$, in which $P$ is the power of the laser. This will also scale the amplitude of the output signal by $\frac{1}{\sqrt{2}}$.\\
+Therefore, given a input signal in the photodiode with amplitude $\tilde{\Psi}$, to recover $P$, we must use:
+\begin{equation}
+P = 2 |\tilde{\Psi}|^2
+\end{equation}
+
+
+\subsection*{Noise implementation}
+
+{\bf Quantum Noise}\\
+The photodiode's out current is modelled as the conversion of the input optical power, which follows the photon number statistics. Using $n$ as the number of input photons, and assuming their source as laser light, we know that this stochastic variable follows:
+%
+\begin{equation}
+n \sim \textrm{Poisson}(\braket{n})
+\end{equation}
+%
+In the simulation, the input of a photodiode corresponds to a mean complex amplitude $\bar{\Psi}$. This amplitude corresponds to the power $\bar{P} = |\bar{\Psi}|^2 = \braket{n}P_\lambda$ in which $P_\lambda$ is the power of a single photon. We want the resulting power after adding noise, $P = n P_\lambda$. To model $n$, we will use a gaussian aproximation of $\sqrt{n}$, for $n \gg 0$, which will give us a continuous distribution:
+%
+\begin{equation}
+\sqrt{n} \sim \textrm{Gaussian}(\sqrt{\braket{n}}, 1/2)
+\end{equation}
+%
+Therefore:
+%
+\begin{equation}
+n \approx \left( \sqrt{\braket{n}} + \frac{1}{2}G \right)^2 = \braket{n} + \sqrt{\braket{n}} G + \frac{1}{4} G^2
+\end{equation}
+%
+in which $G$ is a random variable with a gaussian distribution with mean $0$ and variance $1$.\\
+Therefore, the output power of each becomes:
+%
+\begin{equation}
+P = n P_\lambda = \bar{P} + \sqrt{P_\lambda \bar{P}} G + \frac{1}{4} P_\lambda G^2
+\end{equation}
+%
+\\
+\\
+{\bf Thermal Noise}\\
+In the experimental setting, it is assumed that this noise is created by the detection system. To simulate this noise, the photodiode will add it to the output current as a simple gaussian distribution with mean $0$ and variance according to experimental settings.\\
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 2
+
+\textbf{Type}: Complex signal (ContinuousTimeContinuousAmplitude)
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Real signal (ContinuousTimeContinuousAmplitude)
+
+\end{document}

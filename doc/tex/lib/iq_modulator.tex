@@ -1,0 +1,47 @@
+\documentclass[a4paper]{article}
+\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1.25in]{geometry}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{graphicx}
+\RequirePackage{ltxcmds}[2010/12/07]
+%opening
+\title{IQ Modulator}
+
+\begin{document}
+
+\maketitle
+
+This blocks takes the two input signals that correspond to the part of the signal in phase and in quadrature and produces a complex signal, that contains information about the amplitude and phase. 
+
+\subsection*{Input Parameters}
+
+\begin{itemize}
+	\item outputOpticalPower
+	\item outputOpticalWavelength
+	\item outputOpticalFrequency
+\end{itemize}
+
+\subsection*{Functional Description}
+
+The complex signal is multiplied by $\frac{1}{2}\sqrt{\textit{outputOpticalPower}}$ in order to reintroduce the information about the energy (or power) of the signal. This information was omitted ...
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 2
+
+\textbf{Type}: Sequence of impulses modulated by the filter (ContinuousTimeContiousAmplitude))
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Complex signal (ContinuousTimeContiousAmplitude)
+
+\subsection*{Example}
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{MQAM8}
+\end{figure}
+
+\subsection*{Sugestions for future improvement}
+
+\end{document}

@@ -1,0 +1,64 @@
+\clearpage
+
+\section{Sampler}
+
+\maketitle
+
+This block can work in two configurations: with an external clock or without it. In the latter it accepts two input signals one being the clock and the other the signal to be demodulated. In the other configuration there's only one input signal which is the signal. 
+
+The output signal is obtained by sampling the input signal with a predetermined samplig rate provided either internally or by the clock.
+
+\subsection*{Input Parameters}
+
+\begin{itemize}
+	\item samplesToSkip\{ 0 \}
+\end{itemize}
+
+\subsection*{Methods}
+ 
+Sampler() {}
+\bigbreak
+Sampler(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig) {}
+\bigbreak
+void initialize(void)
+\bigbreak
+bool runBlock(void)
+\bigbreak
+void setSamplesToSkip(\texttt{t\_integer} sToSkip)
+
+\subsection*{Functional description}
+
+This block can work with an external clock or without it. 
+
+In the case of having an external clock it accepts two input signals. The signal to be demodulate which is complex and a clock signal that is a sequence of Dirac delta functions with a predetermined period that corresponds to the sampling period. The signal and the clock signal are scanned and when the clock has the value of 1.0 the correspondent complex value of the signal is placed in the buffer corresponding to the output signal.
+
+There's a detail worth noting. The electrical filter has an impulse response time length of 16 (in units of symbol period). This means that when modulating a bit the spike in the signal corresponding to that bit will appear 8 units of symbol period later. For this reason there's the need to skip the earlier samples of the signal when demodulating it. That's the purpose of the \textit{samplesToSkip} parameter.
+
+Between the binary source and the current block the signal is filtered twice which means that this effect has to be taken into account twice. Therefore the parameter \textit{samplesToSkip} is given by $2*8*samplesPerSymbol$. 
+
+
+
+
+\pagebreak
+
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:} Electrical real (TimeContinuousAmplitudeContinuousReal)
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:} Electrical real (TimeDiscreteAmplitudeContinuousReal)
+
+\subsection*{Examples} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{../homodyne_receiver/figures/Sampler_output}
+	\caption{Example of the output signal of the sampler}\label{Sampler_output}
+\end{figure}
+
+\subsection*{Sugestions for future improvement}

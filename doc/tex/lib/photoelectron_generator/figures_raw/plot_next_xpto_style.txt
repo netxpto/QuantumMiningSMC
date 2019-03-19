@@ -1,0 +1,76 @@
+CONFIGURAÇÃO DOS PLOTS DAS SAMPLES
+
+[ Plots das samples ]
+
+Ainda no visualizer:
+	Style:
+		Line Color: azul (0, 0.45, 0.74)
+	(Close)
+	View > Show All Legends > uncheck
+	View > Configuration Properties:
+		Display:
+			title: (ex: with shot-noise)
+			Y-limits (Minimum): 0
+			Y-limits (Maximum):  2.25 (225 para 1mW)
+			Y-label: Photoelectrons
+	Zoom horizontal: Scale Y-Axis Limits
+	(Print to Figure)
+
+Na figure:
+	Export setup:
+		Size:
+			Width:  24 cm
+			Height: 6 cm
+		Fonts:
+			Use fixed font size: 14 points
+	(Seleccionar a caixa do plot)
+	(More Properties)
+	Position:
+		x: 0.08
+		width: 0.9
+	(Export...)
+	(para PNG)
+
+
+
+
+[ Plots da Potência ]
+
+Selecionar o plot do argumento -> apagá-lo
+
+(Double click no plot de cima)
+
+Na propriedades do plot:
+	- Property Editor:
+		Grid:
+			X: true
+			Y: true
+		Box: True
+		X Axis:
+			X Label: Time (s)
+			X Limits: 0 to 2e-9
+		Y Axis:
+			Y Label: |A|^2 (W)
+			Y Limits: 0 to 1e-9  (0 to 1e-6)
+	(More Properties...)
+	Outer position:
+		y: 0
+		height: 1.0
+	Desktop > Undock Signal Browser
+
+	Export setup:
+		Size:
+			Width:  24 cm
+			Height: 12 cm
+		Fonts:
+			Use fixed font size: 14 points
+	
+	Inspector:
+	Position:
+		x: 0.08
+		width: 0.9
+	(Export...)
+	(para PNG)
+
+
+Este estilo está optimizado para P=1e-9. Para outras potências, a escala do y tem que ser modificada proporcionalmente.

@@ -1,0 +1,48 @@
+\clearpage
+
+\section{Conversion of tektronix to .sgn}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Students Name}  &:& Andoni Santos\\
+						   	    &:& Daniel Pereira (documentation)\\\\
+		\textbf{Goal}           &:& Convert simulation signals into waveform files compatible with the laboratory's Arbitrary Waveform Generator\\\\
+		\textbf{Version}        &:& tektronixToSgn\_20180711.m (\textbf{Student Name}: Andoni Santos)
+	\end{tabular}
+\end{tcolorbox}
+
+
+This section shows how to convert a signal obtained from a Tektronix oscilloscope to a .sgn signal through the use of a MATLAB function called tektronixToSgn\_20180711.m. This allows the use of experimental results inside the netxpto simulation environment.
+
+\subsection{tektronixToSgn\_20180711.m}
+
+\subsection*{Structure of function}
+
+[] = tektronixToSgn\_20180711(Srx, symbolPeriod, samplingPeriod, filename, RTO)
+
+\subsection*{Inputs}
+
+\indent
+
+\textbf{Srx}: Array with the raw data received from the oscilloscope.
+\bigskip
+
+\textbf{symbolPeriod}: Symbol period of the signal at the input.
+\bigskip
+
+\textbf{samplingPeriod}: Sampling period of the oscilloscope.
+\bigskip
+
+\textbf{filename}: Name that will be given to the .sgn file. A letter describing if it's the in-phase or the in-quadrature component is added, the name of the file will then be \_i.sgn or \_q.sgn.
+\bigskip
+
+\textbf{RTO}: Structural variable containing the oscilloscope configuration.
+
+
+\subsection*{Outputs}
+A .sgn file will be created in the Matlab current folder.
+
+
+\subsection*{Functional Description}
+
+This function takes a signal acquired from a Tektronix oscilloscope, converts it to volts and generates two .sgn files similar to the ones created by the netXPTO platform. Each file contains either the in-phase or the quadrature components of the signal. If RTO is not defined, the scaling of the oscilloscope is considered to be 10 mV/div for both channels.

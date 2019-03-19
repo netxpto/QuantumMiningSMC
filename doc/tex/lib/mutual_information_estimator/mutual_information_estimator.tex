@@ -1,0 +1,117 @@
+\clearpage
+
+\section{Mutual Information Estimator}
+\label{sec_mi}
+\begin{refsection}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& mutual\_information\_estimator\_20180723.h \\
+		\textbf{Source File}   &:& mutual\_information\_estimator\_20180723.cpp \\
+	\end{tabular}
+\end{tcolorbox}
+
+This block estimates the mutual information between the input and output channel symbols X and Y, respectively. Each input signal $x_j$ (j = 1,2,...,J) has a specific probability being possible calculate the entropy of the alphabet X, $H(X)$. The uncertainty of the observation regarding with the occurrence of the input symbol is measured by the entropy $H(X)$, which is maximum when all inputs have the same probability. Another concept important to estimate the mutual information is the conditional entropy $H(X|Y=y_k)$, which represents the uncertainty related with the channel input symbols X that stays after the observation of the output symbols Y. This way, the difference $H(X) - H(X|Y)$ is on average the amount of information gained by the observer with respect with the channel input based on the channel output symbol. This difference is called the mutual information:
+
+\begin{eqnarray}
+ \nonumber % Remove numbering (before each equation)
+  I(X;Y)    &=& H(X) - H(X|Y) \\
+            &=& \sum_{k=1}^{K}\sum_{j=1}^{J}P(x_j,y_k)\log \frac{P(x_j|y_k)}{P(x_j)},
+\end{eqnarray}
+where $K$ corresponds to the number of possible output symbols and $J$ corresponds to the number of possible input symbols.
+
+This block uses the property 1.9.3 in \cite{Wesolowski09} of Mutual information which tells that it can be determined using the formula:
+\begin{equation}\label{eq:mi_property}
+  I(X;Y) = H(Y)- H(Y|X).
+\end{equation}
+
+Nevertheless, this block estimates the mutual information of binary signals, which means that it estimates the probability of the input bit is 0 $P(X=0)$ and assumes that the complementary of this probability corresponds to the probability of the input bit is 1 $P(X=1)$. $P(X=0)$ corresponds to the $\alpha$ probability calculated in this block. Furthermore, another probability of interest is $p$ which corresponds to the error probability of the channel. Both $\alpha$ and $p$ are estimated in this block.
+
+In order to calculate the mutual information, from equation \ref{eq:mi_property} we should calculate the conditional entropy $H(Y|X)$ and the entropy of the channel outputs $H(Y)$. First, lets calculate $H(Y|X)$:
+\begin{eqnarray}
+ \nonumber % Remove numbering (before each equation)
+  H(Y|X)    &=& \sum_{k=1}^{K}\sum_{j=1}^{J}P(y_k|x_j)P(x_j)\log \frac{1}{P(y_k|x_j)} \\ \nonumber
+            &=& \alpha (\bar{p} \log \frac{1}{\bar{p}} + p \log \frac{1}{p}) + \bar{\alpha}(\bar{p}\log \frac{1}{\bar{p}}+ p \log \frac{1}{p}) \\ \nonumber
+            &=& (\alpha + \bar{\alpha})(\bar{p}\log\frac{1}{\bar{p}}+p \log\frac{1}{p}) \\
+            &=& H(p),
+\end{eqnarray}
+which means that the conditional entropy depends only on the channel properties and it does not depends on the channel input statistics.
+Now, to calculate the entropy of the channel output symbols we need to calculate the channel output probabilities, i.e $P(Y=0)$ and $P(Y=1)$.
+\begin{eqnarray}
+ \nonumber % Remove numbering (before each equation)
+  P(Y=0)    &=& P(Y=0|X=0)P(X=0)+P(Y=0|X=1)P(X=1) \\
+            &=& \bar{p}\alpha + p \bar{\alpha}.
+\end{eqnarray}
+Since the output channel symbol only has two possible values (0 or 1),
+\begin{eqnarray}
+ \nonumber % Remove numbering (before each equation)
+  P(Y=1)    &=& P(Y=1|X=1)P(X=1) + P(Y=1|X=0)P(X=0) \\ \nonumber
+            &=& p\alpha + \bar{p}\bar{\alpha} \\
+            &=& 1 - P(Y=0).
+\end{eqnarray}
+As a result:
+\begin{equation}\label{eq:entropyout}
+  H(Y) = H(\bar{p}\alpha + p \bar{\alpha})
+\end{equation}
+and the mutual information should be calculated using the following formula:
+\begin{equation}\label{eq:mi_final}
+  I(X;Y) = H(\bar{p}\alpha + p \bar{\alpha}) - H(p)
+\end{equation}
+
+The upper and lower bounds, $\text{I(X;Y)}_\text{UB}$ and $\text{I(X;Y)}_\text{LB}$ respectively, are calculated using the method of Coppler-Pearson as described in section \ref{sec:bit_error_rate} for bit error rate calculation. This way, it returns the simplified expression:
+
+\begin{align}
+\text{I(X;Y)}_\text{UB}&=\text{I(X;Y)}+\frac{1}{\sqrt{N_T}}z_{\alpha/2}\sqrt{\text{I(X;Y)}(1-\text{I(X;Y)})}+\frac{1}{3N_T}\left[2\left(\frac{1}{2}-\text{I(X;Y)}\right)z_{\alpha/2}^2+(2-\text{I(X;Y)})\right]\\
+\text{I(X;Y)}_\text{LB}&=\text{I(X;Y)}-\frac{1}{\sqrt{N_T}}z_{\alpha/2}\sqrt{\text{I(X;Y)}(1-\text{I(X;Y)})}+\frac{1}{3N_T}\left[2\left(\frac{1}{2}-\text{I(X;Y)}\right)z_{\alpha/2}^2-(1+\text{I(X;Y)})\right],
+\end{align}
+where $z_{\alpha/2}$ is the $100\left(1-\frac{\alpha}{2}\right)$th percentile of a standard normal distribution and $N_T$ the total number of bits used to calculate the mutual information. 
+
+
+\subsection*{Input Parameters}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Name           & Type           & Default Value     \\ \hline
+m              & integer        & 0                 \\ \hline
+alpha\_bounds  & double         & 0.05              \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection*{Methods}
+
+\begin{itemize}
+  \item MutualInformationEstimator(vector<Signal *> \&InputSig, vector<Signal *> \&OutputSig) :Block(InputSig,OutputSig)\{\};
+  \item void initialize(void);
+  \item bool runBlock(void);
+  \item void setMidReportSize(int M) \{ m = M; \}
+  \item void setConfidence(double P) \{ alpha = 1-P; \}
+\end{itemize}
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 2\\
+\textbf{Type}: Binary (DiscreteTimeDiscreteAmplitude)
+
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1\\
+\textbf{Type}: Binary (DiscreteTimeDiscreteAmplitude)
+
+
+\subsection*{Functional Description}
+
+This block accepts two binary strings and outputs a binary string, outputting a 0 if the two input samples are equal to each other and 1 if not. This block also outputs \textit{.txt} files with a report of the estimated Mutual Information, as well as the error probability of the channel estimated $p$ and the estimated probability of $X=0$, $\alpha$.
+Furthermore, the mutual information estimator block can output middle report files with size $m$ set by the user using the method \textit{setMidReportSize(int M)}, i.e the mutual information calculated uses $m$ input symbols in its calculation. However, a final report is always outputted using all symbols transmitted.
+
+The block receives two input binary strings, one with the sequence of input channel symbols and from this it calculates the probability of the input symbol is equals to $0$, $\alpha$, and other sequence with the output channel symbols and it compares the bit from this sequence with the correspondent bit from the first sequence (i.e the sequence with the input channel symbols). If the bit in the output channel symbol is different from the correspondent bit in the input channel symbol sequence, it counts as an error and the error probability of the channel is calculated based on the final number of errors, $p$. Both probabilities $\alpha$ and $p$ allow the block to estimate the conditional entropy and the entropy of the output channel symbols, allowing the calculation of the mutual information.
+
+% bibliographic references for the section ----------------------------
+\clearpage
+\printbibliography[heading=subbibliography]
+\end{refsection}
+\addcontentsline{toc}{subsection}{Bibliography}
+\cleardoublepage
+% ---------------------------------------------------------------------

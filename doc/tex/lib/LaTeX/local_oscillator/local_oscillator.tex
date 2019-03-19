@@ -1,0 +1,61 @@
+\clearpage
+
+\section{Local Oscillator}
+
+This block simulates a local oscillator which can have shot noise or not. It produces one output complex signal and it doesn't accept input signals.
+
+\subsection*{Input Parameters}
+
+\begin{itemize}
+	\item opticalPower\{ 1e-3 \}
+	\item wavelength\{ 1550e-9 \}
+	\item frequency\{ SPEED\_OF\_LIGHT / wavelength \}
+	\item phase\{ 0 \}
+	\item samplingPeriod\{ 0.0 \}
+	\item shotNoise\{ false \}
+\end{itemize}
+
+\subsection*{Methods}
+
+LocalOscillator() {}
+\bigbreak
+LocalOscillator(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig)\{\};
+\bigbreak
+void initialize(void);
+\bigbreak
+bool runBlock(void);
+\bigbreak
+void setSamplingPeriod(double sPeriod);
+\bigbreak
+void setOpticalPower(double oPower);
+\bigbreak
+void setOpticalPower\_dBm(double oPower\_dBm);
+\bigbreak
+void setWavelength(double wlength);
+\bigbreak
+void setPhase(double lOscillatorPhase);
+\bigbreak
+void setShotNoise(bool sNoise);
+
+\subsection*{Functional description}
+
+This block generates a complex signal with a specified phase given by the input parameter \textit{phase}.
+
+It can have shot noise or not which corresponds to setting the \textit{shotNoise} parameter to True or False, respectively. If there isn't shot noise the the output of this block is given by $0.5*\sqrt{OpticalPower}*ComplexSignal$. If there's shot noise then a random gaussian distributed noise component is added to the \textit{OpticalPower}.
+
+\pagebreak
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 0
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:} Optical signal
+
+\subsection*{Examples}
+
+\subsection*{Sugestions for future improvement}
+
+

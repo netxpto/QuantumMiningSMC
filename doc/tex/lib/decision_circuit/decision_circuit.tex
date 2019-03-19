@@ -1,0 +1,62 @@
+\clearpage
+
+\section{Decision Circuit}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& decision\_circuit$\_*$.h \\
+		\textbf{Source File}   &:& decision\_circuit$\_*$.cpp \\
+        \textbf{Version}       &:& 20181012 (Celestino Martins) \\
+	\end{tabular}
+\end{tcolorbox}
+
+This block performs the symbols decision, by calculating the minimum distance between the received symbol relatively to the constellation map. It receives one input complex signal and outputs one complex signal.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|cccc}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		mQAM                  & int & any & $4$ \\ \cline{1-4}		
+	\end{tabular}
+	\caption{Decision circuit input parameters}
+	\label{table:cpe_in_par_vv}
+\end{table}
+
+
+\subsection*{Methods}
+
+DecisionCircuitMQAM() {};
+\bigbreak
+DecisionCircuitMQAM(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig)\{\};
+\bigbreak
+void initialize(void);
+\bigbreak
+bool runBlock(void);
+\bigbreak
+void setmQAM(int mQAMs) { mQAM = mQAMs; }
+\bigbreak
+double getmQAM() { return mQAM; }
+
+\subsection*{Functional description}
+
+This block performs the symbols decision, by minimizing the distance between the received symbol relatively to the constellation map. It perform the symbol decision for the modulations formats, 4QAM and 16QAM. The order of modulation format is defined by the parameter $mQAM$.
+
+\pagebreak
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 1
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:} Electrical complex signal
+
+\subsection*{Examples}
+
+\subsection*{Sugestions for future improvement}
+Extend the decision to higher order modulation format.
+

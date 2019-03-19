@@ -1,0 +1,65 @@
+\clearpage
+
+\section{DSP}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& dsp$\_*$.h \\
+		\textbf{Source File}   &:& dsp$\_*$.cpp \\
+        \textbf{Version}       &:& 20180423 (Celestino Martins) \\
+	\end{tabular}
+\end{tcolorbox}
+
+This super block simulates the digital signal processing (DSP) algorithms for system impairments compensation in digital domain. It includes the real to complex block, carrier phase recovery block (CPE) and complex to real block. It receives two real input signal and outputs two real signal.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|cccc}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		nTaps              & int & any & $25$ \\ \cline{1-4}
+        NtestPhase         & int & any & $32$ \\ \cline{1-4}
+        methodType         & int & any & $[0,1]$ \\ \cline{1-4}
+		samplingPeriod     & double & any & $0.0$ \\ \cline{1-4}	
+	\end{tabular}
+	\caption{DSP input parameters}
+	\label{table:dsp_in_par}
+\end{table}
+
+\subsection*{Methods}
+
+DSP(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig);
+\bigbreak
+void setCPEnTaps(double nTaps) { B02.setnTaps(nTaps); }
+\bigbreak
+void setCPETestPhase(double TestPhase) { B02.setTestPhase(TestPhase); }
+\bigbreak
+void setCPESamplingPeriod(double sPeriod) { B02.setSamplingPeriod(sPeriod); }
+\bigbreak
+void setCPEmethodType(string mType) { B02.setmethodType(mType); }
+\bigbreak
+void setSamplingPeriod(double sPeriod) { B02.setSamplingPeriod(sPeriod); };
+
+\subsection*{Functional description}
+
+This super block is composed of three blocks, real to complex block, carrier phase recovery block and complex to real block. The two real input signals are combined into a complex signal using real to complex block. The obtained complex signal is then fed to the CPE block, where the laser phase noise compensation is performed. Finally, the complex output of CPE block is converted into two real signal using complex to real block. 
+
+
+\pagebreak
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 2
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 2
+
+\subparagraph*{Type:} Electrical complex signal
+
+\subsection*{Examples}
+
+\subsection*{Sugestions for future improvement}
+
+

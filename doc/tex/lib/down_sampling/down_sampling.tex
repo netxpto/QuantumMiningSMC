@@ -1,0 +1,63 @@
+\clearpage
+
+\section{DownSampling}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& down\_sampling$\_*$.h \\
+		\textbf{Source File}   &:& down\_sampling$\_*$.cpp \\
+        \textbf{Version}       &:& 20180917 (Celestino Martins) \\
+	\end{tabular}
+\end{tcolorbox}
+
+This block simulates the down-sampling function, where the signal sample rate is decreased by integer factor.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|cccc}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		downSamplingFactor & int & any & $2$ \\ \cline{1-4}	
+	\end{tabular}
+	\caption{DownSampling input parameters}
+	\label{table:down_sampling}
+\end{table}
+
+
+\subsection*{Methods}
+
+DownSampling() {};
+\bigbreak
+DownSampling(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig)\{\};
+\bigbreak
+void initialize(void);
+\bigbreak
+bool runBlock(void);
+\bigbreak
+void setSamplingFactor(unsigned int dSamplingfactor) { downSamplingFactor = dSamplingfactor; }
+\bigbreak
+unsigned int getSamplingFactor() { return downSamplingFactor; }
+
+\subsection*{Functional description}
+
+This block perform decreases the sample rate of input signal by a factor of $downSamplingFactor$. Given a down-sampling factor, $downSamplingFactor$, the output signal correspond to the first sample of input signal and every $downSamplingFactor^{th}$ sample after the first.
+
+
+\pagebreak
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 1
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:} Electrical real signal
+
+\subsection*{Examples}
+
+\subsection*{Sugestions for future improvement}
+
+

@@ -1,0 +1,62 @@
+\clearpage
+
+\section{Arithmetic Decoder}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& arithmetic\_decoder.h \\
+		\textbf{Source File}   &:& arithmetic\_decoder.cpp \\
+        \textbf{Version}       &:& 20180719 (Diogo Barros) \\
+	\end{tabular}
+\end{tcolorbox}
+
+This block implements the integer version of the arithmetic decoding algorithm, given the symbol counts, the number of bits per symbol and the number of symbols to encode.
+The block takes an encoded binary input stream and outputs the decoded binary stream.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|cccc}
+	\cline{1-4}
+	\textbf{Parameter} & \textbf{Type} & \textbf{Values} & \textbf{Default} & \\ \cline{1-5}
+	SeqLen 	   & unsigned int 		  & any & $--$ 	\\ \cline{1-5}
+	BitsPerSymb& unsigned int         & any & $--$ 	\\ \cline{1-5}	
+	SymbCounts & vector<unsigned int> & any & $--$  \\ \cline{1-5}	
+	\end{tabular}
+	\caption{Arithmetic decoding block input parameters.}
+	\label{table:arith_dec_in_par}
+\end{table}
+
+\subsection*{Methods}
+
+bool runBlock(void)
+\bigbreak
+void initialize(void);
+\bigbreak
+void init(const unsigned int\& SeqLen, const unsigned int\& BitsPerSymb,
+const vector<unsigned int>\& SymbCounts);
+\bigbreak
+
+\subsection*{Functional description}
+
+This block implements the integer version of the arithmetic decoding algorithm, given the symbol counts, the number of bits per symbol and the number of symbols to encode.
+The block takes an encoded binary input stream and outputs the decoded binary stream.
+
+
+\pagebreak
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 2
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 2
+
+\subparagraph*{Type:} Electrical complex signal
+
+\subsection*{Examples}
+
+\subsection*{Sugestions for future improvement}
+
+

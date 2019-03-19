@@ -1,0 +1,47 @@
+2018-02-27
+TO BE DONE
+	limpar e organizar o código
+	colocar o código a funcionar para a situação mais simples possível
+
+	documentar
+
+Next Meeting: 6/3, 10h
+
+2018-02-20
+TO BE DONE
+	. concluir isto
+		- colocar a funcionar um sistema analogo ao m_qam_system, com as seguintes diferenças substituir no emissor o sinais IQ por duas fontes de sinais guaissanos
+		- no recetor colocar a zerop todas as fontes de ruído
+	- Fazer a documentação, incluir na lib os modulos novoas desenvolvidos (gaussian)
+
+2018-02-05
+TO BE DONE
+	- colocar a funcionar um sistema analogo ao m_qam_system, com as seguintes diferenças substituir no emissor o sinais IQ por duas fontes de sinais guaissanos
+	- no recetor colocar a zerop todas as fontes de ruído
+	- substituir o estimar de erros, por um estimador de informação mútua
+
+2018-01-31
+TO BE DONE
+
+	-Colocar um esquema para o transmissor assumindo modulação continua gausiana (fazer o esquema de acordo com a standard)
+
+	- Parte teórica do recetor (homodino que extrai informação de uma quadratura)
+
+	- Colocar um esquema para o recetor
+
+	- Calcular teoricamente a informação mutua entre I_A e o I_B
+
+	- Estimar tendo por base resultados experimentais/numéricos
+
+-----------------------------------------
+
+	- colocar as referências por secção 
+	- adiconar na TOC as várias entradas para as referências
+
+Next meeting: 5/1, 11h30m
+
+
+2018-01-12
+TO BE DONE
+	- descrição teórica resumido
+	- fazer o diagram de blocos da simualação (Mariana_TQ)

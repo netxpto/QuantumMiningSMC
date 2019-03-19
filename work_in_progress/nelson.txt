@@ -1,0 +1,14 @@
+2018-02-05
+TO BE DONE
+	- terminar o direct detection
+	- fazer a descrição teórica do homodyne detection
+
+Next meeting: 14/2, 15h
+
+
+2018-01-30
+TO BE DONE
+	- associar a cada figura uma calssificação (baseada na tabela Kahn)
+	- avançar para a descrição clássica
+
+Next Meeting: Segunda-feira, 5/1, 10h30m

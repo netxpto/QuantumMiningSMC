@@ -1,0 +1,36 @@
+\documentclass[../../sdf/tex/BPSK_system.tex]{subfiles}
+\graphicspath{{../../images/}}
+%opening
+\onlyinsubfile{\title{Sampler}}
+\date{ }
+
+\begin{document}
+
+\onlyinsubfile{\maketitle}
+
+\subsection*{Input Parameters}
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item setSamplingRate
+		\item setDelay
+	\end{itemize}
+\end{multicols}
+
+\subsection*{Functional Description}
+
+This block accepts one real continuous signal and outputs one real discrete signal built from a sampling of the input signal with a predetermined sampling rate. The sampling rate is defined by the value \textit{SamplingRate}. This block also allows for a controlled adjustment of the starting point of the output signal, defined by the value \textit{Delay}
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Real signal (ContinuousTimeContinuousAmplitude)
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Real signal (DiscreteTimeContinuousAmplitude)
+
+\end{document}

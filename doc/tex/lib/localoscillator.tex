@@ -1,0 +1,34 @@
+\documentclass[../../sdf/tex/BPSK_system.tex]{subfiles}
+\graphicspath{{../../images/}}
+%opening
+\onlyinsubfile{\title{Local Oscillator}}
+\date{}
+
+\begin{document}
+
+\onlyinsubfile{\maketitle}
+
+\subsection*{Input Parameters}
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item LocalOscillatorPhase
+		\item LocalOscillatorOpticalPower
+		\item LocalOscillatorOpticalPower\_dBm
+	\end{itemize}
+\end{multicols}
+
+\subsection*{Functional Description}
+
+This blocks outputs a complex signal with a user defined length, phase and power. The phase and optical power are defined by the values of \textit{LocalOscillatorPhase} and \textit{LocalOscillatorOpticalPower} respectively.
+\subsection*{Input Signals}
+
+\textbf{Number}: 0
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Complex or Complex\_XY optical signal (ContinuousTimeContinuousAmplitude)
+
+\end{document}

@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[sorting=none, backend=biber]{biblatex}
+\usepackage{filecontents}
+\begin{filecontents}{references.bib}
+@book{knuth1986texbook,
+  keywords = {book},
+  title={The texbook},
+  author={Knuth, D.E. and Bibby, D.},
+  volume={1993},
+  year={1986},
+  publisher={Addison-Wesley}
+}
+@article{knuth1977fast,
+  keywords = {article},
+  title={Fast pattern matching in strings},
+  author={Knuth, D.E. and Morris Jr, J.H. and Pratt, V.R.},
+  journal={SIAM journal on computing},
+  volume={6},
+  number={2},
+  pages={323--350},
+  year={1977},
+  publisher={SIAM}
+}
+\end{filecontents}
+\addbibresource{references.bib}
+\begin{document}
+\section{First}
+\begin{refsection}
+Citation section \thesection: \cite{knuth1986texbook}
+\printbibliography[heading=subbibliography]
+\end{refsection}
+\section{Second}
+\begin{refsection}
+Citation section \thesection: \cite{knuth1977fast}
+\printbibliography[heading=subbibliography]
+\end{refsection}
+\end{document}
+

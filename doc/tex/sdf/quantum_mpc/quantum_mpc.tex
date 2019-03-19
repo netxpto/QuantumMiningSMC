@@ -1,0 +1,56 @@
+\section{Quantum Multi-Party Computation}
+\begin{refsection}
+	\subsection{Our Approach}
+	\subsubsection{1 out of 2 Oblivious Transfer}
+	This section will provide the description of a 1-2 Oblivious Transfer (OT) based on the appliance of a Quantum Oblivious Key Distribution Protocol (QOKD). The 1-2 OT consists in a two party, Alice and Bob, communication protocol. Supposing that Alice has two messages $\{m_1,m_0\}$ length $s$, Bob wants to know one of those in such a way that:
+	\begin{itemize}
+		\item Alice doesn't know Bob's choice, i.e. the protocol is oblivious;
+		\item Bob doesn't get any information on the message he didn't choose, i.e. the protocol is concealing.
+	\end{itemize}
+	Considering the notation of a canonical quantum oblivious transfer protocol, let $U=\{+,\times\}^n\times\{0,1\}^n$, where $+, \times$ stand for the rectilinear and diagonal bases, with a correspondence previously agreed by both Bob and Alice. Physically this corresponds   The general algorithm of the protocol can be described as:
+	\begin{itemize}
+		\item Step 1:\\
+		Alice picks a random uniformly chosen $\big(a,g\big)\,\in\,U$, and sends Bob photons $i$, $1\leq i \leq n$ with polarizations given by the bases $a\big[i\big]$ and states $g\big[i\big]$.
+		\item Step 2:\\
+		Bob picks a random uniformly chosen $b\in\{+,\times\}^n$, measures photons $i$ in basis $b\left[i\right]$ and records the results, if a photon is detected, as $h\left[i\right]\in\{0,1\}$. Bob then makes a bit commitment of all $n$ pairs $\left(b\left[i\right],h\left[i\right]\right)$ to Alice.
+		\item Step 3:\\
+		Alice picks a random uniformly picks a random uniformly chosen subset $R\subset\{1,2,...,n\}$ and tests the commitment made by Bob at positions in $R$. If more $\delta n$ (acceptance threshold) positions $i\in R$ reveal $a\left[i\right]=b\left[i\right]$ and $g\left[i\right]\neq h\left[i\right]$ then Alice stops protocol; otherwise, the test result is accepted.
+		\item Step 4:\\
+		Alice announces the base $a$. Let $T_0$ be the set of $1\leq i \leq n$ such that $a\left[i\right]=b\left[i\right]$ and let $T_1$ be the set of all $1\leq i \leq n$ such that $a\left[i\right]\ne b\left[i\right]$. Bob chooses $I_0,I_1\subset T_0-R, T_1-R$ and sends $S_i=\{I_{1-i},I_i\}$, wishing to know $m_i$, $i\in\{0,1\}$.
+		\item Step 5:\\
+		Alice defines two encryption keys $K_0,K_1$ in such a way that $K_i=g\big[I_i\big]$ for $i=0 \vee i=1$. Alice then cyphers both messages: $m_{\mathtt{coded}}=\{m_0\oplus K_0,m_1\ \oplus K_1\}$ and sends the result $m$ to Bob.
+		\item Step 6:\\
+		Bob will then decode $m$ using the values of his initially chosen basis:  $b\left[S_i\right]$ with $i\in\{0,1\}$, according to his preference. $m_{\mathtt{decoded}}=m_{\mathtt{coded}}\oplus b\left[S_i\right]$. The output of this process will be $m_{\mathtt{decoded}}$ that will have the correct message in the first or last $s^{th}$ positions if he chose $m_0$ or $m_1$, respectively.
+	\end{itemize}
+	It is intuitively clear that the above protocol performs correctly if both parties are honest \cite{Yao1995}. The security of protocol depends, though on the honesty of both parties (and a potential eavesdropper) involved. The security of the protocol can be evaluated in terms of the amount of information received by any given participant. In order to formalize and proof the security of such a system for any case though one has to think of the proceedings of a hypothetically dishonest Bob and an eventual eavesdropper Eve.
+	\begin{itemize}
+		\item Step 1:\\
+		Dishonest Bob has no advantage in being dishonest at this point.
+		\item Step 2:\\
+		Dishonest Eve transfers some information from this pulse into her quantum system and she uses that information to modify the residual state of the pulse which is sent to Bob.\\
+		Dishonest Bob executes a coherent measurement on the pulse received in order to determine: whether or not he declares this pulse as detected and the bit that he commits to Alice.
+		\item Step 4:\\
+		Having learnt Alice's string of basis $a$ dishonest Bob executes a first post-measurement of his choice and uses the outcome to compute the ordered pair $S$.
+		\item Step 5:\\ Using the information obtained in the previous step dishonest Bob makes a second post-test measurement and obtains the outcome $\mathcal{J}_{Bob}$. Eve measures her system and obtains the outcome $\mathcal{J}_{Eve}$ \cite{Mayers}.
+	\end{itemize}
+	From \cite{Mayers} one can concluded that a dishonest Bob following these proceedings learns nothing about $m$, the set of both original messages concatenated, in its full extended, either he passes or fails Alice's original verification. This protocol also compensates the errors in the quantum channel. It is also stated that security against Bob and tolerance against errors implies the security of the protocol against Eve \cite{Mayers}.
+	
+	\subsubsection{Comparison Protocol}
+The millionaire problem was originally a two-party secure computation problem, in which two millionaires, Alice and Bob, want to know which of them is richer without revealing their actual wealth.  It is analogous	to a more general problem whose goal is to compare two numbers $a$ and $b$, without revealing any extra information	on their values other than what can be inferred from	the comparison result. Boudot proposed a protocol to solve said. However, Lo pointed out that the equality function cannot be securely evaluated with a two-party scenario. Therefore, some additional assumptions should be considered to reach the goal of private comparison, a quantum comparison protocol (QPC) always needs:
+\begin{itemize}
+	\item An at least semi-honest Third Party (TP) is required to help the two parties (Alice and Bob) accomplish the comparison. A semi-honest TP is a party who
+	always follows the procedure of the protocol recording all of intermediate computations and despite not being corrupted by an outside eavesdropper, TP might try to steal the information from the record. TP will know the positions of different bit value in the compared information, but it will not be able to know the actual bit value of the information.
+	\item All outsiders and the two players should only know the result of the comparison, but not the different positions of the information.
+	\item To guarantee the security of private information, it is better to compare several
+	bits instead of one bit at a time.
+\end{itemize}
+Since Yao's initial proposal, several QKD protocols using Einstein–Podolsky–
+Rosen (EPR) pairs have been proposed in previous work to achieve secret communication for two communicants. These QKD protocols attempt to use the correlation of EPR pairs to distribute a common shared key for two mutually trusted users. However, EPR pairs in the proposed QPC protocol are used to create two individual keys for each of two mutually suspicious users and at the same time allow a semi-honest third party to perform the comparison without knowing the secret content of their information. Therefore, a QKD protocol may not be able to directly solve the QPC problem.
+
+% bibliographic references for the section ----------------------------
+\clearpage
+\printbibliography[heading=subbibliography]
+\end{refsection}
+\addcontentsline{toc}{subsection}{Bibliography}
+\cleardoublepage
+% --------------------------------------------------------------------- 

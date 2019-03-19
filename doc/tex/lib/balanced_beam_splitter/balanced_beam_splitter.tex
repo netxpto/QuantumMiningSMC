@@ -1,0 +1,73 @@
+\clearpage
+
+\section{Balanced Beam Splitter}
+
+\begin{tcolorbox}	
+\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+\textbf{Header File}   &:& balanced\_beam\_splitter.h \\
+\textbf{Source File}   &:& balanced\_beam\_splitter.cpp \\
+\textbf{Version}       &:& 20180124
+\end{tabular}
+\end{tcolorbox}
+
+\subsection*{Input Parameters}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Name           & Type    & Default Value     \\ \hline
+Matrix         & array <t\_complex, 4> & $\lbrace~\lbrace \frac{1}{\sqrt{2}},~\frac{1}{\sqrt{2}},~\frac{1}{\sqrt{2}},~\frac{-1}{\sqrt{2}} \rbrace~\rbrace$                             \\ \hline
+Mode           & double  & 0                 \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection*{Functional Description}
+The structure of the beam splitter can be controlled with the parameter mode.\\
+When \textbf{Mode = 0} the beam splitter will have one input port and two output ports - \textbf{1x2 Beam Splitter}. If Mode has a value different than 0, the splitter will have two input ports and two output ports - \textbf{2x2 Beam Splitter}.\\
+Considering the first case, the matrix representing a 2x2 Beam Splitter can be summarized in the following way,
+
+\begin{equation}
+M_{BS}=~\frac{\sqrt{2}}{2}\begin{bmatrix}
+              					1  & 1 \\
+            					1 & -1
+            			  \end{bmatrix}
+\end{equation}
+The relation between the values of the input ports and the values of the output ports can be established in the following way
+
+\begin{equation}
+\begin{bmatrix}
+A' \\
+B'
+\end{bmatrix}=M_{BS} \dot{}{\begin{bmatrix}
+			  				     A \\
+			  	                 B
+			  	                 \end{bmatrix}}
+\end{equation}
+Where, A and B represent the inputs and A' and B' represent the outputs of the Beam Splitter.
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1 or 2\\
+\textbf{Type}: Complex
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 2\\
+\textbf{Type}: Complex
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\renewcommand{\bibname}{References}
+%
+%\bibliographystyle{unsrt}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{./lib/balanced_beam_splitter/balanced_beam_splitter}
+%
+%
+

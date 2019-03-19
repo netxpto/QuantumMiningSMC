@@ -1,0 +1,90 @@
+\clearpage
+
+\section{Local Oscillator}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& local\_oscillator.h \\
+		\textbf{Source File}   &:& local\_oscillator.cpp \\
+        \textbf{Version}       &:& 20180130\\
+        \textbf{Version}       &:& 20180828 (Romil Patel)\\
+	\end{tabular}
+\end{tcolorbox}
+\subsection*{Version 20180130}
+This block simulates a local oscillator with constant power and initial phase. It produces one output complex signal and it doesn't accept input signals.
+
+\subsection*{Input Parameters}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|c|cccc}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		opticalPower & double & any & $1\text{e}-3$ \\ \cline{1-4}
+		outputOpticalWavelength & double & any & $1550\text{e}-9$ \\ \cline{1-4}
+		outputOpticalFrequency & double & any &  SPEED\_OF\_LIGHT / outputOpticalWavelength \\ \cline{1-4}
+		phase & double & $\in \left[0,\frac{\pi}{2}\right]$ & $0$ \\ \cline{1-4}
+		samplingPeriod & double & any & $0.0$ \\ \cline{1-4}
+        symbolPeriod   & double & any & $0.0$ \\ \cline{1-4}
+        signaltoNoiseRatio & double & any & $0.0$ \\ \cline{1-4}
+        laserLineWidth & double & any & $0.0$ \\ \cline{1-4}
+        laserRIN       & double & any & $0.0$ \\ \cline{1-4}
+	\end{tabular}
+	\caption{Binary source input parameters}
+	\label{table:LO_in_par}
+\end{table}
+
+%
+%\begin{itemize}
+%	\item opticalPower\{ 1e-3 \}
+%	\item wavelength\{ 1550e-9 \}
+%	\item frequency\{ SPEED\_OF\_LIGHT / wavelength \}
+%	\item phase\{ 0 \}
+%	\item samplingPeriod\{ 0.0 \}
+%\end{itemize}
+
+\subsection*{Methods}
+
+LocalOscillator() {}
+\bigbreak
+LocalOscillator(vector$<$Signal *$>$ \&InputSig, vector$<$Signal *$>$ \&OutputSig) :Block(InputSig, OutputSig)\{\};
+\bigbreak
+void initialize(void);
+\bigbreak
+bool runBlock(void);
+\bigbreak
+void setSamplingPeriod(double sPeriod);
+\bigbreak
+void setSymbolPeriod(double sPeriod);
+\bigbreak
+void setOpticalPower(double oPower);
+\bigbreak
+void setOpticalPower\_dBm(double oPower\_dBm);
+\bigbreak
+void setWavelength(double wlength);
+\bigbreak
+void setFrequency(double freq);
+\bigbreak
+void setPhase(double lOscillatorPhase);
+\bigbreak
+void setSignaltoNoiseRatio(double sNoiseRatio);
+\bigbreak
+void setLaserLinewidth(double laserLinewidth);
+\bigbreak
+void setLaserRIN(double laserRIN);
+
+\subsection*{Functional description}
+
+This block generates a complex signal with a specified phase given by the input parameter \textit{phase}.
+
+\subsection*{Input Signals}
+
+\textbf{Number:} 0
+
+\subsection*{Output Signals}
+
+\textbf{Number:} 1\\
+\textbf{Type:} Optical signal
+
+\subsection*{Version 20180828}
+

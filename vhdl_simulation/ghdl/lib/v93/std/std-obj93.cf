@@ -1,0 +1,5 @@
+v 4
+file . "textio_body.v93" "bc2bada843965282763aab8ec9eb080900384119" "20171217183708.897":
+  package body textio at 18( 777) + 0 on 12;
+file . "textio.v93" "1583bc026ad586549b93dd77b89beef57cd9140b" "20171217183707.920":
+  package textio at 19( 838) + 0 on 11 body;

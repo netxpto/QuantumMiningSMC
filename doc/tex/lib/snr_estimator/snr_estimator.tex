@@ -1,0 +1,267 @@
+% !TEX root = ../../main_netxpto.tex
+\clearpage
+
+\section{SNR Estimator}
+
+\begin{refsection}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Header File}   &:& snr\_estimator\_*.h \\
+		\textbf{Source File}   &:& snr\_estimator\_*.cpp \\
+		\textbf{Version}	   &:& 20180227 (Andoni Santos)
+	\end{tabular}
+\end{tcolorbox}
+
+\subsection*{Input Parameters}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{Name}  		 & \textbf{Type}  & \textbf{Value}    	\\\hline
+		Confidence     		 & double         & 0.95              	\\\hline
+		measuredIntervalSize & int 			  & 1024				\\\hline
+		windowType			 & WindowType     & Hamming			  	\\\hline
+		segmentSize			 & int			  & 512					\\\hline
+		overlapCount  		 & int			  & 256					\\\hline
+		active             & bool       & false \\\hline
+%		LowestMinorant & double         & $1\times10^{-10}$ \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\subsection*{Methods}
+	SNREstimator() {};
+	\bigbreak
+	SNREstimator(vector<Signal *> \&InputSig, vector<Signal *> \&OutputSig) 
+	:Block(InputSig, OutputSig) {};
+	\bigbreak
+	void initialize(void);
+	\bigbreak
+	bool runBlock(void);
+	\bigbreak
+	void setMeasuredIntervalSize(int misz) { measuredIntervalSize= misz; }
+	\bigbreak
+	int getMeasuredIntervalSize(void) { return measuredIntervalSize; }
+	\bigbreak
+	void setSegmentSize(int sz) { segmentSize = sz; }
+	\bigbreak
+	int getSegmentSize(void) { return segmentSize; }
+	\bigbreak
+	void setOverlapCount(int olp) { overlapCount = olp; }
+	\bigbreak
+	int getOverlapCount(void) { return overlapCount; }
+	\bigbreak
+	void setOverlapPercent(double olp) { overlapCount = floor(segmentSize*olp); }
+	\bigbreak
+	double getOverlapPercent(void) { return overlapCount/segmentSize; }
+	\bigbreak
+	void setConfidence(double P) { alpha = 1-P; }
+	\bigbreak
+	double getConfidence(void) { return 1 - alpha; }
+	\bigbreak
+	void setWindowType(WindowType wd) { windowType = wd; }
+	\bigbreak
+	WindowType getWindowType(void) { return windowType; }
+	\bigbreak
+	void setFilename(string fname) { filename = fname; }
+	\bigbreak
+	string getFilename(void) { return filename; }
+	\bigbreak
+	vector<complex<double>> fftshift(vector<complex<double>> \&vec);
+	\bigbreak
+	void setRollOff(double rollOff) { rollOffComp = rollOff; }
+	\bigbreak
+	double getRollOff(void) { return rollOffComp; }
+	\bigbreak
+	void setNoiseBw(double nBw) {  noiseBw = nBw; }
+	\bigbreak
+	double getNoiseBw(void) { return noiseBw; }
+	\bigbreak
+	void setEstimatorMethod(SNREstimatorMethod mtd) { method = mtd; }
+	\bigbreak
+	SNREstimatorMethod getEstimatorMethod(void) { return method; }
+	\bigbreak
+	void setIgnoreInitialSamples(int iis) { ignoreInitialSamples = iis; }
+	\bigbreak
+	int getIgnoreInitialSamples(void) { return ignoreInitialSamples; }
+	\bigbreak
+	void setActivityState(bool state) { active = state; }
+	\bigbreak
+	bool getActivityState(void) { return active; }
+	\bigbreak
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1 or 2\\
+\textbf{Type}: OpticalSignal or TimeContinuousAmplitudeContinuousReal
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1 or 2\\
+\textbf{Type}: OpticalSignal or TimeContinuousAmplitudeContinuousReal
+
+\subsection*{Functional Description}
+This  accepts one OpticalSignal or TimeContinuousAmplitudeContinousReal signal
+(or two, an In-phase signal and a quadrature signal), estimates the
+signal-to-noise ratio for a given time interval and outputs an exact copy of the
+input signal. The estimated SNR value is printed to \textit{cout} after each
+calculation.  The block also writes a \textit{.txt} file reporting the estimated
+signal-to-noise ratio, a count of the number of measurements and the
+corresponding bounds for a given confidence level, based on measurements made on
+consecutive signal segments.
+
+
+\subsection*{Theoretical Description}\label{snrcalc}
+This block can use on of several methods to estimate the signal's SNR. Any of
+them can be usefull for particular use cases.
+
+Currently there are three methods implemented:
+
+\begin{itemize}
+	\item \textbf{powerSpectrum} - Spectral
+		analysis~\cite{harris12,xiao10,kashefi12};
+	\item \textbf{m2m4} - Moments method~\cite{matzner93};
+	\item \textbf{ren} - Modified moments method~\cite{ren05};
+\end{itemize}
+
+\subsubsection*{Spectral analysis}
+Several methods exist for SNR estimation, most of them requiring prior
+knowledge of the sample time or of the signal's conditions. Spectrum-based SNR
+estimators have been shown to provide accurate results even these informations
+are not available, at the cost of being less efficient ~\cite{harris12,xiao10,kashefi12}. 
+
+
+The power spectrum is estimated through Welch's periodogram over a predefined
+interval size~\cite{john2007digital}. This averages the values in each bin,
+providing a smoother estimate of the power spectrum.
+Using the power spectrum obtained from this sequence, the frequency interval
+containing the signal is estimated from the sampling rate, symbol rate and
+modulation type. The power contained in this interval will include both the signal
+and the white noise in those frequencies.
+
+The power of a signal can be calculated from its power spectrum~\cite{john2007digital}:
+
+\begin{equation}
+P = \frac{1}{N} \sum_{n=0}^{N-1} {|x(n)|}^2 = \frac{1}{N^2} \sum_{k=0}^{N-1} {|X(k)|}^2
+\end{equation}
+
+
+By default, the noise is assumed to be AWGN with a given constant spectral
+density. Therefore, by estimating the noise spectral density, an estimation can
+be made of the noise's full power. The noise power spectral density is therefore
+estimated from the the spectrum in the area without signal. This is the used to
+calculate the total noise power. The signal power is obtained by summing the FFT
+bins within the signal's frequency interval and subtracting the corresponding superimposed noise, according to what was previously estimated. The power SNR is the ratio between these two values.
+
+\begin{equation}
+	\text{SNR} = \frac{P_{s}}{P_n} = \frac{P_{s+n} - P_n}{P_n} = \frac{P_{s+n - n_0} R_{sym}}{n_0 R_{sam}}
+\end{equation}
+
+This value is saved and the process is repeated for every sequence of samples.
+The confidence interval is calculated based on the all the obtained SNR
+values~\cite{tranter2004principles}. The SNR value and confidence interval are
+then saved to a text file.
+
+\subsubsection*{Moments method}\label{sec:snrEstm2m4}
+If the sampling time is known, or it the signal has already been sampled, it is
+possible to resort to higher order statistics to get an SNR estimation. One
+popular method, due to its simplicity and efficiency, uses the second and fourth
+order moments of the signal wo estimate the SNR~\cite{matzner93}.
+
+Let the second and fourth order moments be $M_2$ and $M_4$. In addition, let
+$S_k$ be the sampled signal, with $S_{I_k}$ and $S_{Q_k}$ as its in-phase and
+quadrature components.
+
+\begin{equation}
+	M_2 = E\{|S_k|^2\} = E\{S_{i_k}^2 + S_{Q_k}^2\} = P_S + P_N
+\end{equation}
+
+\begin{equation}
+	M_4 = E\{|S_k|^4\} = E\{(S_{i_k}^2 + S_{Q_k}^2)^2\} = k_e P_S^2 + 4P_S P_N + k_n P_N^2
+\end{equation}
+
+Here, $k_e$ and $k_n$ are constants depending on the properties of the
+probability density function of the signal and noise processes. In practice,
+they are known from the modulation scheme used and the noise characteristics.
+For signals with constant energy, for instance, $k_e = 1$, and for two
+dimensional gaussian noise $k_n = 2$.
+It follows that the signal and noise powers can be defined as follows: 
+
+\begin{equation}
+	P_S = \sqrt{2 M_2^2 - M_ 4}
+\end{equation}
+
+\begin{equation}
+	P_N = M_2 - \sqrt{2 M_2^2 - M_ 4}
+\end{equation}
+
+and therefore
+
+\begin{equation}
+	\text{SNR} = \frac{\sqrt{2EM_2^2 - M_4}}{M_2 - \sqrt{2M_2^2 - M_4}}
+\end{equation}
+
+\subsubsection*{Modified Moments method}
+
+\indent This method works like the previous one, but tries to decrease bias and mean
+square error by using a different fourth moment of the received
+signal~\cite{ren05}.
+
+\begin{equation}
+	M^\prime_{4} = E\{(S^2_{I_k} - S^2_{Q_k})^2\} = 2 P_S P_N + P_N^2
+\end{equation}
+
+Thus, $P_S$ ,$P_N$ and the SNR become:
+
+\begin{equation}
+	P^\prime_S = \sqrt{M^2_2 - M^\prime_4}
+\end{equation}
+
+\begin{equation}
+	P^\prime_N = M_2 \sqrt{M^2_2 - M^\prime_4}
+\end{equation}
+
+\begin{equation}
+	\text{SNR} = \frac{\sqrt{M_2^2 - M^\prime_4}}{M_2 - \sqrt{M_2^2 - M^\prime_4}}
+\end{equation}
+
+%This block output signal is exactly equal to the input signal, to estimate SNR at any point in a given simulated system without interfering with it.
+
+%The $\widehat{\text{BER}}$ is obtained by counting both the total number received bits, $N_T$, and the number of coincidences, $K$, and calculating their relative ratio:
+%\begin{equation}
+%\widehat{\text{BER}}=1-\frac{K}{N_T}.
+%\end{equation}
+
+%The upper and lower bounds, $\text{SNR}_\text{UB}$ and $\text{SNR}_\text{LB}$ respectively, are calculated using the Clopper-Pearson confidence interval.
+%, which returns the following simplified expression for $N_T>40$~\cite{almeida2016continuous}:
+%\begin{align}
+%	\text{BER}_\text{UB}&=\widehat{\text{BER}}+\frac{1}{\sqrt{N_T}}z_{\alpha/2}\sqrt{\widehat{\text{BER}}(1-\widehat{\text{BER}})}+\frac{1}{3N_T}\left[2\left(\frac{1}{2}-\widehat{\text{BER}}\right)z_{\alpha/2}^2+(2-\widehat{\text{BER}})\right]\\
+%	\text{BER}_\text{LB}&=\widehat{\text{BER}}-\frac{1}{\sqrt{N_T}}z_{\alpha/2}\sqrt{\widehat{\text{BER}}(1-\widehat{\text{BER}})}+\frac{1}{3N_T}\left[2\left(\frac{1}{2}-\widehat{\text{BER}}\right)z_{\alpha/2}^2-(1+\widehat{\text{BER}})\right],
+%\end{align}
+%where $z_{\alpha/2}$ is the $100\left(1-\frac{\alpha}{2}\right)$th percentile of a standard normal distribution.
+
+\subsection*{Known Issues}\label{snrestissues}
+
+This block currently only works with either one or two
+\textit{TimeContinuousAmplitudeContinuousReal} signals, depending on the chosen
+method. It has also only been tested with the in-phase and quadrature components of an MQAM signal with M=4.
+If the noise's power spectral density is high enough for the signal not to be
+detected, the block will fail (in the mentioned case, typically
+values of SNR < -10dB can be unreliable).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% bibliographic references for the section ----------------------------
+\clearpage
+\printbibliography[heading=subbibliography]
+\end{refsection}
+\addcontentsline{toc}{subsection}{Bibliography}
+\cleardoublepage
+% ---------------------------------------------------------------------

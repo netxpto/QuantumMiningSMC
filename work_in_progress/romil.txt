@@ -1,0 +1,693 @@
+Short term goals: up March/ 2019
+
+	Simulate the system (linear/ideal without noise) => numerical noise
+	Impact of the Tone Power and Windowing
+	Title of the article: The Impact of the Sampling Rate and Tone Power in Iterative Minimum Phase Signal Reconstruction
+
+
+Medium term:	
+	Analize the impact of increasing the CW optical power Tone in the nonlinear noise
+	Improve the IQ modulator model (non-linear)
+	Simulate the system (non-linear/ideal without noise)
+	Perfom an AM/AM and AM/PM analyze of the signal (considering the linear regime and the nonlinear regime)
+	To develop a non-linear equalization filter (Globecom)
+	Publish a paper with this results
+	Confirme experimentally the results
+	Publish a paper with this results
+
+#####################################################################################################################################
+
+2019-02-22
+
+	- conclude the introduction
+	- advance in section 2, explaining the algorithm, follow clousely the figure
+
+Next meeting: 1/3, 3 pm
+
+
+2019-02-22
+
+	- finish the introduction
+	- finish the figure
+	- start section 2, explaining the algorithm, follow clousely the figure
+
+Next meeting: 26/2, 2 pm
+ 
+2019-02-19
+
+	- improve the introduction
+	- improve figure 1
+
+Next meeting: 22/2, 2.30 pm
+
+2019-02-13
+
+	- finalize the introduction (correct minor things, improve the connection between the image processing approch and our approach, make clear which is the novelty of our approach).
+	- rearrange section, start from the receive and to explain the DSP you describe the transmitter)
+	- explain figure 2
+
+Next meeting: 19/2, 3 pm
+
+2019-02-08
+
+	- finalize the introduction (correct minor things, improve the connection between the image processing approch and our approach, make clear which is the novelty of our approach).
+	- rearrange section, start from the receive and to explain the DSP you describe the transmitter)
+
+Next meeting: 13/2, 16 pm
+
+2019-02-05
+	- finalize the introduction (correct minor things, improve the connection between the image processing approch and our approach, make clear which is the novelty of our approach).
+	- rearrange section, start from the receive and to explain the DSP you describe the transmitter)
+
+Next meeting: 8/2, 17 pm
+
+2019-01-12
+
+	- improve introduction
+	- improvewrite section I - description of the method (receiver) (put more emphasis in the receiver)
+	- start to implement the netxpto simulation setup
+
+Next meeting: 5/2, 8h30
+
+2019-01-12
+
+	- improve introduction
+	- improvewrite section I - description of the method (receiver)
+
+Next meeting: 29/1, 10h
+
+
+2019-01-10
+
+	- improve the introduction
+	- write section I - description of the method
+
+Next meeting: 18/1, 9h
+
+
+2019-01-04
+
+	- improve the introduction
+
+	- work hard in the paragaph about the iterative method (not KK)
+
+
+Next meeting: 10/1, 14h30
+
+
+2018-12-18
+
+	- improve a lot the introduction
+		- rewrite the motivation and problem definition
+		- the state-of-the-art, be precise/more careful + more about iterative methods
+		- novelty, more precise and concret
+		- rewrite the organization of the paper
+
+
+	- write section II - architeture of the tx/rx and pos-detection algoritm
+
+	- put more detail in the documentation about the iterative method
+
+	- improve the KK implementation
+
+Next meeting: 2/1, 10h
+
+	
+
+2018-12-11
+
+	>>>> write the introduction of the paper - The Impact of the CW Tone Power in Iterative Minimum Phase Signal Reconstruction
+		1º paragraph: state the motivation and define the problem (short paragraph, 9/10 lines)
+		2ª paragraph: state of the art (make a story out of it, in which your paper in going to fit, very paragraph, 100 lines)
+		3ª paragraph: novelty, very-short paragraph (6/7 lines) (we have tone power in the order 3dB)
+		4ª paragraph: short paragraph (9/10 lines, paper organization) (introduction, iterative minimum phase transceiver architure, Numerical noise vs Tone, conclusions)
+
+	>>>> put more detail in the documentation about the iterative method
+
+	- improve the KK implementation
+
+Next meeting: 17/12, 19h
+
+2018-12-03
+
+	- we are having a lot numerical noise (in the digital signal)
+		1) eliminate all mistakes
+		2) estimate the SNR due to numerical error
+		3) windows techniques
+		4) plot a graph with different curves (3 ou 4 curves, no-window, A-window, B-window, C-Window)(SNR vs CW Tone Power)
+		5) Look into some bybliographic references
+		
+	- rewrite the introduction of the paper
+		1º paragraph: state the motivation and define the problem (short paragraph, 9/10 lines)
+		2ª paragraph: state of the art (make a story out of it, in which your paper in going to fit, very paragraph, 100 lines)
+		3ª paragraph: novelty, very-short paragraph (6/7 lines)
+		4ª paragraph: short paragraph (9/10 lines, paper organization) (introduction, KK transceiver architure, Numerical noise, Nonlinear noise, conclusions)
+
+
+Next meeting: 11/12, 14h30
+
+
+2018-11-20
+
+	improve the tx adding that DC component instead of the RF
+	understand waht is happening bettween S12->S14->S15 (why S15 is not equal to S12) (look for some biblography and discuss with Nelson)
+
+Next meeting: 29/11, 9h
+
+2018-11-13
+
+	finish documentation related with Algorithms/Overlap-Save Method
+
+	use for the digital signal a 5Gbaud - 16QAM siganl with a raised cosine beta=0.1 => analogue bandwidth is +/- 2.5 GHz
+	identify the source of the noise in the ideal digital system (increse the number of samplesPerSymbol, increase the length of the transfer function, compare the signals in the time domain before the decision circuit)
+
+	use for the analogue signal a gaussian white noise with a bandwidth of 2.5GHz, transmit the analogue siganl and compare in the time domain
+
+Next meeting: 20/11, 14h30
+
+
+
+2018-11-07
+
+	work in Overlap-Save Method, put two subsections time domain and frequency domain
+
+	after ddo a comparison using the Hilbert transform filter (both in time and frequency domain) 
+
+	implement the Hilbert transform using the overlap save method in the frequency domain
+	analalyze the transmission of a digital singal
+
+
+Next meeting: 13/11, 14h30
+
+
+2018-10-30
+
+	implement the Hilbert transform using the overlap save method in the frequency domain
+	analalyze the transmission of a digital singal
+
+
+Next meeting: 7/11, 9h
+
+
+2018-10-23
+
+	specify the bandwidth of the signal (both the analogue and digital), look into some RoF papers
+
+	specify clearly the structure of the receiver
+
+	simulated the digital signal => SNR => EVM and BER
+
+	simulated the analogue signal => SNR => EVM ? (prepare a short and clear presentation about EVM for analogue signals)  
+
+Next meeting: 30/10, 15h
+
+2018-10-18
+
+	prepare a poster talk with Nelson about KK receiver for coherent PON (analogue and digital signal)
+
+	organize better the paper introduction
+
+	Do a simulation in the linear regime without noise (digital and analogue) signal 
+	Document this in netxpto/doc
+
+Next Meeting: 23/10, 2 pm
+
+
+2018-09-28
+
+	- improve the paper (section I) => state-of-the-art mention the nonlinearities induced by the modulator 
+
+	- section II => show that the proposed arcitecture is suitable to carry both digital (I(t)) and analogue signals (Q(t)) 
+
+	- section III => assess the impact of the IQ modultor nonlinearities in the digital signal (extend the reach => increase the RF signal power)
+
+	- section IV => assess the impact of the IQ modulator nonlinearities in the analogue signals (extend the reach => increase the RF signal power)
+
+	- perform the simulation in the nexpto (linear regime, show that is possible to send and detect digital and analogue signals)
+
+Next meeting: 19/11, 11 am
+
+
+2018-09-28
+
+	- improve the paper (section I) => state-of-the-art mention the nonlinearities induced by the modulator 
+
+	- section II => show that the proposed arcitecture is suitable to carry both digital (I(t)) and analogue signals (Q(t)) 
+
+	- section III => assess the impact of the IQ modultor nonlinearities in the digital signal
+
+	- section IV => assess the impact of the IQ modulator nonlinearities in the analogue signals
+
+Next meeting: 9/11, 3 pm
+
+2018-09-20
+
+	- improve the paper (section I and II)
+
+	- propose a structure for section III (performance analyse)
+
+
+Next meeting: 28/9, 15h
+
+2018-09-13
+
+	- improve the paper (section I)
+
+	- work in section II (architecture of the network and transceiver)
+
+
+Next meeting: 20/9, 11h
+
+
+2018-09-06
+
+	- The paper is only about Coherent PON with KK
+
+	- MOdel the IQ modulator
+
+	- Write the paper introduction
+
+	- Start the simulation
+		using digital signals without noise
+
+Next meeting: 13/9, 16h
+
+
+2018-08-28
+
+	start a paper in overleaf
+		title "Nonlinear Compensation Equalizer Filter for Kramers-Kronig Trnasceiver"
+
+		introdution:
+			motivation and problem definitios (4/6 phrases)
+				coherent pon (advantages of coherent pon, higher spcetral efficency) based on KK transceiver (advantages KK, simple receiver)
+				to increase the reach without optical amplification high transmitted optical power
+				how to compensate this nonlinear behavior?
+			state-of-the-art( 20/30 phrases)
+				past work, selected 10/15 relevant papers
+			novelty (2/3 phrases)
+			strcuture of the paper (4/6 phrases)
+
+		KK Coherent PON architeture
+
+	Develop and document a model for the IQ Modulator
+		before code you have to describe the model in the documentation
+		put a bibliography reference
+
+Next meeting: 6/9/2018, 14h
+
+2018-08-23
+TO BE DONE
+
+	Improve the setup of the system, the transmitter, and receiver. Make a description of the blocks that you are going to used.
+
+	Put in the documentation the IQ modulator (linear model)
+
+	Simulate the system (linear/ideal without noise)
+
+Next meeting: 28/8, 4 pm
+
+
+2018-07-17
+TO BE DONE
+
+	Place in the document the setup of the system, the transmitter, and receiver.
+
+	Place in the document a block diagram of the IQ Modulator (look into some bibliography), we want to develop a model that takes into account the nonlinear behavioral of the modulator
+
+	See the signal evolution in the transmitter, perfom an AM/AM and AM/PM analyze of the signal (considering the linear regime and the nonlinear regime)
+
+
+Next meeting: 23/8, 3 pm
+
+
+2018-06-29
+TO BE DONE
+
+	Use the tx configuration with a IQ Modulator with I and Q componentes, fig 6.37.
+
+	Study a system without EDFA and we want to maximize the reach and the bit-rate, we are going to operate in a nonlinear regime of the IQ Modulator
+
+	Start to model the IQ modulator / nonlinear behavioral
+
+
+Next meeting: 17/7, 5 pm
+	
+
+
+2018-06-06
+TO BE DONE
+
+	Prepare a presentation
+
+		1 - KK Tx -> KK Rx
+		2 - KK Rx (advantages: we extract information from both phase and amplitude of the eletrical field, this allows pos-processing DSP and two information in both quadratures)
+		3 - 6 - KK Tx (real optical, real digital, complex optical, complex digital)
+		7 - table
+		8 - What we need to know
+			a) which configuration we are going to use (KK tx and KK Rx)
+			b) which signal we are going to use (digital/analog, bandwidth)
+			b) what figure of merit are we going to use for assessing signal distortion
+
+	2018-06-12 - simplified_coherent_receiver - metting with RoF people
+
+Next meeting: 12/6, 10.45 am
+
+2018-05-22
+TO BE DONE
+
+	- finish the theoretical/numerical preliminar section acording with the pdf
+
+
+Next meeting: 6/5, 14h
+
+2018-05-10
+TO BE DONE
+	
+	try to improve the theoretical part (to make things more clear) considerer 2 different cases
+
+		- complex digital signal (QAM)
+		- real digital signal (PAM)
+
+	change the folder name in sdf and doc/sdf => kramers_kronig_transceiver
+	
+Next meeting: 22/5, 9h
+
+2018-05-02
+TO BE DONE
+	
+	try to improve the theoretical part 
+	
+RoF
+	- draw the architecture of the tranmsitter radio part + optical system (charateristics of my radio signal ?)
+	- add bibliography
+	- detailed the optical system (KK transceiver)
+	- simulate in the linar regime (ideal IQ modulator)
+	- increase the power of the laser, operate in teh nonlinear regime of the IQ modulator
+	- perform an AM/AM and AM/PM analyze
+
+
+Next Meeting: 10/5, 9h
+
+2018-04-24
+TO BE DONE
+
+	improve the theoretical (notation, organization and clarity) (next week)
+
+	draw the general architecture of the KK transceiver (in the theoretical part) (next week)
+
+	RoF
+		- draw the architecture of the tranmsitter radio part + KK transceiver (next week)
+		- simulate in the linar regime (ideal IQ modulator)
+		- increase the power of the laser, operate in teh nonlinear regime of the IQ modulator
+		- perform an AM/AM and AM/PM analyze
+
+Next meeting: 2/5, 2.30 pm
+
+2018-04-19
+TO BE DONE
+
+	- read again the simplifed receiver section and add the bibliography
+
+	- rearrange the algorithms doc/tex/algorithms folders (add the bibliography in all subsections)
+
+	- overlape-save try to put as much detail as possible in the documentation (we have to re-analyze)
+
+	- work in this radio-over-fiber link
+
+next meeting: 24/4, 9h
+
+2018-03-27
+TO BE DONE
+
+	- to conclude the fft/ifft work, just correct minor details in the documentation and include the time of Matlab fft function as benchmark.
+
+
+	- do not duplicate
+
+	- overlape-save try to put as much detail as possible in the documentation (we have to re-analyze)
+
+	- work in this radio-over-fiber link
+
+next meeting: 4/3, 15h
+
+
+2018-03-20
+TO BE DONE
+
+	implement a different version of fft without the factor 1/sqrt(N) or with the factor 1/N,
+ this functions must be implement with a third parameter if this third parameter is 0 there is no factor, if the third paramter is one multiply by 1/N.
+Document and test this properly, and assess the performance gains will all situations.
+
+	overlap-save-method, improve the documentation, test netxpto example using the three input paramters
+
+	explain better the filter classes
+
+	improve the Hilbert transform part
+
+next meeting: 27/3/2018, 9h
+
+
+2018-03-06
+TO BE DONE
+
+	finalize the class FD_Filter (filter_20180306.h and filter_20180306.cpp)
+
+	finalize the class PulseShaperFd (pulse_shaper_fd_20180306.h and pulse_shaper_fd_20180306.cpp)
+
+	fix and document the gaussian filter
+
+	teste and document both classes carefully
+
+	implement this function hilbert() and document and test it carefully, hibertTransform folder
+
+
+Netx meeting: 20/3, 9h
+
+2018-02-27
+TO BE DONE
+	finalize the last details in the fft code
+		- improve the manual
+		- change ReImVect2ComplexVector to reImVect2ComplexVector
+		- add a fftShift function
+
+
+	- finalize the details of the overlap and save
+		- do a linear convolution with the same name of Matlab
+		- improve the documentation
+
+	- finalize the filter class
+		- take your time be carefull, work a lot in the documentation, and don't mix with the Hilber transform
+
+	- work in the Hilbert transform
+
+Next meeting: 6/march, 9 am
+
+2018-02-15
+TO BE DONE
+
+	- check the small different, but first save the data from matlab using the function fprintf with the maximum
+		signal in time -> fft -> time again (matlab) 
+		signal in time -> fft -> time again (c++)
+	- report the results that you achieve
+
+	- check document overlap and test
+	- document the class filter, and do a small program do test
+
+Next Meeting: 27/2, 15h
+
+
+2018-02-15
+TO BE DONE
+	- improve the document (read and improve small details);
+
+	- improve the code (check the warning and this small different)
+		signal in time -> fft -> time again (matlab) 
+		signal in time -> fft -> time again (c++)
+
+	- look into the class FIR_Filter and FD_Filter and think in a way to implement a filter in the simulator (What the best way to do it, thinking?)
+	- think about a class Filter
+
+Next Meeting: 20/2, 15h
+
+2018-02-08
+TO BE DONE
+	finish the fft/ifft module (finish the documentation and the test with separate fft_20180208.h & fft_20180208.cpp)
+
+	write the algorithm for the overlap saved method, considering a finite length impulse response filter)
+		vector -> input signal in the time domain
+		vector -> filter (impulse response or the transfer function)
+		vector <- output signal in time domain
+
+Next meeting: 14/2, 8.30 am
+
+2018-01-31
+TO BE DONE
+	finish the documentation with relation to the fft (be carefull)
+	start the overlap save, do in a similar way as the fft
+
+Next meeting: 8/2, 8.30 am
+
+
+2018-01-23
+TO BE DONE
+	check the documentation
+
+	do a complete validation of FFT
+
+	read overlap save method / overpal add
+
+Next meeting: 30/01/2018, 9h30m
+
+2018-01-12
+TO BE DONE
+	finalize the documentation of the fork (minor minor details)
+
+	finalize the sgnToWfm_20171121() function /organize the documentation for working with the Tektronix...
+
+	FFT place a teste/example in the documentation of the use of FFT and IFFT
+
+	work in the overlap save method
+
+
+2018-01-05
+TO BE DONE
+	finalize the documentation of the fork (minor minor details)
+
+	finalize the sgnToWfm_20171121() function /organize the documentation for working with the Tektronix...
+
+	FFT place a teste/example in the documentation of the use of FFT and IFFT
+
+	work in the overlap save method
+
+
+2017-12-05
+TO BE DONE
+	finalize the documentation of the fork (minor minor details)
+
+	finalize this conclude the sgnToWfm without changing the readsignal_20170930.m
+		warning('The sampling frequency was XX and the signal was decimated to obtain a sampling frequency of YY (< 16 GHz).')
+
+	work in the FFT algorithm fft( , -1) or fft( , 1)
+
+Next Meeting: 2017/12/07
+
+
+2017-11-28
+TO BE DONE
+	finalize the documentation of the fork (minor details)
+
+	conclude the sgnToWfm without changing the readsignal_20170930.m
+		warning('The sampling frequency was XX and the signal was decimated to obtain a sampling frequency of YY (< 16 GHz).')
+
+	work in the FFT algorithm fft( , -1) or fft( , 1)
+
+Next Meeting: 2017/11/05
+
+2017-11-21
+TO BE DONE
+	finalize the fork
+		documentation + code (for all types)
+
+	change the sgnToWfm function to force decimation if sampling rate is gretaer than 16 GS/s
+
+	work in the FFT algorithm fft( , -1) or fft( , 1)
+
+NEXT Meeting: Friday, 8h30m
+
+2017-11-14
+TO BE DONE
+	documentation
+		include the fork in the library, follow Bit Error Rate style
+
+		algorithms section, write a section about DFFT (discrete fft and discrete ifft) (go to netxpto.cpp file and see which algorithm are, try to understand them)
+	
+	theoretical part
+		check which is the RF frequency that you need
+
+
+		
+2017-11-09
+TO BE DONE
+	presentation
+		finalize the presentation
+		include results from simulation
+
+	simulation
+		finish the fork
+		think about how to implement the Hilbert transform
+
+	- solve the optical networks dimensioning problem
+
+NEXT METTING: Next Thursday, 16/11, 10 am
+
+2017-11-07
+TO BE DONE
+   - simulation part
+	put the mixer and rf_oscillator in the setup
+
+   - presentation
+
+   - start by reviewing the netxpto - NetPlanner software, install
+
+next meeting: Thursday, 10 am
+
+2017-11-03
+TO BE DONE
+   - simulation part
+	develop the mixer and rf_oscillator 
+
+   - start by reviewing the netxpto - NetPlanner software, install
+
+######################################## October 2017 ##############################################
+2017-10-26
+TO BE DONE
+  - go to the lab and setup a proper place to conduct the experiment (put a sheet with the experimental setup and a short description + student and supervisor name)
+  - go to the lab and implement the experimental setup (and write which components are missing)
+  - start with the simulation setup, write the "kramers_kronig_transceiver_sdf.cpp" file.
+  - improve the theoretical part
+  
+Next meeting: Friday, 3/11, 8:30 am
+
+2017-10-20
+TO BE DONE
+ - Improve the theoretical part;
+ - Finish the simulation setup including description
+ - check which blocks are already in the simulator and which are not
+ - experimental setup transmitter part (low priority)
+
+Next meeting: Friday, 27/10, 8:30 am
+
+2017-10-17
+TO BE DONE
+ - Finish the simulation setup (top priority)
+ - Improve the theoretical part;
+
+
+
+2017-10-09
+TO BE DONE
+- make clear the goal of your work: to apply the Stokes PolDemux algorithm to a KK receiver
+- Improve the text (theory)
+- Start to write a simulation section
+- Start to write a experimental section
+
+Next meeting: 2017-10-17, 2 pm
+
+2017-10-02
+TO BE DONEI
+Next meeting 
+- What are the requirements for the KK receiver? (Minimum Phase Signal and Analytical Signal)
+- What is the definition (Minimum Phase Signal and Analytical Signal)?
+- How we can use these signals and profit from?
+
+Later
+Hilbert Transform
+How to generate?
+
+########################################## September 2017 #############################################
+2017-09-14
+TO BE DONE
+- study two papers (Mecozzi16, Mecozzi17)
+- write in our own words the system setup (explain)
+- reproduce the results in NetXPTO - LinkPlanner

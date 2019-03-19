@@ -1,0 +1,142 @@
+\clearpage
+
+\section{Polarization Analysis Signals}
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Students Name}  &:& Mariana Ramos\\
+		\textbf{Goal}           &:& Analyse simulation Photon Stream signals into Stokes space using plot in Poincare sphere and Autocorrelation calculation and plot. \\\\
+		\textbf{Version}        &:& jonesToStokes\_20180614.m 
+	\end{tabular}
+\end{tcolorbox}
+
+
+This section shows some matlab functions to analyse photon stream signals from simulation.
+
+\subsection{jonesToStokes.m}
+
+\subsection*{Structure of a function}
+
+[] = jonesToStokes(fname,deltaP, filename,NumberOfSamples);
+
+\subsection*{Inputs}
+
+\indent
+
+\textbf{fname}: Input filename of the signal (*.sgn) you want to convert. It must be a photon stream signal (Type: PhotonStreamXY).
+\bigskip
+
+\textbf{deltaP}: Value of delta P (polarization linewidth which is a parameter that depends on optical fibre installation) used to perform the simulation.
+\bigskip
+
+\textbf{filename}: Input filename which contains the stokes parameters resulted from simulation (*.txt).
+\bigskip
+
+\textbf{NumberOfSamples}: Number of Samples to plot in Poincare sphere.
+
+
+\subsection*{Outputs}
+Two graphics are plotted from the photon stream input signal:
+\bigskip
+
+\textbf{Histogram of parameters $\vec{\alpha}$}: Three plots of each $\alpha_i$ which were used as input parameters of the random matrix used to model the SOP drift block.
+\bigskip
+
+\textbf{Poincare sphere}: A plot of the time evolution of the photon stream into the Poincare sphere.
+
+
+
+\subsection*{Functional Description}
+
+This matlab function converts the input signal (*.sgn) which is represented in Jones space in a signal represented in Stokes Space which allows us to plot the signal time evolution in Poincare sphere. Furthermore, the $\vec{\alpha}$ parameters obtained from simulation are also plotted in order to be sure that they were generated correctly by following a normal distribution with mean $0$ and a standard deviation depending on these parameters values.
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Students Name}  &:& Mariana Ramos\\
+		\textbf{Version}        &:& ACF\_20180614.m 
+	\end{tabular}
+\end{tcolorbox}
+\subsection{ACF.m}
+
+\subsection*{Structure of a function}
+[] = ACF(fname,deltaP,N)
+
+\subsection*{Inputs}
+\indent
+
+\textbf{fname}: Input filename of the signal (*.sgn) you want to convert. It must be a photon stream signal (Type: PhotonStreamXY).
+\bigskip
+
+\textbf{deltaP}: Value of delta P (polarization linewidth which is a parameter that depends on optical fibre installation) used to perform the simulation.
+\bigskip
+
+\textbf{N}: Number of Samples used to plot the function of autocorrelation.
+
+
+\subsection*{Outputs}
+This matlab function has two outputs:
+\bigskip
+
+\textbf{.txt file with values of the autocorrelation calculated with data from simulation}: A .txt file with the autocorrelation of the photon stream signal which inputs the function for $N$ samples which is also an input of the function-.
+\bigskip
+
+\textbf{ACF plot}: A plot with numerical ACF calculated from simulation data and with the theoretical ACF calculated based on the value of $\Delta p$ inserted as an input of the function.
+
+
+\subsection*{Functional Description}
+This matlab function calculates the autocorrelation in time domain of the photon stream input signal as well as the theoretical autocorrelation based on the value of $\Delta p$ inserted as an input of the function which must be the same used in simulation. This function outputs a txt file with the numerical ACF and plots a graphic with both theoretical and numerical autocorrelation.
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Students Name}  &:& Mariana Ramos\\
+		\textbf{Version}      &:& plotPhotonStream\_20180102.m
+	\end{tabular}
+\end{tcolorbox}
+\subsection{plotPhotonStream\_20180102.m}
+
+\subsection*{Structure of a function}
+[mag\_x, mag\_y, phase\_dif, h] = plotPhotonStream\_20180102(fname, opt, h)
+
+\subsection*{Inputs}
+\indent
+
+\textbf{fname}: Input filename of the signal (*.sgn) you want to convert. It must be a photon stream signal (Type: PhotonStreamXY).
+\bigskip
+
+\textbf{opt}: If opt equals 0, or no opt, we plot the absolute value of X and Y and the phase difference.If opt equals 1, we plot the amplitude of X and Y, this is only possible when X and Y are real values.
+\bigskip
+
+\textbf{h}: Number of the figure to plot.
+
+
+\subsection*{Outputs}
+This matlab function has four outputs:
+\bigskip
+
+\textbf{mag\_x}: Magnitude of the complex number X.
+\bigskip
+
+\textbf{mag\_y}: Magnitude of the complex number Y.
+\bigskip
+
+\textbf{phase\_dif}: Difference phase between the two complex numbers X and Y.
+\bigskip
+
+\textbf{h}: A plot of magnitude and phase difference of the two complex numbers depending on the choice of the input parameter \textbf{opt}.
+
+
+\subsection*{Functional Description}
+This matlab function plots the magnitude of the two components of the input photon stream signal (*.sgn) and the phase difference between both components. This function allows us to visualize the photon stream signal over time.
+
+\begin{tcolorbox}	
+	\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+		\textbf{Students Name}  &:& Mariana Ramos\\
+		\textbf{Version}        &:& plot\_sphere.m
+	\end{tabular}
+\end{tcolorbox}
+\subsection{plot\_sphere.m}
+
+This function accepts the three stokes parameters $S_1$, $S_2$ and $S_3$. This function supports the other functions in this section allowing the plot of these parameters in Poincare sphere.
+
+
+%\end{document}

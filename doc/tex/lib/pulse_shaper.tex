@@ -1,0 +1,41 @@
+\documentclass[../../sdf/tex/BPSK_system.tex]{subfiles}
+\graphicspath{{../../images/}}
+%opening
+\onlyinsubfile{\title{Pulse Shaper}}
+\date{}
+
+
+\begin{document}
+
+\maketitle
+
+This blocks applies a time domain, finite impulse response filter to the signal. The filter's transfer function is defined by the vector \textit{impulseResponse}. It allows for passive filter mode operation via a boolean check.
+
+\subsection*{Input Parameters}
+
+\begin{itemize}
+	\item filterType
+	\item impulseResponseTimeLength
+	\item rollOfFactor
+	\item usePassiveFilterMode
+\end{itemize}
+
+\subsection*{Functional Description}
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Sequence of Dirac Delta functions (ContinuousTimeDiscreteAmplitude)
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Sequence of impulses modulated by the filter (ContinuousTimeContiousAmplitude)
+
+\subsection*{Suggestions for future improvement}
+
+Introduce other types of filters.
+
+\end{document}

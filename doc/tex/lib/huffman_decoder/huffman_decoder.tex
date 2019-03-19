@@ -1,0 +1,44 @@
+\clearpage
+
+\section{Huffman Decoder}
+
+\begin{tcolorbox}	
+\begin{tabular}{p{2.75cm} p{0.2cm} p{10.5cm}} 	
+\textbf{Header File}   &:& huffman\_decoder\_*.h \\
+\textbf{Source File}   &:& huffman\_decoder\_*.cpp \\
+\textbf{Version}       &:& 20180621 (MarinaJordao)
+\end{tabular}
+\end{tcolorbox}
+
+\subsection*{Input Parameters}
+
+The block accepts one input signal, a binary signal with the message to decode, and it produces an output signal (message decoded).
+Two inputs are required, the probabilityOfZero and the sourceOrder.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|p{60mm}|c|ccp{60mm}}
+		\cline{1-4}
+		\textbf{Parameter} & \textbf{Type} & \textbf{Values} &   \textbf{Default}& \\ \cline{1-4}
+		probabilityOfZero & double & from 1 to 0 & $0.45$ \\ \cline{1-4}
+		sourceOrder & int & 2, 3 or 4 & $2$ \\ \cline{1-4}
+	\end{tabular}
+	\caption{Huffman Decoder input parameters}
+	\label{table:sink_in_par}
+\end{table}
+
+\subsection*{Functional Description}
+
+
+This block decodes a message using Huffman method for a source order of 2, 3 and 4. 
+
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1\\
+\textbf{Type}: Binary 
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 1\\
+\textbf{Type}: Binary 
+%\end{document}
